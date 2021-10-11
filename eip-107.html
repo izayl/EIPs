@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>safe &quot;eth_sendTransaction&quot; authorization via html popup | 以太坊改进提案 EIPs</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="以太坊改进提案（EIPs）描述了以太坊平台的标准，包括核心协议规范，客户端API和合约标准。">
+    
+    <link rel="preload" href="/assets/css/0.styles.89e32c3d.css" as="style"><link rel="preload" href="/assets/js/app.a13d8931.js" as="script"><link rel="preload" href="/assets/js/3.afc73834.js" as="script"><link rel="preload" href="/assets/js/8.d346a35e.js" as="script"><link rel="prefetch" href="/assets/js/10.b7e21e5d.js"><link rel="prefetch" href="/assets/js/100.d5d858e7.js"><link rel="prefetch" href="/assets/js/101.e1db9cf8.js"><link rel="prefetch" href="/assets/js/102.f33c0db7.js"><link rel="prefetch" href="/assets/js/103.9b2f992f.js"><link rel="prefetch" href="/assets/js/104.4682985f.js"><link rel="prefetch" href="/assets/js/105.f9e5318b.js"><link rel="prefetch" href="/assets/js/106.9c75a4a1.js"><link rel="prefetch" href="/assets/js/107.a77b3902.js"><link rel="prefetch" href="/assets/js/108.e6af934c.js"><link rel="prefetch" href="/assets/js/109.ea2fe245.js"><link rel="prefetch" href="/assets/js/11.19d07763.js"><link rel="prefetch" href="/assets/js/110.c7c5923b.js"><link rel="prefetch" href="/assets/js/111.53019564.js"><link rel="prefetch" href="/assets/js/112.2678b5bc.js"><link rel="prefetch" href="/assets/js/113.65344b60.js"><link rel="prefetch" href="/assets/js/114.34870900.js"><link rel="prefetch" href="/assets/js/115.e0ce944c.js"><link rel="prefetch" href="/assets/js/116.05caef5d.js"><link rel="prefetch" href="/assets/js/117.eb1f8851.js"><link rel="prefetch" href="/assets/js/118.1d54235b.js"><link rel="prefetch" href="/assets/js/119.57439d26.js"><link rel="prefetch" href="/assets/js/12.cc14cc21.js"><link rel="prefetch" href="/assets/js/120.fec4a349.js"><link rel="prefetch" href="/assets/js/121.e6ee3bd0.js"><link rel="prefetch" href="/assets/js/122.8b1067e2.js"><link rel="prefetch" href="/assets/js/123.e9852421.js"><link rel="prefetch" href="/assets/js/124.e2572e3e.js"><link rel="prefetch" href="/assets/js/125.d02927d3.js"><link rel="prefetch" href="/assets/js/126.5443f529.js"><link rel="prefetch" href="/assets/js/127.df02ad53.js"><link rel="prefetch" href="/assets/js/128.86d06d73.js"><link rel="prefetch" href="/assets/js/129.4ba20791.js"><link rel="prefetch" href="/assets/js/13.66816190.js"><link rel="prefetch" href="/assets/js/130.a3f03ff0.js"><link rel="prefetch" href="/assets/js/131.626e55b3.js"><link rel="prefetch" href="/assets/js/132.95f1e93d.js"><link rel="prefetch" href="/assets/js/133.6e47359a.js"><link rel="prefetch" href="/assets/js/134.47e4440e.js"><link rel="prefetch" href="/assets/js/135.adb1a4c4.js"><link rel="prefetch" href="/assets/js/136.45c43972.js"><link rel="prefetch" href="/assets/js/137.8ba370d0.js"><link rel="prefetch" href="/assets/js/138.74346e65.js"><link rel="prefetch" href="/assets/js/139.fad68529.js"><link rel="prefetch" href="/assets/js/14.1067acde.js"><link rel="prefetch" href="/assets/js/140.d7cf0c13.js"><link rel="prefetch" href="/assets/js/141.53ad4e2c.js"><link rel="prefetch" href="/assets/js/142.3054db6d.js"><link rel="prefetch" href="/assets/js/143.752707de.js"><link rel="prefetch" href="/assets/js/144.6bb5b315.js"><link rel="prefetch" href="/assets/js/145.5be11191.js"><link rel="prefetch" href="/assets/js/146.65c4a5f7.js"><link rel="prefetch" href="/assets/js/147.503abedf.js"><link rel="prefetch" href="/assets/js/148.fac10f82.js"><link rel="prefetch" href="/assets/js/149.39bdc952.js"><link rel="prefetch" href="/assets/js/15.9ca9208b.js"><link rel="prefetch" href="/assets/js/150.763447dd.js"><link rel="prefetch" href="/assets/js/151.74711268.js"><link rel="prefetch" href="/assets/js/152.04b548a4.js"><link rel="prefetch" href="/assets/js/153.f76cfea2.js"><link rel="prefetch" href="/assets/js/154.63dde107.js"><link rel="prefetch" href="/assets/js/155.0c715174.js"><link rel="prefetch" href="/assets/js/156.685fab04.js"><link rel="prefetch" href="/assets/js/157.6739174d.js"><link rel="prefetch" href="/assets/js/158.882bbbfc.js"><link rel="prefetch" href="/assets/js/159.aede9782.js"><link rel="prefetch" href="/assets/js/16.9eea9a64.js"><link rel="prefetch" href="/assets/js/160.d9be3959.js"><link rel="prefetch" href="/assets/js/161.76cc08ef.js"><link rel="prefetch" href="/assets/js/162.1bdec2e1.js"><link rel="prefetch" href="/assets/js/163.ac0295b3.js"><link rel="prefetch" href="/assets/js/164.cf094dd8.js"><link rel="prefetch" href="/assets/js/165.fa43d86b.js"><link rel="prefetch" href="/assets/js/166.b42e919a.js"><link rel="prefetch" href="/assets/js/167.cd4e2412.js"><link rel="prefetch" href="/assets/js/168.b923679f.js"><link rel="prefetch" href="/assets/js/169.0381e4c3.js"><link rel="prefetch" href="/assets/js/17.8d0803f5.js"><link rel="prefetch" href="/assets/js/170.07048ad0.js"><link rel="prefetch" href="/assets/js/171.efbf2d1b.js"><link rel="prefetch" href="/assets/js/172.c6f3f3a1.js"><link rel="prefetch" href="/assets/js/173.b0448642.js"><link rel="prefetch" href="/assets/js/174.9c3b47d1.js"><link rel="prefetch" href="/assets/js/175.6399aebe.js"><link rel="prefetch" href="/assets/js/176.72f40c53.js"><link rel="prefetch" href="/assets/js/177.e4a8654e.js"><link rel="prefetch" href="/assets/js/178.d88d2f1f.js"><link rel="prefetch" href="/assets/js/179.5f89ba63.js"><link rel="prefetch" href="/assets/js/18.3444113b.js"><link rel="prefetch" href="/assets/js/180.9add0321.js"><link rel="prefetch" href="/assets/js/181.a089c28c.js"><link rel="prefetch" href="/assets/js/182.5c030e78.js"><link rel="prefetch" href="/assets/js/183.a96244f5.js"><link rel="prefetch" href="/assets/js/184.8a73b7fa.js"><link rel="prefetch" href="/assets/js/185.39aa4852.js"><link rel="prefetch" href="/assets/js/186.63c92b48.js"><link rel="prefetch" href="/assets/js/187.0afea76b.js"><link rel="prefetch" href="/assets/js/188.4b72b322.js"><link rel="prefetch" href="/assets/js/189.dacc64a4.js"><link rel="prefetch" href="/assets/js/19.45b60500.js"><link rel="prefetch" href="/assets/js/190.6e72d819.js"><link rel="prefetch" href="/assets/js/191.f3361d30.js"><link rel="prefetch" href="/assets/js/192.d02dc2b3.js"><link rel="prefetch" href="/assets/js/193.9185ff86.js"><link rel="prefetch" href="/assets/js/194.109e4d2b.js"><link rel="prefetch" href="/assets/js/195.9a12a7ef.js"><link rel="prefetch" href="/assets/js/196.30492964.js"><link rel="prefetch" href="/assets/js/197.b8f1016e.js"><link rel="prefetch" href="/assets/js/198.cf2ff396.js"><link rel="prefetch" href="/assets/js/199.617d97ea.js"><link rel="prefetch" href="/assets/js/20.ee4a86f1.js"><link rel="prefetch" href="/assets/js/200.414ac8b8.js"><link rel="prefetch" href="/assets/js/201.6eb83ac5.js"><link rel="prefetch" href="/assets/js/202.f94a8455.js"><link rel="prefetch" href="/assets/js/203.fe4c3d1f.js"><link rel="prefetch" href="/assets/js/204.003cdcb5.js"><link rel="prefetch" href="/assets/js/205.dfb2370b.js"><link rel="prefetch" href="/assets/js/206.a3cdde0f.js"><link rel="prefetch" href="/assets/js/207.7eeb49e5.js"><link rel="prefetch" href="/assets/js/208.f77631f1.js"><link rel="prefetch" href="/assets/js/209.03b79d5b.js"><link rel="prefetch" href="/assets/js/21.81e9a796.js"><link rel="prefetch" href="/assets/js/210.4d77fab4.js"><link rel="prefetch" href="/assets/js/211.504c34d5.js"><link rel="prefetch" href="/assets/js/212.71bb8bf5.js"><link rel="prefetch" href="/assets/js/213.a3b6c27d.js"><link rel="prefetch" href="/assets/js/214.0da60311.js"><link rel="prefetch" href="/assets/js/215.cdeb87d0.js"><link rel="prefetch" href="/assets/js/216.75ce111f.js"><link rel="prefetch" href="/assets/js/217.2a924ebe.js"><link rel="prefetch" href="/assets/js/218.b3782b37.js"><link rel="prefetch" href="/assets/js/219.a7b3d0e2.js"><link rel="prefetch" href="/assets/js/22.037348a7.js"><link rel="prefetch" href="/assets/js/220.67f4dc4d.js"><link rel="prefetch" href="/assets/js/221.122e58c3.js"><link rel="prefetch" href="/assets/js/222.4a6ce5ee.js"><link rel="prefetch" href="/assets/js/223.38c97c72.js"><link rel="prefetch" href="/assets/js/224.08f05ad3.js"><link rel="prefetch" href="/assets/js/225.a1f1248d.js"><link rel="prefetch" href="/assets/js/226.49679af1.js"><link rel="prefetch" href="/assets/js/227.272b5118.js"><link rel="prefetch" href="/assets/js/228.97fe27a2.js"><link rel="prefetch" href="/assets/js/229.08893382.js"><link rel="prefetch" href="/assets/js/23.e7c462f9.js"><link rel="prefetch" href="/assets/js/230.fca4ec8d.js"><link rel="prefetch" href="/assets/js/231.dcf2e717.js"><link rel="prefetch" href="/assets/js/232.ad58634e.js"><link rel="prefetch" href="/assets/js/233.62b51320.js"><link rel="prefetch" href="/assets/js/234.366a5c15.js"><link rel="prefetch" href="/assets/js/235.37ee5e06.js"><link rel="prefetch" href="/assets/js/236.c8db6b56.js"><link rel="prefetch" href="/assets/js/237.2a5623bb.js"><link rel="prefetch" href="/assets/js/238.a1e8e150.js"><link rel="prefetch" href="/assets/js/239.9173cd25.js"><link rel="prefetch" href="/assets/js/24.b2111a14.js"><link rel="prefetch" href="/assets/js/240.74555993.js"><link rel="prefetch" href="/assets/js/241.78b20824.js"><link rel="prefetch" href="/assets/js/242.6acd697d.js"><link rel="prefetch" href="/assets/js/243.e43066f7.js"><link rel="prefetch" href="/assets/js/244.73e01f3b.js"><link rel="prefetch" href="/assets/js/245.3f27ce09.js"><link rel="prefetch" href="/assets/js/246.c0bf05db.js"><link rel="prefetch" href="/assets/js/247.0d837589.js"><link rel="prefetch" href="/assets/js/248.d09c386a.js"><link rel="prefetch" href="/assets/js/249.10459d63.js"><link rel="prefetch" href="/assets/js/25.0610f8ef.js"><link rel="prefetch" href="/assets/js/250.f48824df.js"><link rel="prefetch" href="/assets/js/251.121f3d80.js"><link rel="prefetch" href="/assets/js/252.5f893054.js"><link rel="prefetch" href="/assets/js/253.1417eb3b.js"><link rel="prefetch" href="/assets/js/254.5eac655f.js"><link rel="prefetch" href="/assets/js/255.c730cba3.js"><link rel="prefetch" href="/assets/js/256.1219af97.js"><link rel="prefetch" href="/assets/js/257.04701e9e.js"><link rel="prefetch" href="/assets/js/258.3a3b2150.js"><link rel="prefetch" href="/assets/js/259.e70aceaf.js"><link rel="prefetch" href="/assets/js/26.9114f6fc.js"><link rel="prefetch" href="/assets/js/260.7b8b2967.js"><link rel="prefetch" href="/assets/js/261.c0961706.js"><link rel="prefetch" href="/assets/js/262.d6f757d3.js"><link rel="prefetch" href="/assets/js/263.5659fcc5.js"><link rel="prefetch" href="/assets/js/264.8b56c627.js"><link rel="prefetch" href="/assets/js/265.16d5ce3a.js"><link rel="prefetch" href="/assets/js/266.17f217c2.js"><link rel="prefetch" href="/assets/js/267.e70076df.js"><link rel="prefetch" href="/assets/js/268.b06b7a1e.js"><link rel="prefetch" href="/assets/js/269.b5819c04.js"><link rel="prefetch" href="/assets/js/27.2f304f70.js"><link rel="prefetch" href="/assets/js/270.0beee4b9.js"><link rel="prefetch" href="/assets/js/271.90d0c5e4.js"><link rel="prefetch" href="/assets/js/272.1d617a52.js"><link rel="prefetch" href="/assets/js/273.5d7054ff.js"><link rel="prefetch" href="/assets/js/274.eedc246e.js"><link rel="prefetch" href="/assets/js/275.e89375ea.js"><link rel="prefetch" href="/assets/js/276.1ee4957e.js"><link rel="prefetch" href="/assets/js/277.3fb8abc6.js"><link rel="prefetch" href="/assets/js/278.bc288b6e.js"><link rel="prefetch" href="/assets/js/279.c3111a87.js"><link rel="prefetch" href="/assets/js/28.6a081e3d.js"><link rel="prefetch" href="/assets/js/280.d7edbe4d.js"><link rel="prefetch" href="/assets/js/281.98d9104a.js"><link rel="prefetch" href="/assets/js/282.d09079ea.js"><link rel="prefetch" href="/assets/js/283.996adb15.js"><link rel="prefetch" href="/assets/js/284.ff69d3db.js"><link rel="prefetch" href="/assets/js/285.75d86772.js"><link rel="prefetch" href="/assets/js/286.48f2c786.js"><link rel="prefetch" href="/assets/js/287.964dc8a8.js"><link rel="prefetch" href="/assets/js/288.f50b81c4.js"><link rel="prefetch" href="/assets/js/289.b15ef4ba.js"><link rel="prefetch" href="/assets/js/29.e6c29d28.js"><link rel="prefetch" href="/assets/js/290.065686f6.js"><link rel="prefetch" href="/assets/js/291.8e91cb89.js"><link rel="prefetch" href="/assets/js/292.23991b2a.js"><link rel="prefetch" href="/assets/js/293.d89282cb.js"><link rel="prefetch" href="/assets/js/294.8459cf6b.js"><link rel="prefetch" href="/assets/js/295.5159bb70.js"><link rel="prefetch" href="/assets/js/296.bad535dd.js"><link rel="prefetch" href="/assets/js/297.a89c8004.js"><link rel="prefetch" href="/assets/js/298.bfc2ed34.js"><link rel="prefetch" href="/assets/js/299.ed75d8ac.js"><link rel="prefetch" href="/assets/js/30.7ef93552.js"><link rel="prefetch" href="/assets/js/300.04fd45af.js"><link rel="prefetch" href="/assets/js/301.913d3df9.js"><link rel="prefetch" href="/assets/js/302.10b258dd.js"><link rel="prefetch" href="/assets/js/303.fbdf4e67.js"><link rel="prefetch" href="/assets/js/304.e0ff7d5b.js"><link rel="prefetch" href="/assets/js/305.300c5349.js"><link rel="prefetch" href="/assets/js/306.9f73bc93.js"><link rel="prefetch" href="/assets/js/307.b187f491.js"><link rel="prefetch" href="/assets/js/308.d03c07b3.js"><link rel="prefetch" href="/assets/js/309.937b56a3.js"><link rel="prefetch" href="/assets/js/31.7afea5f6.js"><link rel="prefetch" href="/assets/js/310.635a8c4d.js"><link rel="prefetch" href="/assets/js/311.573fcf4a.js"><link rel="prefetch" href="/assets/js/312.bc67fce0.js"><link rel="prefetch" href="/assets/js/313.b5013426.js"><link rel="prefetch" href="/assets/js/314.ae21fa05.js"><link rel="prefetch" href="/assets/js/315.37182c2b.js"><link rel="prefetch" href="/assets/js/316.06cf15a9.js"><link rel="prefetch" href="/assets/js/317.df759a5b.js"><link rel="prefetch" href="/assets/js/318.1a66ad2b.js"><link rel="prefetch" href="/assets/js/319.17d9681e.js"><link rel="prefetch" href="/assets/js/32.861f9380.js"><link rel="prefetch" href="/assets/js/320.10769343.js"><link rel="prefetch" href="/assets/js/321.cc4a3790.js"><link rel="prefetch" href="/assets/js/322.d2b9bced.js"><link rel="prefetch" href="/assets/js/323.dadd7af5.js"><link rel="prefetch" href="/assets/js/324.4281b9b7.js"><link rel="prefetch" href="/assets/js/325.313d6817.js"><link rel="prefetch" href="/assets/js/326.e63bdc82.js"><link rel="prefetch" href="/assets/js/327.f47507e0.js"><link rel="prefetch" href="/assets/js/328.f35cf934.js"><link rel="prefetch" href="/assets/js/329.a1084770.js"><link rel="prefetch" href="/assets/js/33.ab9e8c2b.js"><link rel="prefetch" href="/assets/js/330.ca4cd65f.js"><link rel="prefetch" href="/assets/js/331.e75a5907.js"><link rel="prefetch" href="/assets/js/332.fb511231.js"><link rel="prefetch" href="/assets/js/333.f93dbb9e.js"><link rel="prefetch" href="/assets/js/334.a71bbaa5.js"><link rel="prefetch" href="/assets/js/335.2fa937a5.js"><link rel="prefetch" href="/assets/js/336.a9679a8c.js"><link rel="prefetch" href="/assets/js/337.597945ba.js"><link rel="prefetch" href="/assets/js/338.05b854a8.js"><link rel="prefetch" href="/assets/js/339.fb34c537.js"><link rel="prefetch" href="/assets/js/34.91cf34bb.js"><link rel="prefetch" href="/assets/js/340.bb04bb94.js"><link rel="prefetch" href="/assets/js/341.d8eab431.js"><link rel="prefetch" href="/assets/js/342.adb6fccd.js"><link rel="prefetch" href="/assets/js/343.2e514ff7.js"><link rel="prefetch" href="/assets/js/344.ae288347.js"><link rel="prefetch" href="/assets/js/345.36cef5e0.js"><link rel="prefetch" href="/assets/js/346.18900139.js"><link rel="prefetch" href="/assets/js/347.55de0e5f.js"><link rel="prefetch" href="/assets/js/348.e8df7344.js"><link rel="prefetch" href="/assets/js/349.391634ff.js"><link rel="prefetch" href="/assets/js/35.a54aaacc.js"><link rel="prefetch" href="/assets/js/350.6ed9c27e.js"><link rel="prefetch" href="/assets/js/351.13d8f554.js"><link rel="prefetch" href="/assets/js/352.42a626e4.js"><link rel="prefetch" href="/assets/js/353.28e60cfb.js"><link rel="prefetch" href="/assets/js/354.1d876de3.js"><link rel="prefetch" href="/assets/js/355.be9dd30e.js"><link rel="prefetch" href="/assets/js/356.c76485ba.js"><link rel="prefetch" href="/assets/js/357.3beca4a2.js"><link rel="prefetch" href="/assets/js/358.34ce9b7c.js"><link rel="prefetch" href="/assets/js/359.62662c8a.js"><link rel="prefetch" href="/assets/js/36.1fb34483.js"><link rel="prefetch" href="/assets/js/360.1d4fd1c2.js"><link rel="prefetch" href="/assets/js/361.cedc472b.js"><link rel="prefetch" href="/assets/js/362.1a42a5a9.js"><link rel="prefetch" href="/assets/js/363.3212b786.js"><link rel="prefetch" href="/assets/js/364.795f5fbb.js"><link rel="prefetch" href="/assets/js/365.ba5aeafd.js"><link rel="prefetch" href="/assets/js/366.9e7c06f4.js"><link rel="prefetch" href="/assets/js/367.520bbbb6.js"><link rel="prefetch" href="/assets/js/368.1645c28e.js"><link rel="prefetch" href="/assets/js/369.3809a538.js"><link rel="prefetch" href="/assets/js/37.ee12bd46.js"><link rel="prefetch" href="/assets/js/370.217b10df.js"><link rel="prefetch" href="/assets/js/371.c8a9e0a9.js"><link rel="prefetch" href="/assets/js/372.247d9278.js"><link rel="prefetch" href="/assets/js/373.0eed1f0a.js"><link rel="prefetch" href="/assets/js/374.881713dc.js"><link rel="prefetch" href="/assets/js/375.b09c525d.js"><link rel="prefetch" href="/assets/js/376.43c32017.js"><link rel="prefetch" href="/assets/js/377.47cbbf1d.js"><link rel="prefetch" href="/assets/js/378.dd3eec1a.js"><link rel="prefetch" href="/assets/js/379.191b4f64.js"><link rel="prefetch" href="/assets/js/38.242d9c7f.js"><link rel="prefetch" href="/assets/js/380.8f916b60.js"><link rel="prefetch" href="/assets/js/381.fe1dfc6a.js"><link rel="prefetch" href="/assets/js/382.067d85f2.js"><link rel="prefetch" href="/assets/js/383.eeab62ac.js"><link rel="prefetch" href="/assets/js/384.ffab213d.js"><link rel="prefetch" href="/assets/js/385.94da6ae9.js"><link rel="prefetch" href="/assets/js/386.991dd01d.js"><link rel="prefetch" href="/assets/js/387.ffb790b4.js"><link rel="prefetch" href="/assets/js/388.ed3f39f5.js"><link rel="prefetch" href="/assets/js/389.a6174e1c.js"><link rel="prefetch" href="/assets/js/39.dbcc5d61.js"><link rel="prefetch" href="/assets/js/390.fe916439.js"><link rel="prefetch" href="/assets/js/391.69f751d7.js"><link rel="prefetch" href="/assets/js/392.e6c52ac2.js"><link rel="prefetch" href="/assets/js/393.7da57f52.js"><link rel="prefetch" href="/assets/js/394.1a7a717f.js"><link rel="prefetch" href="/assets/js/395.3399844a.js"><link rel="prefetch" href="/assets/js/396.7f2e8145.js"><link rel="prefetch" href="/assets/js/397.42b4026a.js"><link rel="prefetch" href="/assets/js/398.5c231ed1.js"><link rel="prefetch" href="/assets/js/399.4566824b.js"><link rel="prefetch" href="/assets/js/4.fea0df6a.js"><link rel="prefetch" href="/assets/js/40.493a59f4.js"><link rel="prefetch" href="/assets/js/400.6882e1d0.js"><link rel="prefetch" href="/assets/js/401.527ff51d.js"><link rel="prefetch" href="/assets/js/402.e9c37d2a.js"><link rel="prefetch" href="/assets/js/403.360b2d7d.js"><link rel="prefetch" href="/assets/js/404.4d3adaac.js"><link rel="prefetch" href="/assets/js/405.c6785e58.js"><link rel="prefetch" href="/assets/js/406.ea8781ae.js"><link rel="prefetch" href="/assets/js/407.b0463036.js"><link rel="prefetch" href="/assets/js/408.56b3f633.js"><link rel="prefetch" href="/assets/js/409.83b77a08.js"><link rel="prefetch" href="/assets/js/41.bd45f48a.js"><link rel="prefetch" href="/assets/js/410.808144cb.js"><link rel="prefetch" href="/assets/js/411.efd2ae36.js"><link rel="prefetch" href="/assets/js/412.42b1274b.js"><link rel="prefetch" href="/assets/js/42.3475d232.js"><link rel="prefetch" href="/assets/js/43.2407adcb.js"><link rel="prefetch" href="/assets/js/44.e2a316c5.js"><link rel="prefetch" href="/assets/js/45.1c5f24df.js"><link rel="prefetch" href="/assets/js/46.18a61726.js"><link rel="prefetch" href="/assets/js/47.707f9f7a.js"><link rel="prefetch" href="/assets/js/48.5dd41842.js"><link rel="prefetch" href="/assets/js/49.d3acd899.js"><link rel="prefetch" href="/assets/js/5.461bccd8.js"><link rel="prefetch" href="/assets/js/50.02c1a863.js"><link rel="prefetch" href="/assets/js/51.ccf0ba79.js"><link rel="prefetch" href="/assets/js/52.3aee611f.js"><link rel="prefetch" href="/assets/js/53.bf3daa85.js"><link rel="prefetch" href="/assets/js/54.d61cd0a6.js"><link rel="prefetch" href="/assets/js/55.5986d91d.js"><link rel="prefetch" href="/assets/js/56.da7d4622.js"><link rel="prefetch" href="/assets/js/57.a53216e9.js"><link rel="prefetch" href="/assets/js/58.eb424782.js"><link rel="prefetch" href="/assets/js/59.0db825e2.js"><link rel="prefetch" href="/assets/js/6.76cd68c6.js"><link rel="prefetch" href="/assets/js/60.885ad249.js"><link rel="prefetch" href="/assets/js/61.9a010ecb.js"><link rel="prefetch" href="/assets/js/62.907dc688.js"><link rel="prefetch" href="/assets/js/63.69f56658.js"><link rel="prefetch" href="/assets/js/64.ec17ab0c.js"><link rel="prefetch" href="/assets/js/65.555f05e2.js"><link rel="prefetch" href="/assets/js/66.82f26703.js"><link rel="prefetch" href="/assets/js/67.3d43cd18.js"><link rel="prefetch" href="/assets/js/68.b14b7646.js"><link rel="prefetch" href="/assets/js/69.f4f9155f.js"><link rel="prefetch" href="/assets/js/7.f2fbf882.js"><link rel="prefetch" href="/assets/js/70.146046b6.js"><link rel="prefetch" href="/assets/js/71.5cc26b01.js"><link rel="prefetch" href="/assets/js/72.bc119d92.js"><link rel="prefetch" href="/assets/js/73.9d63e7dc.js"><link rel="prefetch" href="/assets/js/74.f12f047e.js"><link rel="prefetch" href="/assets/js/75.131756e3.js"><link rel="prefetch" href="/assets/js/76.147c95b9.js"><link rel="prefetch" href="/assets/js/77.4f81bf5f.js"><link rel="prefetch" href="/assets/js/78.2620317a.js"><link rel="prefetch" href="/assets/js/79.7d79e1df.js"><link rel="prefetch" href="/assets/js/80.08435f23.js"><link rel="prefetch" href="/assets/js/81.bbea59aa.js"><link rel="prefetch" href="/assets/js/82.93bbfeeb.js"><link rel="prefetch" href="/assets/js/83.9e0f2d3f.js"><link rel="prefetch" href="/assets/js/84.2a78f0ef.js"><link rel="prefetch" href="/assets/js/85.464597f8.js"><link rel="prefetch" href="/assets/js/86.8cced385.js"><link rel="prefetch" href="/assets/js/87.6eab3983.js"><link rel="prefetch" href="/assets/js/88.919be664.js"><link rel="prefetch" href="/assets/js/89.a9c88099.js"><link rel="prefetch" href="/assets/js/9.2b013f04.js"><link rel="prefetch" href="/assets/js/90.e30432e7.js"><link rel="prefetch" href="/assets/js/91.6b17f9d5.js"><link rel="prefetch" href="/assets/js/92.044d73f7.js"><link rel="prefetch" href="/assets/js/93.446151cb.js"><link rel="prefetch" href="/assets/js/94.777e77bb.js"><link rel="prefetch" href="/assets/js/95.dbda6d80.js"><link rel="prefetch" href="/assets/js/96.e280ef31.js"><link rel="prefetch" href="/assets/js/97.2d68e74b.js"><link rel="prefetch" href="/assets/js/98.93faeca6.js"><link rel="prefetch" href="/assets/js/99.8285fa98.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.029a7c95.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.89e32c3d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">以太坊改进提案 EIPs</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="https://ethlibrary.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  About us
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <a href="https://github.com/ethlibrary/EIPs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="https://ethlibrary.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  About us
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <a href="https://github.com/ethlibrary/EIPs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><a href="/all.html" class="sidebar-link">All EIPs</a></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Status</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/draft.html" class="sidebar-link">Draft</a></li><li><a href="/review.html" class="sidebar-link">Review</a></li><li><a href="/lastCall.html" class="sidebar-link">Last Call</a></li><li><a href="/accepted.html" class="sidebar-link">Accepted</a></li><li><a href="/final_and_living.html" class="sidebar-link">Final and Living</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Type</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/core.html" class="sidebar-link">Core (165)</a></li><li><a href="/networking.html" class="sidebar-link">Networking (11)</a></li><li><a href="/interface.html" class="sidebar-link">Interface (38)</a></li><li><a href="/erc.html" class="sidebar-link">ERC (153)</a></li><li><a href="/meta.html" class="sidebar-link">Meta (18)</a></li><li><a href="/informational.html" class="sidebar-link">Informational (6)</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="abstract"><a href="#abstract" class="header-anchor">#</a> Abstract</h1> <p>This draft EIP describes the details of an authorization method that if provided by rpc enabled ethereum nodes would allow regular websites to send transactions (via <code>eth_sendTransaction</code>) without the need to enable CORS. Instead, user would be asked to confirm the transaction via an html popup.</p> <p>Every read only rpc call the dapp wants to perform is redirected to an invisible iframe from the node's domain and for every transaction that the dapp wish to execute, an html popup is presented to the user to allow him/her to cancel or confirm the transaction. This allows the dapp to connect to the node's rpc api without being  granted any kind of privileges. This allows users to safely interact with dapps running in their everyday web browser while their accounts are unlocked. In case the account is not unlocked, and the node has allowed the &quot;personal&quot; api via rpc,the html page also allow the user to enter their password to unlock the account for the scope of the transaction.</p> <h1 id="motivation"><a href="#motivation" class="header-anchor">#</a> Motivation</h1> <p>Currently, if a user navigates to a dapp running on a website using her/his everyday browser, the dapp will by default have no access to the rpc api for security reasons. The user will have to enable CORS for the website's domain in order for the dapp to work. Unfortunately if the user does so, the dapp will be able to send transactions from any unlocked account without the need for any user consent. In other words, not only does the user need to change the node's default setting, but the user is also forced to trust the dapp in order to use it. This is of course not acceptable and forces existing dapps to rely on the use of workarounds like:</p> <ul><li>if the transaction is a plain ether transfer, the user is asked to enter it in a dedicated trusted wallet like &quot;Mist&quot;</li> <li>For more complex case, the user is asked to enter the transaction manually via the node command line interface.</li></ul> <p>This proposal aims to provide a safe and user friendly alternative.</p> <p>Here are some screenshots of the provided implementation of that html popup:</p> <h2 id="account-unlocked"><a href="#account-unlocked" class="header-anchor">#</a> Account unlocked :</h2> <p>When the account is already unlocked, the user is presented with the following popup for every transaction that the dapp attempts to make:</p> <p><img src="/assets/img/authorization.57edd92b.png" alt=""></p> <h2 id="account-locked-and-no-personal-api-exposed-via-rpc"><a href="#account-locked-and-no-personal-api-exposed-via-rpc" class="header-anchor">#</a> Account locked and no &quot;personal&quot; api exposed via rpc:</h2> <p>When the account is locked, and the node does not provide access to account unlocking via its rpc interface, the following popup will be presented. This is not ideal since this requires the user to know how to unlock an account:</p> <p><img src="/assets/img/authorization-locked.6f286493.png" alt=""></p> <h2 id="account-locked-but-node-exposing-the-personal-api-via-rpc"><a href="#account-locked-but-node-exposing-the-personal-api-via-rpc" class="header-anchor">#</a> Account locked but node exposing the &quot;personal&quot; api via rpc :</h2> <p>A better option is to ask the user for their password, but this is only possible if the node allows access to the &quot;personal&quot; api via rpc. In such case, the following dialog will be presented to the user so he/she can accept the transaction by providing the password required to unlock the account:</p> <p><img src="/assets/img/authorization-password.ace88d56.png" alt=""></p> <h1 id="specification"><a href="#specification" class="header-anchor">#</a> Specification</h1> <p>In order for the mechanism to work, the node needs to serve an html file via http at the url &lt;node url&gt;/authorization.html</p> <p>This file will then be used by the dapp in 2 different modes (invisible iframe and popup window).</p> <p>The invisible iframe will be embedded in the dapp to allow the dapp to send its read-only rpc call without having to enable CORS for the dapp's website domain. This is done by sending message to the iframe (via javascript <code>window.postMessage</code>) which in turn execute the rpc call. This works since the iframe and the node share the same domain/port.</p> <p>In the iframe mode, the html file's javascript code will ensure that no call requiring an unlocked key can be made. This is to prevent dapps from embedding the invisible iframe and tricking the user into clicking the confirm button.
+If the dapp requires an <code>eth_sendTransaction</code> call, the dapp will instead open a new window using the same url.</p> <p>In this popup window mode, the html file's javascript code will allow <code>eth_sendTransaction</code> (but not  <code>eth_sign</code>, as there is no way to display to the user the meaningful content of the transaction to sign in a safe way) to be called. But instead of sending the call to the node directly, a confirmation dialog will be presented showing the sender and recipient addresses, as well as the amount being transferred along with the potential gas cost. Upon the user approving, the request will be sent and the result returned to the dapp. An error will be returned in case the user cancel the request.</p> <p>The html page also checks for the availability of the &quot;personal&quot; api and if so, will ask the user to unlock the account if necessary. The unlocking is temporary (3s) so the password will be asked again if a transaction is attempted before the end of this short time.</p> <p>In both iframe mode and window mode, the communication with the dapp is achieved using <code>window.postMessage</code>.
+The fist message the iframe/window sends is a message containing the string &quot;ready&quot; to let the dapp know that it now accepts messages. Then the dapp can start performing rpc call by sending message using the following object :</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>{
+  id:&lt;a an id&gt;, //so responses can be match as there is no guarantee of the order of the response
+  payload:&lt;json rpc object&gt; //this is the exact object that usually send to the node
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>For <code>eth_sendTransaction</code> the &quot;gas&quot;, &quot;gasPrice&quot; and &quot;from&quot; field need to be set in the rpc parameter so that the window can display the correct value. If not all of these are passed in, the window will return an error.</p> <p>Upon receiving such message, the iframe will perform the actual rpc call to the node but only if such a call is a read only call (not requiring an unlocked key). If it is not it will return a error. The window on the other will only accept <code>eth_sendTransaction</code> calls but will display a dialog so the user can accept or cancel the request.</p> <p>In all the cases, the iframe/window will send a message back to the dapp using the following object:</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>{
+  id:&lt;id matching the request&gt;,
+  result:&lt;rpc result as is&gt;,
+  error:&lt;error object&gt;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>the error object cannot be a javascript Error object due to postMessage limitation. Instead it is</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>{
+  message:&lt;a string describing the error&gt;,
+  type:&lt;a string defining the type of error&gt; //type=&quot;cancel&quot; means the user cancel the transaction
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h1 id="rationale"><a href="#rationale" class="header-anchor">#</a> Rationale</h1> <p>The design for that proposal was chosen for its simplicity and security. A previous idea was to use an oauth-like protocol in order for the user to accept or deny a transaction request. It would have required deeper code change in the node and some geth contributors argues that such change did not fit into geth code base as it would have required dapp aware code.
+The current design, instead has a very simple implementation (self contained html file that can be shared across node's implementation) and its safeness is guarantess by browsers' cross domain policies.</p> <p>The use of iframe/ window was required to have both security and user friendliness. The invisible iframe allows the dapp to execute read only calls without the need for user input, and the window ensures user approval before making a call. While we could have made it without the window mode by making the iframe confirmation use the native browser <code>window.confirm</code> dialog, this would have prevented the use of a more elegant confirmation popup that the current design allows. It also happens to be that the <code>window.confirm</code> is not safe in some browsers, as it gives focus to the accept option and can be triggered automatically (https://bugs.chromium.org/p/chromium/issues/detail?id=260653).</p> <h1 id="implementations"><a href="#implementations" class="header-anchor">#</a> Implementations</h1> <p>In order to implement this design, the following html file or an equivalent one needs to be served at the url &lt;node url&gt;/authorization.html</p> <p>That's it.</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Ethereum Authorization&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;script&gt;
+    //https://github.com/alexvandesande/blockies
+    !function(){function r(r){for(var t=0;t&lt;l.length;t++)l[t]=0;for(var t=0;t&lt;r.length;t++)l[t%4]=(l[t%4]&lt;&lt;5)-l[t%4]+r.charCodeAt(t)}function t(){var r=l[0]^l[0]&lt;&lt;11;return l[0]=l[1],l[1]=l[2],l[2]=l[3],l[3]=l[3]^l[3]&gt;&gt;19^r^r&gt;&gt;8,(l[3]&gt;&gt;&gt;0)/(1&lt;&lt;31&gt;&gt;&gt;0)}function e(){var r=Math.floor(360*t()),e=60*t()+40+&quot;%&quot;,o=25*(t()+t()+t()+t())+&quot;%&quot;,n=&quot;hsl(&quot;+r+&quot;,&quot;+e+&quot;,&quot;+o+&quot;)&quot;;return n}function o(r){for(var e=r,o=r,n=Math.ceil(e/2),a=e-n,l=[],c=0;o&gt;c;c++){for(var f=[],h=0;n&gt;h;h++)f[h]=Math.floor(2.3*t());var i=f.slice(0,a);i.reverse(),f=f.concat(i);for(var v=0;v&lt;f.length;v++)l.push(f[v])}return l}function n(r,t,e,o,n){var a=document.createElement(&quot;canvas&quot;),l=Math.sqrt(r.length);a.width=a.height=l*e;var c=a.getContext(&quot;2d&quot;);c.fillStyle=o,c.fillRect(0,0,a.width,a.height),c.fillStyle=t;for(var f=0;f&lt;r.length;f++){var h=Math.floor(f/l),i=f%l;c.fillStyle=1==r[f]?t:n,r[f]&amp;&amp;c.fillRect(i*e,h*e,e,e)}return a}function a(t){t=t||{};var a=t.size||8,l=t.scale||4,c=t.seed||Math.floor(Math.random()*Math.pow(10,16)).toString(16);r(c);var f=t.color||e(),h=t.bgcolor||e(),i=t.spotcolor||e(),v=o(a),u=n(v,f,l,h,i);return u}var l=new Array(4);window.blockies={create:a}}();
+
+    /* bignumber.js v2.3.0 https://github.com/MikeMcl/bignumber.js/LICENCE */
+    !function(e){&quot;use strict&quot;;function n(e){function E(e,n){var t,r,i,o,u,s,f=this;if(!(f instanceof E))return j&amp;&amp;L(26,&quot;constructor call without new&quot;,e),new E(e,n);if(null!=n&amp;&amp;H(n,2,64,M,&quot;base&quot;)){if(n=0|n,s=e+&quot;&quot;,10==n)return f=new E(e instanceof E?e:s),U(f,P+f.e+1,k);if((o=&quot;number&quot;==typeof e)&amp;&amp;0*e!=0||!new RegExp(&quot;^-?&quot;+(t=&quot;[&quot;+N.slice(0,n)+&quot;]+&quot;)+&quot;(?:\\.&quot;+t+&quot;)?$&quot;,37&gt;n?&quot;i&quot;:&quot;&quot;).test(s))return h(f,s,o,n);o?(f.s=0&gt;1/e?(s=s.slice(1),-1):1,j&amp;&amp;s.replace(/^0\.0*|\./,&quot;&quot;).length&gt;15&amp;&amp;L(M,v,e),o=!1):f.s=45===s.charCodeAt(0)?(s=s.slice(1),-1):1,s=D(s,10,n,f.s)}else{if(e instanceof E)return f.s=e.s,f.e=e.e,f.c=(e=e.c)?e.slice():e,void(M=0);if((o=&quot;number&quot;==typeof e)&amp;&amp;0*e==0){if(f.s=0&gt;1/e?(e=-e,-1):1,e===~~e){for(r=0,i=e;i&gt;=10;i/=10,r++);return f.e=r,f.c=[e],void(M=0)}s=e+&quot;&quot;}else{if(!g.test(s=e+&quot;&quot;))return h(f,s,o);f.s=45===s.charCodeAt(0)?(s=s.slice(1),-1):1}}for((r=s.indexOf(&quot;.&quot;))&gt;-1&amp;&amp;(s=s.replace(&quot;.&quot;,&quot;&quot;)),(i=s.search(/e/i))&gt;0?(0&gt;r&amp;&amp;(r=i),r+=+s.slice(i+1),s=s.substring(0,i)):0&gt;r&amp;&amp;(r=s.length),i=0;48===s.charCodeAt(i);i++);for(u=s.length;48===s.charCodeAt(--u););if(s=s.slice(i,u+1))if(u=s.length,o&amp;&amp;j&amp;&amp;u&gt;15&amp;&amp;(e&gt;y||e!==d(e))&amp;&amp;L(M,v,f.s*e),r=r-i-1,r&gt;z)f.c=f.e=null;else if(G&gt;r)f.c=[f.e=0];else{if(f.e=r,f.c=[],i=(r+1)%O,0&gt;r&amp;&amp;(i+=O),u&gt;i){for(i&amp;&amp;f.c.push(+s.slice(0,i)),u-=O;u&gt;i;)f.c.push(+s.slice(i,i+=O));s=s.slice(i),i=O-s.length}else i-=u;for(;i--;s+=&quot;0&quot;);f.c.push(+s)}else f.c=[f.e=0];M=0}function D(e,n,t,i){var o,u,f,c,a,h,g,p=e.indexOf(&quot;.&quot;),d=P,m=k;for(37&gt;t&amp;&amp;(e=e.toLowerCase()),p&gt;=0&amp;&amp;(f=J,J=0,e=e.replace(&quot;.&quot;,&quot;&quot;),g=new E(t),a=g.pow(e.length-p),J=f,g.c=s(l(r(a.c),a.e),10,n),g.e=g.c.length),h=s(e,t,n),u=f=h.length;0==h[--f];h.pop());if(!h[0])return&quot;0&quot;;if(0&gt;p?--u:(a.c=h,a.e=u,a.s=i,a=C(a,g,d,m,n),h=a.c,c=a.r,u=a.e),o=u+d+1,p=h[o],f=n/2,c=c||0&gt;o||null!=h[o+1],c=4&gt;m?(null!=p||c)&amp;&amp;(0==m||m==(a.s&lt;0?3:2)):p&gt;f||p==f&amp;&amp;(4==m||c||6==m&amp;&amp;1&amp;h[o-1]||m==(a.s&lt;0?8:7)),1&gt;o||!h[0])e=c?l(&quot;1&quot;,-d):&quot;0&quot;;else{if(h.length=o,c)for(--n;++h[--o]&gt;n;)h[o]=0,o||(++u,h.unshift(1));for(f=h.length;!h[--f];);for(p=0,e=&quot;&quot;;f&gt;=p;e+=N.charAt(h[p++]));e=l(e,u)}return e}function F(e,n,t,i){var o,u,s,c,a;if(t=null!=t&amp;&amp;H(t,0,8,i,w)?0|t:k,!e.c)return e.toString();if(o=e.c[0],s=e.e,null==n)a=r(e.c),a=19==i||24==i&amp;&amp;B&gt;=s?f(a,s):l(a,s);else if(e=U(new E(e),n,t),u=e.e,a=r(e.c),c=a.length,19==i||24==i&amp;&amp;(u&gt;=n||B&gt;=u)){for(;n&gt;c;a+=&quot;0&quot;,c++);a=f(a,u)}else if(n-=s,a=l(a,u),u+1&gt;c){if(--n&gt;0)for(a+=&quot;.&quot;;n--;a+=&quot;0&quot;);}else if(n+=u-c,n&gt;0)for(u+1==c&amp;&amp;(a+=&quot;.&quot;);n--;a+=&quot;0&quot;);return e.s&lt;0&amp;&amp;o?&quot;-&quot;+a:a}function _(e,n){var t,r,i=0;for(u(e[0])&amp;&amp;(e=e[0]),t=new E(e[0]);++i&lt;e.length;){if(r=new E(e[i]),!r.s){t=r;break}n.call(t,r)&amp;&amp;(t=r)}return t}function x(e,n,t,r,i){return(n&gt;e||e&gt;t||e!=c(e))&amp;&amp;L(r,(i||&quot;decimal places&quot;)+(n&gt;e||e&gt;t?&quot; out of range&quot;:&quot; not an integer&quot;),e),!0}function I(e,n,t){for(var r=1,i=n.length;!n[--i];n.pop());for(i=n[0];i&gt;=10;i/=10,r++);return(t=r+t*O-1)&gt;z?e.c=e.e=null:G&gt;t?e.c=[e.e=0]:(e.e=t,e.c=n),e}function L(e,n,t){var r=new Error([&quot;new BigNumber&quot;,&quot;cmp&quot;,&quot;config&quot;,&quot;div&quot;,&quot;divToInt&quot;,&quot;eq&quot;,&quot;gt&quot;,&quot;gte&quot;,&quot;lt&quot;,&quot;lte&quot;,&quot;minus&quot;,&quot;mod&quot;,&quot;plus&quot;,&quot;precision&quot;,&quot;random&quot;,&quot;round&quot;,&quot;shift&quot;,&quot;times&quot;,&quot;toDigits&quot;,&quot;toExponential&quot;,&quot;toFixed&quot;,&quot;toFormat&quot;,&quot;toFraction&quot;,&quot;pow&quot;,&quot;toPrecision&quot;,&quot;toString&quot;,&quot;BigNumber&quot;][e]+&quot;() &quot;+n+&quot;: &quot;+t);throw r.name=&quot;BigNumber Error&quot;,M=0,r}function U(e,n,t,r){var i,o,u,s,f,l,c,a=e.c,h=S;if(a){e:{for(i=1,s=a[0];s&gt;=10;s/=10,i++);if(o=n-i,0&gt;o)o+=O,u=n,f=a[l=0],c=f/h[i-u-1]%10|0;else if(l=p((o+1)/O),l&gt;=a.length){if(!r)break e;for(;a.length&lt;=l;a.push(0));f=c=0,i=1,o%=O,u=o-O+1}else{for(f=s=a[l],i=1;s&gt;=10;s/=10,i++);o%=O,u=o-O+i,c=0&gt;u?0:f/h[i-u-1]%10|0}if(r=r||0&gt;n||null!=a[l+1]||(0&gt;u?f:f%h[i-u-1]),r=4&gt;t?(c||r)&amp;&amp;(0==t||t==(e.s&lt;0?3:2)):c&gt;5||5==c&amp;&amp;(4==t||r||6==t&amp;&amp;(o&gt;0?u&gt;0?f/h[i-u]:0:a[l-1])%10&amp;1||t==(e.s&lt;0?8:7)),1&gt;n||!a[0])return a.length=0,r?(n-=e.e+1,a[0]=h[(O-n%O)%O],e.e=-n||0):a[0]=e.e=0,e;if(0==o?(a.length=l,s=1,l--):(a.length=l+1,s=h[O-o],a[l]=u&gt;0?d(f/h[i-u]%h[u])*s:0),r)for(;;){if(0==l){for(o=1,u=a[0];u&gt;=10;u/=10,o++);for(u=a[0]+=s,s=1;u&gt;=10;u/=10,s++);o!=s&amp;&amp;(e.e++,a[0]==b&amp;&amp;(a[0]=1));break}if(a[l]+=s,a[l]!=b)break;a[l--]=0,s=1}for(o=a.length;0===a[--o];a.pop());}e.e&gt;z?e.c=e.e=null:e.e&lt;G&amp;&amp;(e.c=[e.e=0])}return e}var C,M=0,T=E.prototype,q=new E(1),P=20,k=4,B=-7,$=21,G=-1e7,z=1e7,j=!0,H=x,V=!1,W=1,J=100,X={decimalSeparator:&quot;.&quot;,groupSeparator:&quot;,&quot;,groupSize:3,secondaryGroupSize:0,fractionGroupSeparator:&quot; &quot;,fractionGroupSize:0};return E.another=n,E.ROUND_UP=0,E.ROUND_DOWN=1,E.ROUND_CEIL=2,E.ROUND_FLOOR=3,E.ROUND_HALF_UP=4,E.ROUND_HALF_DOWN=5,E.ROUND_HALF_EVEN=6,E.ROUND_HALF_CEIL=7,E.ROUND_HALF_FLOOR=8,E.EUCLID=9,E.config=function(){var e,n,t=0,r={},i=arguments,s=i[0],f=s&amp;&amp;&quot;object&quot;==typeof s?function(){return s.hasOwnProperty(n)?null!=(e=s[n]):void 0}:function(){return i.length&gt;t?null!=(e=i[t++]):void 0};return f(n=&quot;DECIMAL_PLACES&quot;)&amp;&amp;H(e,0,A,2,n)&amp;&amp;(P=0|e),r[n]=P,f(n=&quot;ROUNDING_MODE&quot;)&amp;&amp;H(e,0,8,2,n)&amp;&amp;(k=0|e),r[n]=k,f(n=&quot;EXPONENTIAL_AT&quot;)&amp;&amp;(u(e)?H(e[0],-A,0,2,n)&amp;&amp;H(e[1],0,A,2,n)&amp;&amp;(B=0|e[0],$=0|e[1]):H(e,-A,A,2,n)&amp;&amp;(B=-($=0|(0&gt;e?-e:e)))),r[n]=[B,$],f(n=&quot;RANGE&quot;)&amp;&amp;(u(e)?H(e[0],-A,-1,2,n)&amp;&amp;H(e[1],1,A,2,n)&amp;&amp;(G=0|e[0],z=0|e[1]):H(e,-A,A,2,n)&amp;&amp;(0|e?G=-(z=0|(0&gt;e?-e:e)):j&amp;&amp;L(2,n+&quot; cannot be zero&quot;,e))),r[n]=[G,z],f(n=&quot;ERRORS&quot;)&amp;&amp;(e===!!e||1===e||0===e?(M=0,H=(j=!!e)?x:o):j&amp;&amp;L(2,n+m,e)),r[n]=j,f(n=&quot;CRYPTO&quot;)&amp;&amp;(e===!!e||1===e||0===e?(V=!(!e||!a),e&amp;&amp;!V&amp;&amp;j&amp;&amp;L(2,&quot;crypto unavailable&quot;,a)):j&amp;&amp;L(2,n+m,e)),r[n]=V,f(n=&quot;MODULO_MODE&quot;)&amp;&amp;H(e,0,9,2,n)&amp;&amp;(W=0|e),r[n]=W,f(n=&quot;POW_PRECISION&quot;)&amp;&amp;H(e,0,A,2,n)&amp;&amp;(J=0|e),r[n]=J,f(n=&quot;FORMAT&quot;)&amp;&amp;(&quot;object&quot;==typeof e?X=e:j&amp;&amp;L(2,n+&quot; not an object&quot;,e)),r[n]=X,r},E.max=function(){return _(arguments,T.lt)},E.min=function(){return _(arguments,T.gt)},E.random=function(){var e=9007199254740992,n=Math.random()*e&amp;2097151?function(){return d(Math.random()*e)}:function(){return 8388608*(1073741824*Math.random()|0)+(8388608*Math.random()|0)};return function(e){var t,r,i,o,u,s=0,f=[],l=new E(q);if(e=null!=e&amp;&amp;H(e,0,A,14)?0|e:P,o=p(e/O),V)if(a&amp;&amp;a.getRandomValues){for(t=a.getRandomValues(new Uint32Array(o*=2));o&gt;s;)u=131072*t[s]+(t[s+1]&gt;&gt;&gt;11),u&gt;=9e15?(r=a.getRandomValues(new Uint32Array(2)),t[s]=r[0],t[s+1]=r[1]):(f.push(u%1e14),s+=2);s=o/2}else if(a&amp;&amp;a.randomBytes){for(t=a.randomBytes(o*=7);o&gt;s;)u=281474976710656*(31&amp;t[s])+1099511627776*t[s+1]+4294967296*t[s+2]+16777216*t[s+3]+(t[s+4]&lt;&lt;16)+(t[s+5]&lt;&lt;8)+t[s+6],u&gt;=9e15?a.randomBytes(7).copy(t,s):(f.push(u%1e14),s+=7);s=o/7}else j&amp;&amp;L(14,&quot;crypto unavailable&quot;,a);if(!s)for(;o&gt;s;)u=n(),9e15&gt;u&amp;&amp;(f[s++]=u%1e14);for(o=f[--s],e%=O,o&amp;&amp;e&amp;&amp;(u=S[O-e],f[s]=d(o/u)*u);0===f[s];f.pop(),s--);if(0&gt;s)f=[i=0];else{for(i=-1;0===f[0];f.shift(),i-=O);for(s=1,u=f[0];u&gt;=10;u/=10,s++);O&gt;s&amp;&amp;(i-=O-s)}return l.e=i,l.c=f,l}}(),C=function(){function e(e,n,t){var r,i,o,u,s=0,f=e.length,l=n%R,c=n/R|0;for(e=e.slice();f--;)o=e[f]%R,u=e[f]/R|0,r=c*o+u*l,i=l*o+r%R*R+s,s=(i/t|0)+(r/R|0)+c*u,e[f]=i%t;return s&amp;&amp;e.unshift(s),e}function n(e,n,t,r){var i,o;if(t!=r)o=t&gt;r?1:-1;else for(i=o=0;t&gt;i;i++)if(e[i]!=n[i]){o=e[i]&gt;n[i]?1:-1;break}return o}function r(e,n,t,r){for(var i=0;t--;)e[t]-=i,i=e[t]&lt;n[t]?1:0,e[t]=i*r+e[t]-n[t];for(;!e[0]&amp;&amp;e.length&gt;1;e.shift());}return function(i,o,u,s,f){var l,c,a,h,g,p,m,w,v,N,y,S,R,A,D,F,_,x=i.s==o.s?1:-1,I=i.c,L=o.c;if(!(I&amp;&amp;I[0]&amp;&amp;L&amp;&amp;L[0]))return new E(i.s&amp;&amp;o.s&amp;&amp;(I?!L||I[0]!=L[0]:L)?I&amp;&amp;0==I[0]||!L?0*x:x/0:NaN);for(w=new E(x),v=w.c=[],c=i.e-o.e,x=u+c+1,f||(f=b,c=t(i.e/O)-t(o.e/O),x=x/O|0),a=0;L[a]==(I[a]||0);a++);if(L[a]&gt;(I[a]||0)&amp;&amp;c--,0&gt;x)v.push(1),h=!0;else{for(A=I.length,F=L.length,a=0,x+=2,g=d(f/(L[0]+1)),g&gt;1&amp;&amp;(L=e(L,g,f),I=e(I,g,f),F=L.length,A=I.length),R=F,N=I.slice(0,F),y=N.length;F&gt;y;N[y++]=0);_=L.slice(),_.unshift(0),D=L[0],L[1]&gt;=f/2&amp;&amp;D++;do{if(g=0,l=n(L,N,F,y),0&gt;l){if(S=N[0],F!=y&amp;&amp;(S=S*f+(N[1]||0)),g=d(S/D),g&gt;1)for(g&gt;=f&amp;&amp;(g=f-1),p=e(L,g,f),m=p.length,y=N.length;1==n(p,N,m,y);)g--,r(p,m&gt;F?_:L,m,f),m=p.length,l=1;else 0==g&amp;&amp;(l=g=1),p=L.slice(),m=p.length;if(y&gt;m&amp;&amp;p.unshift(0),r(N,p,y,f),y=N.length,-1==l)for(;n(L,N,F,y)&lt;1;)g++,r(N,y&gt;F?_:L,y,f),y=N.length}else 0===l&amp;&amp;(g++,N=[0]);v[a++]=g,N[0]?N[y++]=I[R]||0:(N=[I[R]],y=1)}while((R++&lt;A||null!=N[0])&amp;&amp;x--);h=null!=N[0],v[0]||v.shift()}if(f==b){for(a=1,x=v[0];x&gt;=10;x/=10,a++);U(w,u+(w.e=a+c*O-1)+1,s,h)}else w.e=c,w.r=+h;return w}}(),h=function(){var e=/^(-?)0([xbo])(?=\w[\w.]*$)/i,n=/^([^.]+)\.$/,t=/^\.([^.]+)$/,r=/^-?(Infinity|NaN)$/,i=/^\s*\+(?=[\w.])|^\s+|\s+$/g;return function(o,u,s,f){var l,c=s?u:u.replace(i,&quot;&quot;);if(r.test(c))o.s=isNaN(c)?null:0&gt;c?-1:1;else{if(!s&amp;&amp;(c=c.replace(e,function(e,n,t){return l=&quot;x&quot;==(t=t.toLowerCase())?16:&quot;b&quot;==t?2:8,f&amp;&amp;f!=l?e:n}),f&amp;&amp;(l=f,c=c.replace(n,&quot;$1&quot;).replace(t,&quot;0.$1&quot;)),u!=c))return new E(c,l);j&amp;&amp;L(M,&quot;not a&quot;+(f?&quot; base &quot;+f:&quot;&quot;)+&quot; number&quot;,u),o.s=null}o.c=o.e=null,M=0}}(),T.absoluteValue=T.abs=function(){var e=new E(this);return e.s&lt;0&amp;&amp;(e.s=1),e},T.ceil=function(){return U(new E(this),this.e+1,2)},T.comparedTo=T.cmp=function(e,n){return M=1,i(this,new E(e,n))},T.decimalPlaces=T.dp=function(){var e,n,r=this.c;if(!r)return null;if(e=((n=r.length-1)-t(this.e/O))*O,n=r[n])for(;n%10==0;n/=10,e--);return 0&gt;e&amp;&amp;(e=0),e},T.dividedBy=T.div=function(e,n){return M=3,C(this,new E(e,n),P,k)},T.dividedToIntegerBy=T.divToInt=function(e,n){return M=4,C(this,new E(e,n),0,1)},T.equals=T.eq=function(e,n){return M=5,0===i(this,new E(e,n))},T.floor=function(){return U(new E(this),this.e+1,3)},T.greaterThan=T.gt=function(e,n){return M=6,i(this,new E(e,n))&gt;0},T.greaterThanOrEqualTo=T.gte=function(e,n){return M=7,1===(n=i(this,new E(e,n)))||0===n},T.isFinite=function(){return!!this.c},T.isInteger=T.isInt=function(){return!!this.c&amp;&amp;t(this.e/O)&gt;this.c.length-2},T.isNaN=function(){return!this.s},T.isNegative=T.isNeg=function(){return this.s&lt;0},T.isZero=function(){return!!this.c&amp;&amp;0==this.c[0]},T.lessThan=T.lt=function(e,n){return M=8,i(this,new E(e,n))&lt;0},T.lessThanOrEqualTo=T.lte=function(e,n){return M=9,-1===(n=i(this,new E(e,n)))||0===n},T.minus=T.sub=function(e,n){var r,i,o,u,s=this,f=s.s;if(M=10,e=new E(e,n),n=e.s,!f||!n)return new E(NaN);if(f!=n)return e.s=-n,s.plus(e);var l=s.e/O,c=e.e/O,a=s.c,h=e.c;if(!l||!c){if(!a||!h)return a?(e.s=-n,e):new E(h?s:NaN);if(!a[0]||!h[0])return h[0]?(e.s=-n,e):new E(a[0]?s:3==k?-0:0)}if(l=t(l),c=t(c),a=a.slice(),f=l-c){for((u=0&gt;f)?(f=-f,o=a):(c=l,o=h),o.reverse(),n=f;n--;o.push(0));o.reverse()}else for(i=(u=(f=a.length)&lt;(n=h.length))?f:n,f=n=0;i&gt;n;n++)if(a[n]!=h[n]){u=a[n]&lt;h[n];break}if(u&amp;&amp;(o=a,a=h,h=o,e.s=-e.s),n=(i=h.length)-(r=a.length),n&gt;0)for(;n--;a[r++]=0);for(n=b-1;i&gt;f;){if(a[--i]&lt;h[i]){for(r=i;r&amp;&amp;!a[--r];a[r]=n);--a[r],a[i]+=b}a[i]-=h[i]}for(;0==a[0];a.shift(),--c);return a[0]?I(e,a,c):(e.s=3==k?-1:1,e.c=[e.e=0],e)},T.modulo=T.mod=function(e,n){var t,r,i=this;return M=11,e=new E(e,n),!i.c||!e.s||e.c&amp;&amp;!e.c[0]?new E(NaN):!e.c||i.c&amp;&amp;!i.c[0]?new E(i):(9==W?(r=e.s,e.s=1,t=C(i,e,0,3),e.s=r,t.s*=r):t=C(i,e,0,W),i.minus(t.times(e)))},T.negated=T.neg=function(){var e=new E(this);return e.s=-e.s||null,e},T.plus=T.add=function(e,n){var r,i=this,o=i.s;if(M=12,e=new E(e,n),n=e.s,!o||!n)return new E(NaN);if(o!=n)return e.s=-n,i.minus(e);var u=i.e/O,s=e.e/O,f=i.c,l=e.c;if(!u||!s){if(!f||!l)return new E(o/0);if(!f[0]||!l[0])return l[0]?e:new E(f[0]?i:0*o)}if(u=t(u),s=t(s),f=f.slice(),o=u-s){for(o&gt;0?(s=u,r=l):(o=-o,r=f),r.reverse();o--;r.push(0));r.reverse()}for(o=f.length,n=l.length,0&gt;o-n&amp;&amp;(r=l,l=f,f=r,n=o),o=0;n;)o=(f[--n]=f[n]+l[n]+o)/b|0,f[n]%=b;return o&amp;&amp;(f.unshift(o),++s),I(e,f,s)},T.precision=T.sd=function(e){var n,t,r=this,i=r.c;if(null!=e&amp;&amp;e!==!!e&amp;&amp;1!==e&amp;&amp;0!==e&amp;&amp;(j&amp;&amp;L(13,&quot;argument&quot;+m,e),e!=!!e&amp;&amp;(e=null)),!i)return null;if(t=i.length-1,n=t*O+1,t=i[t]){for(;t%10==0;t/=10,n--);for(t=i[0];t&gt;=10;t/=10,n++);}return e&amp;&amp;r.e+1&gt;n&amp;&amp;(n=r.e+1),n},T.round=function(e,n){var t=new E(this);return(null==e||H(e,0,A,15))&amp;&amp;U(t,~~e+this.e+1,null!=n&amp;&amp;H(n,0,8,15,w)?0|n:k),t},T.shift=function(e){var n=this;return H(e,-y,y,16,&quot;argument&quot;)?n.times(&quot;1e&quot;+c(e)):new E(n.c&amp;&amp;n.c[0]&amp;&amp;(-y&gt;e||e&gt;y)?n.s*(0&gt;e?0:1/0):n)},T.squareRoot=T.sqrt=function(){var e,n,i,o,u,s=this,f=s.c,l=s.s,c=s.e,a=P+4,h=new E(&quot;0.5&quot;);if(1!==l||!f||!f[0])return new E(!l||0&gt;l&amp;&amp;(!f||f[0])?NaN:f?s:1/0);if(l=Math.sqrt(+s),0==l||l==1/0?(n=r(f),(n.length+c)%2==0&amp;&amp;(n+=&quot;0&quot;),l=Math.sqrt(n),c=t((c+1)/2)-(0&gt;c||c%2),l==1/0?n=&quot;1e&quot;+c:(n=l.toExponential(),n=n.slice(0,n.indexOf(&quot;e&quot;)+1)+c),i=new E(n)):i=new E(l+&quot;&quot;),i.c[0])for(c=i.e,l=c+a,3&gt;l&amp;&amp;(l=0);;)if(u=i,i=h.times(u.plus(C(s,u,a,1))),r(u.c).slice(0,l)===(n=r(i.c)).slice(0,l)){if(i.e&lt;c&amp;&amp;--l,n=n.slice(l-3,l+1),&quot;9999&quot;!=n&amp;&amp;(o||&quot;4999&quot;!=n)){(!+n||!+n.slice(1)&amp;&amp;&quot;5&quot;==n.charAt(0))&amp;&amp;(U(i,i.e+P+2,1),e=!i.times(i).eq(s));break}if(!o&amp;&amp;(U(u,u.e+P+2,0),u.times(u).eq(s))){i=u;break}a+=4,l+=4,o=1}return U(i,i.e+P+1,k,e)},T.times=T.mul=function(e,n){var r,i,o,u,s,f,l,c,a,h,g,p,d,m,w,v=this,N=v.c,y=(M=17,e=new E(e,n)).c;if(!(N&amp;&amp;y&amp;&amp;N[0]&amp;&amp;y[0]))return!v.s||!e.s||N&amp;&amp;!N[0]&amp;&amp;!y||y&amp;&amp;!y[0]&amp;&amp;!N?e.c=e.e=e.s=null:(e.s*=v.s,N&amp;&amp;y?(e.c=[0],e.e=0):e.c=e.e=null),e;for(i=t(v.e/O)+t(e.e/O),e.s*=v.s,l=N.length,h=y.length,h&gt;l&amp;&amp;(d=N,N=y,y=d,o=l,l=h,h=o),o=l+h,d=[];o--;d.push(0));for(m=b,w=R,o=h;--o&gt;=0;){for(r=0,g=y[o]%w,p=y[o]/w|0,s=l,u=o+s;u&gt;o;)c=N[--s]%w,a=N[s]/w|0,f=p*c+a*g,c=g*c+f%w*w+d[u]+r,r=(c/m|0)+(f/w|0)+p*a,d[u--]=c%m;d[u]=r}return r?++i:d.shift(),I(e,d,i)},T.toDigits=function(e,n){var t=new E(this);return e=null!=e&amp;&amp;H(e,1,A,18,&quot;precision&quot;)?0|e:null,n=null!=n&amp;&amp;H(n,0,8,18,w)?0|n:k,e?U(t,e,n):t},T.toExponential=function(e,n){return F(this,null!=e&amp;&amp;H(e,0,A,19)?~~e+1:null,n,19)},T.toFixed=function(e,n){return F(this,null!=e&amp;&amp;H(e,0,A,20)?~~e+this.e+1:null,n,20)},T.toFormat=function(e,n){var t=F(this,null!=e&amp;&amp;H(e,0,A,21)?~~e+this.e+1:null,n,21);if(this.c){var r,i=t.split(&quot;.&quot;),o=+X.groupSize,u=+X.secondaryGroupSize,s=X.groupSeparator,f=i[0],l=i[1],c=this.s&lt;0,a=c?f.slice(1):f,h=a.length;if(u&amp;&amp;(r=o,o=u,u=r,h-=r),o&gt;0&amp;&amp;h&gt;0){for(r=h%o||o,f=a.substr(0,r);h&gt;r;r+=o)f+=s+a.substr(r,o);u&gt;0&amp;&amp;(f+=s+a.slice(r)),c&amp;&amp;(f=&quot;-&quot;+f)}t=l?f+X.decimalSeparator+((u=+X.fractionGroupSize)?l.replace(new RegExp(&quot;\\d{&quot;+u+&quot;}\\B&quot;,&quot;g&quot;),&quot;$&amp;&quot;+X.fractionGroupSeparator):l):f}return t},T.toFraction=function(e){var n,t,i,o,u,s,f,l,c,a=j,h=this,g=h.c,p=new E(q),d=t=new E(q),m=f=new E(q);if(null!=e&amp;&amp;(j=!1,s=new E(e),j=a,(!(a=s.isInt())||s.lt(q))&amp;&amp;(j&amp;&amp;L(22,&quot;max denominator &quot;+(a?&quot;out of range&quot;:&quot;not an integer&quot;),e),e=!a&amp;&amp;s.c&amp;&amp;U(s,s.e+1,1).gte(q)?s:null)),!g)return h.toString();for(c=r(g),o=p.e=c.length-h.e-1,p.c[0]=S[(u=o%O)&lt;0?O+u:u],e=!e||s.cmp(p)&gt;0?o&gt;0?p:d:s,u=z,z=1/0,s=new E(c),f.c[0]=0;l=C(s,p,0,1),i=t.plus(l.times(m)),1!=i.cmp(e);)t=m,m=i,d=f.plus(l.times(i=d)),f=i,p=s.minus(l.times(i=p)),s=i;return i=C(e.minus(t),m,0,1),f=f.plus(i.times(d)),t=t.plus(i.times(m)),f.s=d.s=h.s,o*=2,n=C(d,m,o,k).minus(h).abs().cmp(C(f,t,o,k).minus(h).abs())&lt;1?[d.toString(),m.toString()]:[f.toString(),t.toString()],z=u,n},T.toNumber=function(){return+this},T.toPower=T.pow=function(e,n){var t,r,i,o=d(0&gt;e?-e:+e),u=this;if(null!=n&amp;&amp;(M=23,n=new E(n)),!H(e,-y,y,23,&quot;exponent&quot;)&amp;&amp;(!isFinite(e)||o&gt;y&amp;&amp;(e/=0)||parseFloat(e)!=e&amp;&amp;!(e=NaN))||0==e)return t=Math.pow(+u,e),new E(n?t%n:t);for(n?e&gt;1&amp;&amp;u.gt(q)&amp;&amp;u.isInt()&amp;&amp;n.gt(q)&amp;&amp;n.isInt()?u=u.mod(n):(i=n,n=null):J&amp;&amp;(t=p(J/O+2)),r=new E(q);;){if(o%2){if(r=r.times(u),!r.c)break;t?r.c.length&gt;t&amp;&amp;(r.c.length=t):n&amp;&amp;(r=r.mod(n))}if(o=d(o/2),!o)break;u=u.times(u),t?u.c&amp;&amp;u.c.length&gt;t&amp;&amp;(u.c.length=t):n&amp;&amp;(u=u.mod(n))}return n?r:(0&gt;e&amp;&amp;(r=q.div(r)),i?r.mod(i):t?U(r,J,k):r)},T.toPrecision=function(e,n){return F(this,null!=e&amp;&amp;H(e,1,A,24,&quot;precision&quot;)?0|e:null,n,24)},T.toString=function(e){var n,t=this,i=t.s,o=t.e;return null===o?i?(n=&quot;Infinity&quot;,0&gt;i&amp;&amp;(n=&quot;-&quot;+n)):n=&quot;NaN&quot;:(n=r(t.c),n=null!=e&amp;&amp;H(e,2,64,25,&quot;base&quot;)?D(l(n,o),0|e,10,i):B&gt;=o||o&gt;=$?f(n,o):l(n,o),0&gt;i&amp;&amp;t.c[0]&amp;&amp;(n=&quot;-&quot;+n)),n},T.truncated=T.trunc=function(){return U(new E(this),this.e+1,1)},T.valueOf=T.toJSON=function(){var e,n=this,t=n.e;return null===t?n.toString():(e=r(n.c),e=B&gt;=t||t&gt;=$?f(e,t):l(e,t),n.s&lt;0?&quot;-&quot;+e:e)},null!=e&amp;&amp;E.config(e),E}function t(e){var n=0|e;return e&gt;0||e===n?n:n-1}function r(e){for(var n,t,r=1,i=e.length,o=e[0]+&quot;&quot;;i&gt;r;){for(n=e[r++]+&quot;&quot;,t=O-n.length;t--;n=&quot;0&quot;+n);o+=n}for(i=o.length;48===o.charCodeAt(--i););return o.slice(0,i+1||1)}function i(e,n){var t,r,i=e.c,o=n.c,u=e.s,s=n.s,f=e.e,l=n.e;if(!u||!s)return null;if(t=i&amp;&amp;!i[0],r=o&amp;&amp;!o[0],t||r)return t?r?0:-s:u;if(u!=s)return u;if(t=0&gt;u,r=f==l,!i||!o)return r?0:!i^t?1:-1;if(!r)return f&gt;l^t?1:-1;for(s=(f=i.length)&lt;(l=o.length)?f:l,u=0;s&gt;u;u++)if(i[u]!=o[u])return i[u]&gt;o[u]^t?1:-1;return f==l?0:f&gt;l^t?1:-1}function o(e,n,t){return(e=c(e))&gt;=n&amp;&amp;t&gt;=e}function u(e){return&quot;[object Array]&quot;==Object.prototype.toString.call(e)}function s(e,n,t){for(var r,i,o=[0],u=0,s=e.length;s&gt;u;){for(i=o.length;i--;o[i]*=n);for(o[r=0]+=N.indexOf(e.charAt(u++));r&lt;o.length;r++)o[r]&gt;t-1&amp;&amp;(null==o[r+1]&amp;&amp;(o[r+1]=0),o[r+1]+=o[r]/t|0,o[r]%=t)}return o.reverse()}function f(e,n){return(e.length&gt;1?e.charAt(0)+&quot;.&quot;+e.slice(1):e)+(0&gt;n?&quot;e&quot;:&quot;e+&quot;)+n}function l(e,n){var t,r;if(0&gt;n){for(r=&quot;0.&quot;;++n;r+=&quot;0&quot;);e=r+e}else if(t=e.length,++n&gt;t){for(r=&quot;0&quot;,n-=t;--n;r+=&quot;0&quot;);e+=r}else t&gt;n&amp;&amp;(e=e.slice(0,n)+&quot;.&quot;+e.slice(n));return e}function c(e){return e=parseFloat(e),0&gt;e?p(e):d(e)}var a,h,g=/^-?(\d+(\.\d*)?|\.\d+)(e[+-]?\d+)?$/i,p=Math.ceil,d=Math.floor,m=&quot; not a boolean or binary digit&quot;,w=&quot;rounding mode&quot;,v=&quot;number type has more than 15 significant digits&quot;,N=&quot;0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ$_&quot;,b=1e14,O=14,y=9007199254740991,S=[1,10,100,1e3,1e4,1e5,1e6,1e7,1e8,1e9,1e10,1e11,1e12,1e13],R=1e7,A=1e9;if(&quot;undefined&quot;!=typeof crypto&amp;&amp;(a=crypto),&quot;function&quot;==typeof define&amp;&amp;define.amd)define(function(){return n()});else if(&quot;undefined&quot;!=typeof module&amp;&amp;module.exports){if(module.exports=n(),!a)try{a=require(&quot;crypto&quot;)}catch(E){}}else e||(e=&quot;undefined&quot;!=typeof self?self:Function(&quot;return this&quot;)()),e.BigNumber=n()}(this);
+  &lt;/script&gt;
+
+  &lt;style&gt;
+    body{
+      font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif;
+      background: #E2E2E2;
+    }
+    *, *:after, *:before {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    #pleasewait{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+    }
+    #infomessage {
+      text-align: center;
+      font-size: 1rem;
+      margin: 0 2rem 4.5rem;
+    }
+
+    .wrapper{
+      background: #E2E2E2;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      display:none;
+      text-align: center;
+    }
+    .title {
+      text-align: center;
+      font-size: 1.2rem;
+      margin: 1rem 0rem;
+    }
+    .message {
+      text-align: center;
+      font-size: 1rem;
+      /*margin: 0 2rem 4.5rem;*/
+    }
+
+    #passwordField {
+      text-align: center;
+      font-size: 1rem;
+      margin: 1rem 0rem;
+      /*margin: 0 2rem 4.5rem;*/
+    }
+
+    .wrapper button {
+      background: transparent;
+      border: none;
+      color: #1678E5;
+      height: 3rem;
+      font-size: 1rem;
+      width: 50%;
+      position: absolute;
+      bottom: 0;
+      cursor: pointer;
+    }
+    #cancel-button {
+      border-top: 1px solid #B4B4B4;
+      border-right: 1px solid #B4B4B4;
+      left: 0;
+      border-radius: 0 0 0 10px;
+    }
+    #confirm-button {
+      border-top: 1px solid #B4B4B4;
+      right: 0;
+      border-radius: 0 0 10px 0;
+    }
+    .wrapper button:focus,
+    .wrapper button:hover {
+      font-weight: bold;
+      background: #EFEFEF;
+    }
+    .wrapper button:active {
+      background: #D6D6D6;
+    }
+
+    .button {
+      margin: 1rem 0rem;
+      display: inline-block;
+      padding: 9px 15px;
+      background-color: #3898EC;
+      color: white;
+      border: 0;
+      line-height: inherit;
+      text-decoration: none;
+      cursor: pointer;
+      border-radius: 0;
+    }
+
+    input.button {
+      -webkit-appearance: button;
+    }
+  &lt;/style&gt;
+
+  &lt;body&gt;
+
+    &lt;div id=&quot;pleasewait&quot;&gt;
+      &lt;br/&gt;
+      &lt;p id=&quot;infomessage&quot;&gt;Please wait...&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;form id=&quot;form&quot; class=&quot;wrapper&quot;&gt;
+      &lt;br/&gt;
+      &lt;p id=&quot;message&quot; class=&quot;message&quot;&gt;&lt;/p&gt;
+      &lt;p id=&quot;passwordField&quot;&gt;&lt;label&gt;Password Required:&lt;/label&gt;&lt;input id=&quot;password&quot; type=&quot;password&quot; /&gt;&lt;/p&gt;
+      &lt;button id=&quot;cancel-button&quot; type=&quot;button&quot; autofocus&gt;Cancel&lt;/button&gt;
+      &lt;button id=&quot;confirm-button&quot; type=&quot;button&quot; &gt;Confirm&lt;/button&gt;
+    &lt;/form&gt;
+
+    &lt;div id=&quot;modal-dialog&quot; class=&quot;wrapper&quot;&gt;
+      &lt;h3 id=&quot;modal-dialog-title&quot; class=&quot;title&quot;&gt;Title&lt;/h3&gt;
+      &lt;p id=&quot;modal-dialog-message&quot; class=&quot;message&quot;&gt;Message&lt;/p&gt;
+      &lt;span id=&quot;modal-dialog-button&quot; class=&quot;button&quot;&gt;Ok&lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;script&gt;
+    var noMessageReceivedYet = true;
+    var closedByCode = false;
+    var pleaseWait = document.getElementById(&quot;pleasewait&quot;);
+    var form = document.getElementById(&quot;form&quot;);
+    var cancelButton = document.getElementById(&quot;cancel-button&quot;);
+    var confirmButton = document.getElementById(&quot;confirm-button&quot;);
+    var message = document.getElementById(&quot;message&quot;);
+    var infoMessage = document.getElementById(&quot;infomessage&quot;);
+    var password = document.getElementById(&quot;password&quot;);
+    var passwordField = document.getElementById(&quot;passwordField&quot;);
+    var modalDialog = document.getElementById(&quot;modal-dialog&quot;);
+    var modalDialogButton = document.getElementById(&quot;modal-dialog-button&quot;);
+    var modalDialogTitle = document.getElementById(&quot;modal-dialog-title&quot;);
+    var modalDialogMessage = document.getElementById(&quot;modal-dialog-message&quot;);
+
+    var firstUrl = null;
+
+    var inIframe = true;
+    var source = null;
+    if(window.opener){
+      inIframe = false;
+      source = window.opener;
+    }else if(window.parent != window){
+      source = window.parent;
+    }else{
+      console.log(&quot;closing&quot;);
+      window.close();
+    }
+
+    function closeWindow(){
+      closedByCode = true;
+      window.close();
+    }
+
+    function showWaiting(text){
+      if(!text){
+        text = &quot;Please wait...&quot;
+      }
+      infoMessage.innerHTML = text;
+      pleaseWait.style.display = &quot;block&quot;;
+      form.style.display = &quot;none&quot;;
+    }
+
+    function hideWaiting(){
+      pleaseWait.style.display = &quot;none&quot;;
+      form.style.display = &quot;block&quot;;
+
+      window.onbeforeunload = null;
+    }
+
+    function showMessage(title, message, callback, buttonText){
+      modalDialog.style.display = &quot;block&quot;;
+      modalDialogTitle.innerHTML = title;
+      modalDialogMessage.innerHTML = &quot;&quot;;
+      if((typeof message) == &quot;string&quot;){
+        modalDialogMessage.innerHTML += message;
+      }else{
+        modalDialogMessage.appendChild(message);
+      }
+      modalDialogMessage.appendChild(document.createElement('br'));
+
+      if(!buttonText){
+        buttonText = &quot;Ok&quot;;
+      }
+      modalDialogButton.innerHTML = buttonText;
+      modalDialogButton.onclick = function(){
+        modalDialogButton.onclick = null;
+        modalDialog.style.display = &quot;none&quot;;
+        if(callback){
+          callback();
+        }
+      }
+    }
+
+    function hideMessage(){
+      modalDialog.style.display = &quot;none&quot;;
+      modalDialogButton.onclick = null;
+    }
+
+    function sendAsync(url,payload, callback) {
+      var request = new XMLHttpRequest();
+      request.open('POST', url, true);
+      request.setRequestHeader('Content-Type','application/json');
+
+      request.onreadystatechange = function() {
+        if (request.readyState === 4) {
+          var result = request.responseText;
+          var error = null;
+          try {
+            result = JSON.parse(result);
+          } catch(e) {
+            var message = !!result &amp;&amp; !!result.error &amp;&amp; !!result.error.message ? result.error.message : 'Invalid JSON RPC response: ' + JSON.stringify(result);
+            error = {message:message,type:&quot;JsonParse&quot;};
+          }
+          callback(error, result);
+        }
+      };
+
+      try {
+        request.send(JSON.stringify(payload));
+      } catch(e) {
+        callback({message:'CONNECTION ERROR: Couldn\'t connect to node '+ url +'.',type:&quot;noConnection&quot;});
+      }
+    }
+
+    function addBlocky(message, address){
+      var icon = blockies.create({
+        seed: address,
+        size: 8,
+        scale: 6
+      });
+      message.appendChild(icon);
+    }
+
+    function askAuthorization(transactionInfo, data, requireUnlock, sourceWindow){
+
+
+      var value = transactionInfo[&quot;value&quot;] ? transactionInfo.value : &quot;0&quot;;
+      var gasProvided = transactionInfo.gas;
+      var gasPriceProvided = transactionInfo.gasPrice;
+      var gasPrice = new BigNumber(gasPriceProvided,16);
+      var gas = new BigNumber(gasProvided,16);
+      var weiValue = new BigNumber(value,16);
+      var gasWeiValue = gas.times(gasPrice);
+      var etherValue = weiValue.dividedBy(new BigNumber(&quot;1000000000000000000&quot;));
+      var gasEtherValue = gasWeiValue.dividedBy(new BigNumber(&quot;1000000000000000000&quot;));
+
+      hideWaiting();
+
+      message.innerHTML = &quot;&quot;;
+
+      addBlocky(message,transactionInfo.from);
+
+      var span = document.createElement('span');
+      span.style=&quot;font-size:3em;&quot;;
+      span.innerHTML = &quot;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot; + &quot;&amp;#x2192;&quot; + &quot;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;;
+      message.appendChild(span);
+
+      addBlocky(message,transactionInfo.to);
+
+      message.appendChild(document.createElement('br'));
+      var textSpan = document.createElement(&quot;span&quot;);
+      message.appendChild(textSpan);
+      textSpan.innerHTML = etherValue.toFormat() + &quot; ether &lt;br/&gt;  + gas cost (&quot; + gasEtherValue.toFormat() + &quot; ether )&quot;
+
+      if(requireUnlock){
+        passwordField.style.display = &quot;block&quot;;
+      }else{
+        passwordField.style.display = &quot;none&quot;;
+      }
+
+      cancelButton.onclick = function(){
+        sourceWindow.postMessage({id:data.id,result:null,error:{message:&quot;Not Authorized&quot;},type:&quot;cancel&quot;},firstUrl);
+        closeWindow();
+      }
+
+      var submitFunc = function(){
+        window.onbeforeunload = function (event) {
+          if(!closedByCode){
+            return &quot;do not close now as a transaction is progress, this cannot be canceled and we wait for an answer&quot;;
+          }
+        };
+        if(requireUnlock){
+          if(password.value == &quot;&quot;){
+            password.style.border = &quot;2px solid red&quot;;
+            return false;
+          }
+          password.style.border = &quot;none&quot;;
+          var params = [transactionInfo.from,password.value,3];
+          showWaiting(&quot;Please wait...&lt;br/&gt;Do not close the window.&quot;);
+          sendAsync(data.url,{id:999992,method:&quot;personal_unlockAccount&quot;,params:params},function(error,result){
+            if(error || result.error){
+              showMessage(&quot;Error unlocking account&quot;, &quot;Please retry.&quot;, hideWaiting);
+            }else{
+              sendAsync(data.url,data.payload,function(error,result){
+                sourceWindow.postMessage({id:data.id,result:result,error:error},firstUrl);
+                closeWindow();
+              });
+            }
+          });
+        }else{
+          sendAsync(data.url,data.payload,function(error,result){
+            if(result &amp;&amp; result.error){
+              processMessage(data,sourceWindow);
+            }else{
+              sourceWindow.postMessage({id:data.id,result:result,error:error},firstUrl);
+              closeWindow();
+            }
+          });
+          showWaiting();
+        }
+        return false;
+      }
+
+      form.onsubmit = submitFunc;
+      confirmButton.onclick = submitFunc;
+    }
+
+    function needToAndCanUnlockAccount(address,url,callback){
+      sendAsync(url,{id:9999990,method:&quot;eth_sign&quot;,params:[address,&quot;0xc6888fa8d57087278718986382264244252f8d57087278718986382264244252f&quot;]},function(error,result){
+        if(error || result.error){
+          sendAsync(url,{id:9999991,method:&quot;personal_listAccounts&quot;,params:[]},function(error,result){
+            if(error || result.error){
+              callback(true,false);
+            }else{
+              callback(true,true);
+            }
+          });
+        }else{
+          callback(false);
+        }
+      });
+    }
+
+    function receiveMessage(event){
+      if(event.source != source){
+        return;
+      }
+      if(firstUrl){
+        if(firstUrl != event.origin){
+          return;
+        }
+      }else{
+        firstUrl = event.origin;
+      }
+      hideMessage();
+      noMessageReceivedYet = false;
+      var data = event.data;
+      try{
+        processMessage(data,event.source);
+      }catch(e){
+        event.source.postMessage({id:data.id,result:null,error:{message:&quot;Could not process message data&quot;},type:&quot;notValid&quot;},firstUrl);
+        showMessage(&quot;Error&quot;,&quot;The application has sent invalid data&quot;, function(){
+          closeWindow();
+        });
+      }
+
+    }
+
+    var allowedMethods = [
+       &quot;web3_clientVersion&quot;
+      ,&quot;web3_sha3&quot;
+      ,&quot;net_version&quot;
+      ,&quot;net_peerCount&quot;
+      ,&quot;net_listening&quot;
+      ,&quot;eth_protocolVersion&quot;
+      ,&quot;eth_syncing&quot;
+      ,&quot;eth_coinbase&quot;
+      ,&quot;eth_mining&quot;
+      ,&quot;eth_hashrate&quot;
+      ,&quot;eth_gasPrice&quot;
+      ,&quot;eth_accounts&quot;
+      ,&quot;eth_blockNumber&quot;
+      ,&quot;eth_getBalance&quot;
+      ,&quot;eth_getStorageAt&quot;
+      ,&quot;eth_getTransactionCount&quot;
+      ,&quot;eth_getBlockTransactionCountByHash&quot;
+      ,&quot;eth_getBlockTransactionCountByNumber&quot;
+      ,&quot;eth_getUncleCountByBlockHash&quot;
+      ,&quot;eth_getUncleCountByBlockNumber&quot;
+      ,&quot;eth_getCode&quot;
+      ,&quot;eth_sendRawTransaction&quot;
+      ,&quot;eth_call&quot;
+      ,&quot;eth_estimateGas&quot;
+      ,&quot;eth_getBlockByHash&quot;
+      ,&quot;eth_getBlockByNumber&quot;
+      ,&quot;eth_getTransactionByHash&quot;
+      ,&quot;eth_getTransactionByBlockHashAndIndex&quot;
+      ,&quot;eth_getTransactionByBlockNumberAndIndex&quot;
+      ,&quot;eth_getTransactionReceipt&quot;
+      ,&quot;eth_getUncleByBlockHashAndIndex&quot;
+      ,&quot;eth_getUncleByBlockNumberAndIndex&quot;
+      ,&quot;eth_getCompilers&quot;
+      ,&quot;eth_compileLLL&quot;
+      ,&quot;eth_compileSolidity&quot;
+      ,&quot;eth_compileSerpent&quot;
+      ,&quot;eth_newFilter&quot;
+      ,&quot;eth_newBlockFilter&quot;
+      ,&quot;eth_newPendingTransactionFilter&quot;
+      ,&quot;eth_uninstallFilter&quot;
+      ,&quot;eth_getFilterChanges&quot;
+      ,&quot;eth_getFilterLogs&quot;
+      ,&quot;eth_getLogs&quot;
+      ,&quot;eth_getWork&quot;
+      ,&quot;eth_submitWork&quot;
+      ,&quot;eth_submitHashrate&quot;
+      // ,&quot;shh_post&quot;
+      // ,&quot;shh_version&quot;
+      // ,&quot;shh_newIdentity&quot;
+      // ,&quot;shh_hasIdentity&quot;
+      // ,&quot;shh_newGroup&quot;
+      // ,&quot;shh_addToGroup&quot;
+      // ,&quot;shh_newFilter&quot;
+      // ,&quot;shh_uninstallFilter&quot;
+      // ,&quot;shh_getFilterChanges&quot;
+      // ,&quot;shh_getMessages&quot;
+    ];
+
+    function isMethodAllowed(method){
+      return allowedMethods.indexOf(method) != -1;
+    }
+
+    function processMessage(data, sourceWindow){
+
+      if(inIframe){
+        if(isMethodAllowed(data.payload.method)){
+          sendAsync(data.url,data.payload,function(error,result){
+            sourceWindow.postMessage({id:data.id,result:result,error:error},firstUrl);
+          });
+        }else{
+          sourceWindow.postMessage({id:data.id,result:null,error:{message:&quot;method (&quot; + data.payload.method + &quot;) not allowed in iframe&quot;},type:&quot;notAllowed&quot;},firstUrl);
+        }
+      }else if(data.payload.method == &quot;eth_sendTransaction&quot;){
+        var transactionInfo = null;
+        if(data.payload.params.length &gt; 0){
+          if(data.payload.params[0][&quot;gas&quot;] &amp;&amp; data.payload.params[0][&quot;gasPrice&quot;] &amp;&amp; data.payload.params[0][&quot;to&quot;] &amp;&amp; data.payload.params[0][&quot;from&quot;]){
+            transactionInfo = data.payload.params[0];
+          }
+        }
+        if(transactionInfo != null){
+          needToAndCanUnlockAccount(transactionInfo.from,data.url,function(requireUnlock,canUnlock){
+            if(requireUnlock &amp;&amp; canUnlock){
+              askAuthorization(transactionInfo,data,true, sourceWindow);
+            }else if(!requireUnlock){
+              askAuthorization(transactionInfo,data,false,sourceWindow);
+            }else if(requireUnlock &amp;&amp; !canUnlock){
+              var messageHtml = document.createElement('span');
+              addBlocky(messageHtml,transactionInfo.from);
+              messageHtml.appendChild(document.createElement('br'));
+              var span = document.createElement('span');
+              span.innerHTML = &quot;You need to unlock your account first : &lt;br/&gt;&quot; + transactionInfo.from;
+              messageHtml.appendChild(span);
+
+              showMessage(&quot;Account Locked&quot;,messageHtml,function(){
+                processMessage(data,sourceWindow);
+              }, &quot;Done&quot;);
+            }
+
+          });
+        }else{
+          sourceWindow.postMessage({id:data.id,result:null,error:{message:&quot;Need to specify from , to, gas and gasPrice&quot;},type:&quot;notValid&quot;},firstUrl);
+          closeWindow();
+        }
+      }else{
+        sourceWindow.postMessage({id:data.id,result:null,error:{message:&quot;method (&quot; + data.payload.method + &quot;) not allowed in popup&quot;},type:&quot;notAllowed&quot;},firstUrl);
+      }     
+    }
+
+    function checkMessageNotReceived(){
+      if(noMessageReceivedYet){
+        showMessage(&quot;Error&quot;,&quot;No transaction received. Please make sure popup are not blocked.&quot;, function(){
+          closeWindow();
+        });
+      }
+    }
+    setTimeout(checkMessageNotReceived,1000);
+
+    window.addEventListener(&quot;message&quot;, receiveMessage);
+    if(source){
+      source.postMessage(&quot;ready&quot;,&quot;*&quot;);
+    }
+
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br><span class="line-number">140</span><br><span class="line-number">141</span><br><span class="line-number">142</span><br><span class="line-number">143</span><br><span class="line-number">144</span><br><span class="line-number">145</span><br><span class="line-number">146</span><br><span class="line-number">147</span><br><span class="line-number">148</span><br><span class="line-number">149</span><br><span class="line-number">150</span><br><span class="line-number">151</span><br><span class="line-number">152</span><br><span class="line-number">153</span><br><span class="line-number">154</span><br><span class="line-number">155</span><br><span class="line-number">156</span><br><span class="line-number">157</span><br><span class="line-number">158</span><br><span class="line-number">159</span><br><span class="line-number">160</span><br><span class="line-number">161</span><br><span class="line-number">162</span><br><span class="line-number">163</span><br><span class="line-number">164</span><br><span class="line-number">165</span><br><span class="line-number">166</span><br><span class="line-number">167</span><br><span class="line-number">168</span><br><span class="line-number">169</span><br><span class="line-number">170</span><br><span class="line-number">171</span><br><span class="line-number">172</span><br><span class="line-number">173</span><br><span class="line-number">174</span><br><span class="line-number">175</span><br><span class="line-number">176</span><br><span class="line-number">177</span><br><span class="line-number">178</span><br><span class="line-number">179</span><br><span class="line-number">180</span><br><span class="line-number">181</span><br><span class="line-number">182</span><br><span class="line-number">183</span><br><span class="line-number">184</span><br><span class="line-number">185</span><br><span class="line-number">186</span><br><span class="line-number">187</span><br><span class="line-number">188</span><br><span class="line-number">189</span><br><span class="line-number">190</span><br><span class="line-number">191</span><br><span class="line-number">192</span><br><span class="line-number">193</span><br><span class="line-number">194</span><br><span class="line-number">195</span><br><span class="line-number">196</span><br><span class="line-number">197</span><br><span class="line-number">198</span><br><span class="line-number">199</span><br><span class="line-number">200</span><br><span class="line-number">201</span><br><span class="line-number">202</span><br><span class="line-number">203</span><br><span class="line-number">204</span><br><span class="line-number">205</span><br><span class="line-number">206</span><br><span class="line-number">207</span><br><span class="line-number">208</span><br><span class="line-number">209</span><br><span class="line-number">210</span><br><span class="line-number">211</span><br><span class="line-number">212</span><br><span class="line-number">213</span><br><span class="line-number">214</span><br><span class="line-number">215</span><br><span class="line-number">216</span><br><span class="line-number">217</span><br><span class="line-number">218</span><br><span class="line-number">219</span><br><span class="line-number">220</span><br><span class="line-number">221</span><br><span class="line-number">222</span><br><span class="line-number">223</span><br><span class="line-number">224</span><br><span class="line-number">225</span><br><span class="line-number">226</span><br><span class="line-number">227</span><br><span class="line-number">228</span><br><span class="line-number">229</span><br><span class="line-number">230</span><br><span class="line-number">231</span><br><span class="line-number">232</span><br><span class="line-number">233</span><br><span class="line-number">234</span><br><span class="line-number">235</span><br><span class="line-number">236</span><br><span class="line-number">237</span><br><span class="line-number">238</span><br><span class="line-number">239</span><br><span class="line-number">240</span><br><span class="line-number">241</span><br><span class="line-number">242</span><br><span class="line-number">243</span><br><span class="line-number">244</span><br><span class="line-number">245</span><br><span class="line-number">246</span><br><span class="line-number">247</span><br><span class="line-number">248</span><br><span class="line-number">249</span><br><span class="line-number">250</span><br><span class="line-number">251</span><br><span class="line-number">252</span><br><span class="line-number">253</span><br><span class="line-number">254</span><br><span class="line-number">255</span><br><span class="line-number">256</span><br><span class="line-number">257</span><br><span class="line-number">258</span><br><span class="line-number">259</span><br><span class="line-number">260</span><br><span class="line-number">261</span><br><span class="line-number">262</span><br><span class="line-number">263</span><br><span class="line-number">264</span><br><span class="line-number">265</span><br><span class="line-number">266</span><br><span class="line-number">267</span><br><span class="line-number">268</span><br><span class="line-number">269</span><br><span class="line-number">270</span><br><span class="line-number">271</span><br><span class="line-number">272</span><br><span class="line-number">273</span><br><span class="line-number">274</span><br><span class="line-number">275</span><br><span class="line-number">276</span><br><span class="line-number">277</span><br><span class="line-number">278</span><br><span class="line-number">279</span><br><span class="line-number">280</span><br><span class="line-number">281</span><br><span class="line-number">282</span><br><span class="line-number">283</span><br><span class="line-number">284</span><br><span class="line-number">285</span><br><span class="line-number">286</span><br><span class="line-number">287</span><br><span class="line-number">288</span><br><span class="line-number">289</span><br><span class="line-number">290</span><br><span class="line-number">291</span><br><span class="line-number">292</span><br><span class="line-number">293</span><br><span class="line-number">294</span><br><span class="line-number">295</span><br><span class="line-number">296</span><br><span class="line-number">297</span><br><span class="line-number">298</span><br><span class="line-number">299</span><br><span class="line-number">300</span><br><span class="line-number">301</span><br><span class="line-number">302</span><br><span class="line-number">303</span><br><span class="line-number">304</span><br><span class="line-number">305</span><br><span class="line-number">306</span><br><span class="line-number">307</span><br><span class="line-number">308</span><br><span class="line-number">309</span><br><span class="line-number">310</span><br><span class="line-number">311</span><br><span class="line-number">312</span><br><span class="line-number">313</span><br><span class="line-number">314</span><br><span class="line-number">315</span><br><span class="line-number">316</span><br><span class="line-number">317</span><br><span class="line-number">318</span><br><span class="line-number">319</span><br><span class="line-number">320</span><br><span class="line-number">321</span><br><span class="line-number">322</span><br><span class="line-number">323</span><br><span class="line-number">324</span><br><span class="line-number">325</span><br><span class="line-number">326</span><br><span class="line-number">327</span><br><span class="line-number">328</span><br><span class="line-number">329</span><br><span class="line-number">330</span><br><span class="line-number">331</span><br><span class="line-number">332</span><br><span class="line-number">333</span><br><span class="line-number">334</span><br><span class="line-number">335</span><br><span class="line-number">336</span><br><span class="line-number">337</span><br><span class="line-number">338</span><br><span class="line-number">339</span><br><span class="line-number">340</span><br><span class="line-number">341</span><br><span class="line-number">342</span><br><span class="line-number">343</span><br><span class="line-number">344</span><br><span class="line-number">345</span><br><span class="line-number">346</span><br><span class="line-number">347</span><br><span class="line-number">348</span><br><span class="line-number">349</span><br><span class="line-number">350</span><br><span class="line-number">351</span><br><span class="line-number">352</span><br><span class="line-number">353</span><br><span class="line-number">354</span><br><span class="line-number">355</span><br><span class="line-number">356</span><br><span class="line-number">357</span><br><span class="line-number">358</span><br><span class="line-number">359</span><br><span class="line-number">360</span><br><span class="line-number">361</span><br><span class="line-number">362</span><br><span class="line-number">363</span><br><span class="line-number">364</span><br><span class="line-number">365</span><br><span class="line-number">366</span><br><span class="line-number">367</span><br><span class="line-number">368</span><br><span class="line-number">369</span><br><span class="line-number">370</span><br><span class="line-number">371</span><br><span class="line-number">372</span><br><span class="line-number">373</span><br><span class="line-number">374</span><br><span class="line-number">375</span><br><span class="line-number">376</span><br><span class="line-number">377</span><br><span class="line-number">378</span><br><span class="line-number">379</span><br><span class="line-number">380</span><br><span class="line-number">381</span><br><span class="line-number">382</span><br><span class="line-number">383</span><br><span class="line-number">384</span><br><span class="line-number">385</span><br><span class="line-number">386</span><br><span class="line-number">387</span><br><span class="line-number">388</span><br><span class="line-number">389</span><br><span class="line-number">390</span><br><span class="line-number">391</span><br><span class="line-number">392</span><br><span class="line-number">393</span><br><span class="line-number">394</span><br><span class="line-number">395</span><br><span class="line-number">396</span><br><span class="line-number">397</span><br><span class="line-number">398</span><br><span class="line-number">399</span><br><span class="line-number">400</span><br><span class="line-number">401</span><br><span class="line-number">402</span><br><span class="line-number">403</span><br><span class="line-number">404</span><br><span class="line-number">405</span><br><span class="line-number">406</span><br><span class="line-number">407</span><br><span class="line-number">408</span><br><span class="line-number">409</span><br><span class="line-number">410</span><br><span class="line-number">411</span><br><span class="line-number">412</span><br><span class="line-number">413</span><br><span class="line-number">414</span><br><span class="line-number">415</span><br><span class="line-number">416</span><br><span class="line-number">417</span><br><span class="line-number">418</span><br><span class="line-number">419</span><br><span class="line-number">420</span><br><span class="line-number">421</span><br><span class="line-number">422</span><br><span class="line-number">423</span><br><span class="line-number">424</span><br><span class="line-number">425</span><br><span class="line-number">426</span><br><span class="line-number">427</span><br><span class="line-number">428</span><br><span class="line-number">429</span><br><span class="line-number">430</span><br><span class="line-number">431</span><br><span class="line-number">432</span><br><span class="line-number">433</span><br><span class="line-number">434</span><br><span class="line-number">435</span><br><span class="line-number">436</span><br><span class="line-number">437</span><br><span class="line-number">438</span><br><span class="line-number">439</span><br><span class="line-number">440</span><br><span class="line-number">441</span><br><span class="line-number">442</span><br><span class="line-number">443</span><br><span class="line-number">444</span><br><span class="line-number">445</span><br><span class="line-number">446</span><br><span class="line-number">447</span><br><span class="line-number">448</span><br><span class="line-number">449</span><br><span class="line-number">450</span><br><span class="line-number">451</span><br><span class="line-number">452</span><br><span class="line-number">453</span><br><span class="line-number">454</span><br><span class="line-number">455</span><br><span class="line-number">456</span><br><span class="line-number">457</span><br><span class="line-number">458</span><br><span class="line-number">459</span><br><span class="line-number">460</span><br><span class="line-number">461</span><br><span class="line-number">462</span><br><span class="line-number">463</span><br><span class="line-number">464</span><br><span class="line-number">465</span><br><span class="line-number">466</span><br><span class="line-number">467</span><br><span class="line-number">468</span><br><span class="line-number">469</span><br><span class="line-number">470</span><br><span class="line-number">471</span><br><span class="line-number">472</span><br><span class="line-number">473</span><br><span class="line-number">474</span><br><span class="line-number">475</span><br><span class="line-number">476</span><br><span class="line-number">477</span><br><span class="line-number">478</span><br><span class="line-number">479</span><br><span class="line-number">480</span><br><span class="line-number">481</span><br><span class="line-number">482</span><br><span class="line-number">483</span><br><span class="line-number">484</span><br><span class="line-number">485</span><br><span class="line-number">486</span><br><span class="line-number">487</span><br><span class="line-number">488</span><br><span class="line-number">489</span><br><span class="line-number">490</span><br><span class="line-number">491</span><br><span class="line-number">492</span><br><span class="line-number">493</span><br><span class="line-number">494</span><br><span class="line-number">495</span><br><span class="line-number">496</span><br><span class="line-number">497</span><br><span class="line-number">498</span><br><span class="line-number">499</span><br><span class="line-number">500</span><br><span class="line-number">501</span><br><span class="line-number">502</span><br><span class="line-number">503</span><br><span class="line-number">504</span><br><span class="line-number">505</span><br></div></div><h2 id="copyright"><a href="#copyright" class="header-anchor">#</a> Copyright</h2> <p>Copyright and related rights waived via <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener noreferrer">CC0<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>.</p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/ethlibrary/EIPs/edit/master/EIPS/eip-107.md" target="_blank" rel="noopener noreferrer">帮助完善文档</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">10/10/2021, 1:08:00 AM</span></div></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.a13d8931.js" defer></script><script src="/assets/js/3.afc73834.js" defer></script><script src="/assets/js/8.d346a35e.js" defer></script>
+  </body>
+</html>

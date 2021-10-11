@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Flash Loans | 以太坊改进提案 EIPs</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="以太坊改进提案（EIPs）描述了以太坊平台的标准，包括核心协议规范，客户端API和合约标准。">
+    
+    <link rel="preload" href="/assets/css/0.styles.89e32c3d.css" as="style"><link rel="preload" href="/assets/js/app.a13d8931.js" as="script"><link rel="preload" href="/assets/js/3.afc73834.js" as="script"><link rel="preload" href="/assets/js/299.ed75d8ac.js" as="script"><link rel="prefetch" href="/assets/js/10.b7e21e5d.js"><link rel="prefetch" href="/assets/js/100.d5d858e7.js"><link rel="prefetch" href="/assets/js/101.e1db9cf8.js"><link rel="prefetch" href="/assets/js/102.f33c0db7.js"><link rel="prefetch" href="/assets/js/103.9b2f992f.js"><link rel="prefetch" href="/assets/js/104.4682985f.js"><link rel="prefetch" href="/assets/js/105.f9e5318b.js"><link rel="prefetch" href="/assets/js/106.9c75a4a1.js"><link rel="prefetch" href="/assets/js/107.a77b3902.js"><link rel="prefetch" href="/assets/js/108.e6af934c.js"><link rel="prefetch" href="/assets/js/109.ea2fe245.js"><link rel="prefetch" href="/assets/js/11.19d07763.js"><link rel="prefetch" href="/assets/js/110.c7c5923b.js"><link rel="prefetch" href="/assets/js/111.53019564.js"><link rel="prefetch" href="/assets/js/112.2678b5bc.js"><link rel="prefetch" href="/assets/js/113.65344b60.js"><link rel="prefetch" href="/assets/js/114.34870900.js"><link rel="prefetch" href="/assets/js/115.e0ce944c.js"><link rel="prefetch" href="/assets/js/116.05caef5d.js"><link rel="prefetch" href="/assets/js/117.eb1f8851.js"><link rel="prefetch" href="/assets/js/118.1d54235b.js"><link rel="prefetch" href="/assets/js/119.57439d26.js"><link rel="prefetch" href="/assets/js/12.cc14cc21.js"><link rel="prefetch" href="/assets/js/120.fec4a349.js"><link rel="prefetch" href="/assets/js/121.e6ee3bd0.js"><link rel="prefetch" href="/assets/js/122.8b1067e2.js"><link rel="prefetch" href="/assets/js/123.e9852421.js"><link rel="prefetch" href="/assets/js/124.e2572e3e.js"><link rel="prefetch" href="/assets/js/125.d02927d3.js"><link rel="prefetch" href="/assets/js/126.5443f529.js"><link rel="prefetch" href="/assets/js/127.df02ad53.js"><link rel="prefetch" href="/assets/js/128.86d06d73.js"><link rel="prefetch" href="/assets/js/129.4ba20791.js"><link rel="prefetch" href="/assets/js/13.66816190.js"><link rel="prefetch" href="/assets/js/130.a3f03ff0.js"><link rel="prefetch" href="/assets/js/131.626e55b3.js"><link rel="prefetch" href="/assets/js/132.95f1e93d.js"><link rel="prefetch" href="/assets/js/133.6e47359a.js"><link rel="prefetch" href="/assets/js/134.47e4440e.js"><link rel="prefetch" href="/assets/js/135.adb1a4c4.js"><link rel="prefetch" href="/assets/js/136.45c43972.js"><link rel="prefetch" href="/assets/js/137.8ba370d0.js"><link rel="prefetch" href="/assets/js/138.74346e65.js"><link rel="prefetch" href="/assets/js/139.fad68529.js"><link rel="prefetch" href="/assets/js/14.1067acde.js"><link rel="prefetch" href="/assets/js/140.d7cf0c13.js"><link rel="prefetch" href="/assets/js/141.53ad4e2c.js"><link rel="prefetch" href="/assets/js/142.3054db6d.js"><link rel="prefetch" href="/assets/js/143.752707de.js"><link rel="prefetch" href="/assets/js/144.6bb5b315.js"><link rel="prefetch" href="/assets/js/145.5be11191.js"><link rel="prefetch" href="/assets/js/146.65c4a5f7.js"><link rel="prefetch" href="/assets/js/147.503abedf.js"><link rel="prefetch" href="/assets/js/148.fac10f82.js"><link rel="prefetch" href="/assets/js/149.39bdc952.js"><link rel="prefetch" href="/assets/js/15.9ca9208b.js"><link rel="prefetch" href="/assets/js/150.763447dd.js"><link rel="prefetch" href="/assets/js/151.74711268.js"><link rel="prefetch" href="/assets/js/152.04b548a4.js"><link rel="prefetch" href="/assets/js/153.f76cfea2.js"><link rel="prefetch" href="/assets/js/154.63dde107.js"><link rel="prefetch" href="/assets/js/155.0c715174.js"><link rel="prefetch" href="/assets/js/156.685fab04.js"><link rel="prefetch" href="/assets/js/157.6739174d.js"><link rel="prefetch" href="/assets/js/158.882bbbfc.js"><link rel="prefetch" href="/assets/js/159.aede9782.js"><link rel="prefetch" href="/assets/js/16.9eea9a64.js"><link rel="prefetch" href="/assets/js/160.d9be3959.js"><link rel="prefetch" href="/assets/js/161.76cc08ef.js"><link rel="prefetch" href="/assets/js/162.1bdec2e1.js"><link rel="prefetch" href="/assets/js/163.ac0295b3.js"><link rel="prefetch" href="/assets/js/164.cf094dd8.js"><link rel="prefetch" href="/assets/js/165.fa43d86b.js"><link rel="prefetch" href="/assets/js/166.b42e919a.js"><link rel="prefetch" href="/assets/js/167.cd4e2412.js"><link rel="prefetch" href="/assets/js/168.b923679f.js"><link rel="prefetch" href="/assets/js/169.0381e4c3.js"><link rel="prefetch" href="/assets/js/17.8d0803f5.js"><link rel="prefetch" href="/assets/js/170.07048ad0.js"><link rel="prefetch" href="/assets/js/171.efbf2d1b.js"><link rel="prefetch" href="/assets/js/172.c6f3f3a1.js"><link rel="prefetch" href="/assets/js/173.b0448642.js"><link rel="prefetch" href="/assets/js/174.9c3b47d1.js"><link rel="prefetch" href="/assets/js/175.6399aebe.js"><link rel="prefetch" href="/assets/js/176.72f40c53.js"><link rel="prefetch" href="/assets/js/177.e4a8654e.js"><link rel="prefetch" href="/assets/js/178.d88d2f1f.js"><link rel="prefetch" href="/assets/js/179.5f89ba63.js"><link rel="prefetch" href="/assets/js/18.3444113b.js"><link rel="prefetch" href="/assets/js/180.9add0321.js"><link rel="prefetch" href="/assets/js/181.a089c28c.js"><link rel="prefetch" href="/assets/js/182.5c030e78.js"><link rel="prefetch" href="/assets/js/183.a96244f5.js"><link rel="prefetch" href="/assets/js/184.8a73b7fa.js"><link rel="prefetch" href="/assets/js/185.39aa4852.js"><link rel="prefetch" href="/assets/js/186.63c92b48.js"><link rel="prefetch" href="/assets/js/187.0afea76b.js"><link rel="prefetch" href="/assets/js/188.4b72b322.js"><link rel="prefetch" href="/assets/js/189.dacc64a4.js"><link rel="prefetch" href="/assets/js/19.45b60500.js"><link rel="prefetch" href="/assets/js/190.6e72d819.js"><link rel="prefetch" href="/assets/js/191.f3361d30.js"><link rel="prefetch" href="/assets/js/192.d02dc2b3.js"><link rel="prefetch" href="/assets/js/193.9185ff86.js"><link rel="prefetch" href="/assets/js/194.109e4d2b.js"><link rel="prefetch" href="/assets/js/195.9a12a7ef.js"><link rel="prefetch" href="/assets/js/196.30492964.js"><link rel="prefetch" href="/assets/js/197.b8f1016e.js"><link rel="prefetch" href="/assets/js/198.cf2ff396.js"><link rel="prefetch" href="/assets/js/199.617d97ea.js"><link rel="prefetch" href="/assets/js/20.ee4a86f1.js"><link rel="prefetch" href="/assets/js/200.414ac8b8.js"><link rel="prefetch" href="/assets/js/201.6eb83ac5.js"><link rel="prefetch" href="/assets/js/202.f94a8455.js"><link rel="prefetch" href="/assets/js/203.fe4c3d1f.js"><link rel="prefetch" href="/assets/js/204.003cdcb5.js"><link rel="prefetch" href="/assets/js/205.dfb2370b.js"><link rel="prefetch" href="/assets/js/206.a3cdde0f.js"><link rel="prefetch" href="/assets/js/207.7eeb49e5.js"><link rel="prefetch" href="/assets/js/208.f77631f1.js"><link rel="prefetch" href="/assets/js/209.03b79d5b.js"><link rel="prefetch" href="/assets/js/21.81e9a796.js"><link rel="prefetch" href="/assets/js/210.4d77fab4.js"><link rel="prefetch" href="/assets/js/211.504c34d5.js"><link rel="prefetch" href="/assets/js/212.71bb8bf5.js"><link rel="prefetch" href="/assets/js/213.a3b6c27d.js"><link rel="prefetch" href="/assets/js/214.0da60311.js"><link rel="prefetch" href="/assets/js/215.cdeb87d0.js"><link rel="prefetch" href="/assets/js/216.75ce111f.js"><link rel="prefetch" href="/assets/js/217.2a924ebe.js"><link rel="prefetch" href="/assets/js/218.b3782b37.js"><link rel="prefetch" href="/assets/js/219.a7b3d0e2.js"><link rel="prefetch" href="/assets/js/22.037348a7.js"><link rel="prefetch" href="/assets/js/220.67f4dc4d.js"><link rel="prefetch" href="/assets/js/221.122e58c3.js"><link rel="prefetch" href="/assets/js/222.4a6ce5ee.js"><link rel="prefetch" href="/assets/js/223.38c97c72.js"><link rel="prefetch" href="/assets/js/224.08f05ad3.js"><link rel="prefetch" href="/assets/js/225.a1f1248d.js"><link rel="prefetch" href="/assets/js/226.49679af1.js"><link rel="prefetch" href="/assets/js/227.272b5118.js"><link rel="prefetch" href="/assets/js/228.97fe27a2.js"><link rel="prefetch" href="/assets/js/229.08893382.js"><link rel="prefetch" href="/assets/js/23.e7c462f9.js"><link rel="prefetch" href="/assets/js/230.fca4ec8d.js"><link rel="prefetch" href="/assets/js/231.dcf2e717.js"><link rel="prefetch" href="/assets/js/232.ad58634e.js"><link rel="prefetch" href="/assets/js/233.62b51320.js"><link rel="prefetch" href="/assets/js/234.366a5c15.js"><link rel="prefetch" href="/assets/js/235.37ee5e06.js"><link rel="prefetch" href="/assets/js/236.c8db6b56.js"><link rel="prefetch" href="/assets/js/237.2a5623bb.js"><link rel="prefetch" href="/assets/js/238.a1e8e150.js"><link rel="prefetch" href="/assets/js/239.9173cd25.js"><link rel="prefetch" href="/assets/js/24.b2111a14.js"><link rel="prefetch" href="/assets/js/240.74555993.js"><link rel="prefetch" href="/assets/js/241.78b20824.js"><link rel="prefetch" href="/assets/js/242.6acd697d.js"><link rel="prefetch" href="/assets/js/243.e43066f7.js"><link rel="prefetch" href="/assets/js/244.73e01f3b.js"><link rel="prefetch" href="/assets/js/245.3f27ce09.js"><link rel="prefetch" href="/assets/js/246.c0bf05db.js"><link rel="prefetch" href="/assets/js/247.0d837589.js"><link rel="prefetch" href="/assets/js/248.d09c386a.js"><link rel="prefetch" href="/assets/js/249.10459d63.js"><link rel="prefetch" href="/assets/js/25.0610f8ef.js"><link rel="prefetch" href="/assets/js/250.f48824df.js"><link rel="prefetch" href="/assets/js/251.121f3d80.js"><link rel="prefetch" href="/assets/js/252.5f893054.js"><link rel="prefetch" href="/assets/js/253.1417eb3b.js"><link rel="prefetch" href="/assets/js/254.5eac655f.js"><link rel="prefetch" href="/assets/js/255.c730cba3.js"><link rel="prefetch" href="/assets/js/256.1219af97.js"><link rel="prefetch" href="/assets/js/257.04701e9e.js"><link rel="prefetch" href="/assets/js/258.3a3b2150.js"><link rel="prefetch" href="/assets/js/259.e70aceaf.js"><link rel="prefetch" href="/assets/js/26.9114f6fc.js"><link rel="prefetch" href="/assets/js/260.7b8b2967.js"><link rel="prefetch" href="/assets/js/261.c0961706.js"><link rel="prefetch" href="/assets/js/262.d6f757d3.js"><link rel="prefetch" href="/assets/js/263.5659fcc5.js"><link rel="prefetch" href="/assets/js/264.8b56c627.js"><link rel="prefetch" href="/assets/js/265.16d5ce3a.js"><link rel="prefetch" href="/assets/js/266.17f217c2.js"><link rel="prefetch" href="/assets/js/267.e70076df.js"><link rel="prefetch" href="/assets/js/268.b06b7a1e.js"><link rel="prefetch" href="/assets/js/269.b5819c04.js"><link rel="prefetch" href="/assets/js/27.2f304f70.js"><link rel="prefetch" href="/assets/js/270.0beee4b9.js"><link rel="prefetch" href="/assets/js/271.90d0c5e4.js"><link rel="prefetch" href="/assets/js/272.1d617a52.js"><link rel="prefetch" href="/assets/js/273.5d7054ff.js"><link rel="prefetch" href="/assets/js/274.eedc246e.js"><link rel="prefetch" href="/assets/js/275.e89375ea.js"><link rel="prefetch" href="/assets/js/276.1ee4957e.js"><link rel="prefetch" href="/assets/js/277.3fb8abc6.js"><link rel="prefetch" href="/assets/js/278.bc288b6e.js"><link rel="prefetch" href="/assets/js/279.c3111a87.js"><link rel="prefetch" href="/assets/js/28.6a081e3d.js"><link rel="prefetch" href="/assets/js/280.d7edbe4d.js"><link rel="prefetch" href="/assets/js/281.98d9104a.js"><link rel="prefetch" href="/assets/js/282.d09079ea.js"><link rel="prefetch" href="/assets/js/283.996adb15.js"><link rel="prefetch" href="/assets/js/284.ff69d3db.js"><link rel="prefetch" href="/assets/js/285.75d86772.js"><link rel="prefetch" href="/assets/js/286.48f2c786.js"><link rel="prefetch" href="/assets/js/287.964dc8a8.js"><link rel="prefetch" href="/assets/js/288.f50b81c4.js"><link rel="prefetch" href="/assets/js/289.b15ef4ba.js"><link rel="prefetch" href="/assets/js/29.e6c29d28.js"><link rel="prefetch" href="/assets/js/290.065686f6.js"><link rel="prefetch" href="/assets/js/291.8e91cb89.js"><link rel="prefetch" href="/assets/js/292.23991b2a.js"><link rel="prefetch" href="/assets/js/293.d89282cb.js"><link rel="prefetch" href="/assets/js/294.8459cf6b.js"><link rel="prefetch" href="/assets/js/295.5159bb70.js"><link rel="prefetch" href="/assets/js/296.bad535dd.js"><link rel="prefetch" href="/assets/js/297.a89c8004.js"><link rel="prefetch" href="/assets/js/298.bfc2ed34.js"><link rel="prefetch" href="/assets/js/30.7ef93552.js"><link rel="prefetch" href="/assets/js/300.04fd45af.js"><link rel="prefetch" href="/assets/js/301.913d3df9.js"><link rel="prefetch" href="/assets/js/302.10b258dd.js"><link rel="prefetch" href="/assets/js/303.fbdf4e67.js"><link rel="prefetch" href="/assets/js/304.e0ff7d5b.js"><link rel="prefetch" href="/assets/js/305.300c5349.js"><link rel="prefetch" href="/assets/js/306.9f73bc93.js"><link rel="prefetch" href="/assets/js/307.b187f491.js"><link rel="prefetch" href="/assets/js/308.d03c07b3.js"><link rel="prefetch" href="/assets/js/309.937b56a3.js"><link rel="prefetch" href="/assets/js/31.7afea5f6.js"><link rel="prefetch" href="/assets/js/310.635a8c4d.js"><link rel="prefetch" href="/assets/js/311.573fcf4a.js"><link rel="prefetch" href="/assets/js/312.bc67fce0.js"><link rel="prefetch" href="/assets/js/313.b5013426.js"><link rel="prefetch" href="/assets/js/314.ae21fa05.js"><link rel="prefetch" href="/assets/js/315.37182c2b.js"><link rel="prefetch" href="/assets/js/316.06cf15a9.js"><link rel="prefetch" href="/assets/js/317.df759a5b.js"><link rel="prefetch" href="/assets/js/318.1a66ad2b.js"><link rel="prefetch" href="/assets/js/319.17d9681e.js"><link rel="prefetch" href="/assets/js/32.861f9380.js"><link rel="prefetch" href="/assets/js/320.10769343.js"><link rel="prefetch" href="/assets/js/321.cc4a3790.js"><link rel="prefetch" href="/assets/js/322.d2b9bced.js"><link rel="prefetch" href="/assets/js/323.dadd7af5.js"><link rel="prefetch" href="/assets/js/324.4281b9b7.js"><link rel="prefetch" href="/assets/js/325.313d6817.js"><link rel="prefetch" href="/assets/js/326.e63bdc82.js"><link rel="prefetch" href="/assets/js/327.f47507e0.js"><link rel="prefetch" href="/assets/js/328.f35cf934.js"><link rel="prefetch" href="/assets/js/329.a1084770.js"><link rel="prefetch" href="/assets/js/33.ab9e8c2b.js"><link rel="prefetch" href="/assets/js/330.ca4cd65f.js"><link rel="prefetch" href="/assets/js/331.e75a5907.js"><link rel="prefetch" href="/assets/js/332.fb511231.js"><link rel="prefetch" href="/assets/js/333.f93dbb9e.js"><link rel="prefetch" href="/assets/js/334.a71bbaa5.js"><link rel="prefetch" href="/assets/js/335.2fa937a5.js"><link rel="prefetch" href="/assets/js/336.a9679a8c.js"><link rel="prefetch" href="/assets/js/337.597945ba.js"><link rel="prefetch" href="/assets/js/338.05b854a8.js"><link rel="prefetch" href="/assets/js/339.fb34c537.js"><link rel="prefetch" href="/assets/js/34.91cf34bb.js"><link rel="prefetch" href="/assets/js/340.bb04bb94.js"><link rel="prefetch" href="/assets/js/341.d8eab431.js"><link rel="prefetch" href="/assets/js/342.adb6fccd.js"><link rel="prefetch" href="/assets/js/343.2e514ff7.js"><link rel="prefetch" href="/assets/js/344.ae288347.js"><link rel="prefetch" href="/assets/js/345.36cef5e0.js"><link rel="prefetch" href="/assets/js/346.18900139.js"><link rel="prefetch" href="/assets/js/347.55de0e5f.js"><link rel="prefetch" href="/assets/js/348.e8df7344.js"><link rel="prefetch" href="/assets/js/349.391634ff.js"><link rel="prefetch" href="/assets/js/35.a54aaacc.js"><link rel="prefetch" href="/assets/js/350.6ed9c27e.js"><link rel="prefetch" href="/assets/js/351.13d8f554.js"><link rel="prefetch" href="/assets/js/352.42a626e4.js"><link rel="prefetch" href="/assets/js/353.28e60cfb.js"><link rel="prefetch" href="/assets/js/354.1d876de3.js"><link rel="prefetch" href="/assets/js/355.be9dd30e.js"><link rel="prefetch" href="/assets/js/356.c76485ba.js"><link rel="prefetch" href="/assets/js/357.3beca4a2.js"><link rel="prefetch" href="/assets/js/358.34ce9b7c.js"><link rel="prefetch" href="/assets/js/359.62662c8a.js"><link rel="prefetch" href="/assets/js/36.1fb34483.js"><link rel="prefetch" href="/assets/js/360.1d4fd1c2.js"><link rel="prefetch" href="/assets/js/361.cedc472b.js"><link rel="prefetch" href="/assets/js/362.1a42a5a9.js"><link rel="prefetch" href="/assets/js/363.3212b786.js"><link rel="prefetch" href="/assets/js/364.795f5fbb.js"><link rel="prefetch" href="/assets/js/365.ba5aeafd.js"><link rel="prefetch" href="/assets/js/366.9e7c06f4.js"><link rel="prefetch" href="/assets/js/367.520bbbb6.js"><link rel="prefetch" href="/assets/js/368.1645c28e.js"><link rel="prefetch" href="/assets/js/369.3809a538.js"><link rel="prefetch" href="/assets/js/37.ee12bd46.js"><link rel="prefetch" href="/assets/js/370.217b10df.js"><link rel="prefetch" href="/assets/js/371.c8a9e0a9.js"><link rel="prefetch" href="/assets/js/372.247d9278.js"><link rel="prefetch" href="/assets/js/373.0eed1f0a.js"><link rel="prefetch" href="/assets/js/374.881713dc.js"><link rel="prefetch" href="/assets/js/375.b09c525d.js"><link rel="prefetch" href="/assets/js/376.43c32017.js"><link rel="prefetch" href="/assets/js/377.47cbbf1d.js"><link rel="prefetch" href="/assets/js/378.dd3eec1a.js"><link rel="prefetch" href="/assets/js/379.191b4f64.js"><link rel="prefetch" href="/assets/js/38.242d9c7f.js"><link rel="prefetch" href="/assets/js/380.8f916b60.js"><link rel="prefetch" href="/assets/js/381.fe1dfc6a.js"><link rel="prefetch" href="/assets/js/382.067d85f2.js"><link rel="prefetch" href="/assets/js/383.eeab62ac.js"><link rel="prefetch" href="/assets/js/384.ffab213d.js"><link rel="prefetch" href="/assets/js/385.94da6ae9.js"><link rel="prefetch" href="/assets/js/386.991dd01d.js"><link rel="prefetch" href="/assets/js/387.ffb790b4.js"><link rel="prefetch" href="/assets/js/388.ed3f39f5.js"><link rel="prefetch" href="/assets/js/389.a6174e1c.js"><link rel="prefetch" href="/assets/js/39.dbcc5d61.js"><link rel="prefetch" href="/assets/js/390.fe916439.js"><link rel="prefetch" href="/assets/js/391.69f751d7.js"><link rel="prefetch" href="/assets/js/392.e6c52ac2.js"><link rel="prefetch" href="/assets/js/393.7da57f52.js"><link rel="prefetch" href="/assets/js/394.1a7a717f.js"><link rel="prefetch" href="/assets/js/395.3399844a.js"><link rel="prefetch" href="/assets/js/396.7f2e8145.js"><link rel="prefetch" href="/assets/js/397.42b4026a.js"><link rel="prefetch" href="/assets/js/398.5c231ed1.js"><link rel="prefetch" href="/assets/js/399.4566824b.js"><link rel="prefetch" href="/assets/js/4.fea0df6a.js"><link rel="prefetch" href="/assets/js/40.493a59f4.js"><link rel="prefetch" href="/assets/js/400.6882e1d0.js"><link rel="prefetch" href="/assets/js/401.527ff51d.js"><link rel="prefetch" href="/assets/js/402.e9c37d2a.js"><link rel="prefetch" href="/assets/js/403.360b2d7d.js"><link rel="prefetch" href="/assets/js/404.4d3adaac.js"><link rel="prefetch" href="/assets/js/405.c6785e58.js"><link rel="prefetch" href="/assets/js/406.ea8781ae.js"><link rel="prefetch" href="/assets/js/407.b0463036.js"><link rel="prefetch" href="/assets/js/408.56b3f633.js"><link rel="prefetch" href="/assets/js/409.83b77a08.js"><link rel="prefetch" href="/assets/js/41.bd45f48a.js"><link rel="prefetch" href="/assets/js/410.808144cb.js"><link rel="prefetch" href="/assets/js/411.efd2ae36.js"><link rel="prefetch" href="/assets/js/412.42b1274b.js"><link rel="prefetch" href="/assets/js/42.3475d232.js"><link rel="prefetch" href="/assets/js/43.2407adcb.js"><link rel="prefetch" href="/assets/js/44.e2a316c5.js"><link rel="prefetch" href="/assets/js/45.1c5f24df.js"><link rel="prefetch" href="/assets/js/46.18a61726.js"><link rel="prefetch" href="/assets/js/47.707f9f7a.js"><link rel="prefetch" href="/assets/js/48.5dd41842.js"><link rel="prefetch" href="/assets/js/49.d3acd899.js"><link rel="prefetch" href="/assets/js/5.461bccd8.js"><link rel="prefetch" href="/assets/js/50.02c1a863.js"><link rel="prefetch" href="/assets/js/51.ccf0ba79.js"><link rel="prefetch" href="/assets/js/52.3aee611f.js"><link rel="prefetch" href="/assets/js/53.bf3daa85.js"><link rel="prefetch" href="/assets/js/54.d61cd0a6.js"><link rel="prefetch" href="/assets/js/55.5986d91d.js"><link rel="prefetch" href="/assets/js/56.da7d4622.js"><link rel="prefetch" href="/assets/js/57.a53216e9.js"><link rel="prefetch" href="/assets/js/58.eb424782.js"><link rel="prefetch" href="/assets/js/59.0db825e2.js"><link rel="prefetch" href="/assets/js/6.76cd68c6.js"><link rel="prefetch" href="/assets/js/60.885ad249.js"><link rel="prefetch" href="/assets/js/61.9a010ecb.js"><link rel="prefetch" href="/assets/js/62.907dc688.js"><link rel="prefetch" href="/assets/js/63.69f56658.js"><link rel="prefetch" href="/assets/js/64.ec17ab0c.js"><link rel="prefetch" href="/assets/js/65.555f05e2.js"><link rel="prefetch" href="/assets/js/66.82f26703.js"><link rel="prefetch" href="/assets/js/67.3d43cd18.js"><link rel="prefetch" href="/assets/js/68.b14b7646.js"><link rel="prefetch" href="/assets/js/69.f4f9155f.js"><link rel="prefetch" href="/assets/js/7.f2fbf882.js"><link rel="prefetch" href="/assets/js/70.146046b6.js"><link rel="prefetch" href="/assets/js/71.5cc26b01.js"><link rel="prefetch" href="/assets/js/72.bc119d92.js"><link rel="prefetch" href="/assets/js/73.9d63e7dc.js"><link rel="prefetch" href="/assets/js/74.f12f047e.js"><link rel="prefetch" href="/assets/js/75.131756e3.js"><link rel="prefetch" href="/assets/js/76.147c95b9.js"><link rel="prefetch" href="/assets/js/77.4f81bf5f.js"><link rel="prefetch" href="/assets/js/78.2620317a.js"><link rel="prefetch" href="/assets/js/79.7d79e1df.js"><link rel="prefetch" href="/assets/js/8.d346a35e.js"><link rel="prefetch" href="/assets/js/80.08435f23.js"><link rel="prefetch" href="/assets/js/81.bbea59aa.js"><link rel="prefetch" href="/assets/js/82.93bbfeeb.js"><link rel="prefetch" href="/assets/js/83.9e0f2d3f.js"><link rel="prefetch" href="/assets/js/84.2a78f0ef.js"><link rel="prefetch" href="/assets/js/85.464597f8.js"><link rel="prefetch" href="/assets/js/86.8cced385.js"><link rel="prefetch" href="/assets/js/87.6eab3983.js"><link rel="prefetch" href="/assets/js/88.919be664.js"><link rel="prefetch" href="/assets/js/89.a9c88099.js"><link rel="prefetch" href="/assets/js/9.2b013f04.js"><link rel="prefetch" href="/assets/js/90.e30432e7.js"><link rel="prefetch" href="/assets/js/91.6b17f9d5.js"><link rel="prefetch" href="/assets/js/92.044d73f7.js"><link rel="prefetch" href="/assets/js/93.446151cb.js"><link rel="prefetch" href="/assets/js/94.777e77bb.js"><link rel="prefetch" href="/assets/js/95.dbda6d80.js"><link rel="prefetch" href="/assets/js/96.e280ef31.js"><link rel="prefetch" href="/assets/js/97.2d68e74b.js"><link rel="prefetch" href="/assets/js/98.93faeca6.js"><link rel="prefetch" href="/assets/js/99.8285fa98.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.029a7c95.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.89e32c3d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">以太坊改进提案 EIPs</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="https://ethlibrary.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  About us
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <a href="https://github.com/ethlibrary/EIPs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="https://ethlibrary.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  About us
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <a href="https://github.com/ethlibrary/EIPs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><a href="/all.html" class="sidebar-link">All EIPs</a></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Status</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/draft.html" class="sidebar-link">Draft</a></li><li><a href="/review.html" class="sidebar-link">Review</a></li><li><a href="/lastCall.html" class="sidebar-link">Last Call</a></li><li><a href="/accepted.html" class="sidebar-link">Accepted</a></li><li><a href="/final_and_living.html" class="sidebar-link">Final and Living</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Type</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/core.html" class="sidebar-link">Core (165)</a></li><li><a href="/networking.html" class="sidebar-link">Networking (11)</a></li><li><a href="/interface.html" class="sidebar-link">Interface (38)</a></li><li><a href="/erc.html" class="sidebar-link">ERC (153)</a></li><li><a href="/meta.html" class="sidebar-link">Meta (18)</a></li><li><a href="/informational.html" class="sidebar-link">Informational (6)</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="simple-summary"><a href="#simple-summary" class="header-anchor">#</a> Simple Summary</h2> <p>This ERC provides standard interfaces and processes for single-asset flash loans.</p> <h2 id="abstract"><a href="#abstract" class="header-anchor">#</a> Abstract</h2> <p>A flash loan is a smart contract transaction in which a lender smart contract lends assets to a borrower smart contract with the condition that the assets are returned, plus an optional fee, before the end of the transaction. This ERC specifies interfaces for lenders to accept flash loan requests, and for borrowers to take temporary control of the transaction within the lender execution. The process for the safe execution of flash loans is also specified.</p> <h2 id="motivation"><a href="#motivation" class="header-anchor">#</a> Motivation</h2> <p>Flash loans allow smart contracts to lend an amount of tokens without a requirement for collateral, with the condition that they must be returned within the same transaction.</p> <p>Early adopters of the flash loan pattern have produced different interfaces and different use patterns. The diversification is expected to intensify, and with it the technical debt required to integrate with diverse flash lending patterns.</p> <p>Some of the high level diferences in the approaches across the protocols include:</p> <ul><li>Repayment approaches at the end of the transaction, where some pull the principal plus the fee from the loan receiver, and others where the loan receiver needs to manually return the principal and the fee to the lender.</li> <li>Some lenders offer the ability to repay the loan using a token that is different to what was originally borrowed, which can reduce the overall complexity of the flash transaction and gas fees.</li> <li>Some lenders offer a single entry point into the protocol regardless of whether you're buying, selling, depositing or chaining them together as a flash loan, whereas other protocols offer discrete entry points.</li> <li>Some lenders allow to flash mint any amount of their native token without charging a fee, effectively allowing flash loans bounded by computational constraints instead of asset ownership constraints.</li></ul> <h2 id="specification"><a href="#specification" class="header-anchor">#</a> Specification</h2> <p>A flash lending feature integrates two smart contracts using a callback pattern. These are called the LENDER and the RECEIVER in this EIP.</p> <h3 id="lender-specification"><a href="#lender-specification" class="header-anchor">#</a> Lender Specification</h3> <p>A <code>lender</code> MUST implement the IERC3156FlashLender interface.</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>pragma solidity ^0.7.0 || ^0.8.0;
+import &quot;./IERC3156FlashBorrower.sol&quot;;
+
+
+interface IERC3156FlashLender {
+
+    /**
+     * @dev The amount of currency available to be lent.
+     * @param token The loan currency.
+     * @return The amount of `token` that can be borrowed.
+     */
+    function maxFlashLoan(
+        address token
+    ) external view returns (uint256);
+
+    /**
+     * @dev The fee to be charged for a given loan.
+     * @param token The loan currency.
+     * @param amount The amount of tokens lent.
+     * @return The amount of `token` to be charged for the loan, on top of the returned principal.
+     */
+    function flashFee(
+        address token,
+        uint256 amount
+    ) external view returns (uint256);
+
+    /**
+     * @dev Initiate a flash loan.
+     * @param receiver The receiver of the tokens in the loan, and the receiver of the callback.
+     * @param token The loan currency.
+     * @param amount The amount of tokens lent.
+     * @param data Arbitrary data structure, intended to contain user-defined parameters.
+     */
+    function flashLoan(
+        IERC3156FlashBorrower receiver,
+        address token,
+        uint256 amount,
+        bytes calldata data
+    ) external returns (bool);
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br></div></div><p>The <code>maxFlashLoan</code> function MUST return the maximum loan possible for <code>token</code>. If a <code>token</code> is not currently supported <code>maxFlashLoan</code> MUST return 0, instead of reverting.</p> <p>The <code>flashFee</code> function MUST return the fee charged for a loan of <code>amount</code> <code>token</code>. If the token is not supported <code>flashFee</code> MUST revert.</p> <p>The <code>flashLoan</code> function MUST include a callback to the <code>onFlashLoan</code> function in a <code>IERC3156FlashBorrower</code> contract.</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>function flashLoan(
+    IERC3156FlashBorrower receiver,
+    address token,
+    uint256 amount,
+    bytes calldata data
+) external returns (bool) {
+  ...
+  require(
+      receiver.onFlashLoan(msg.sender, token, amount, fee, data) == keccak256(&quot;ERC3156FlashBorrower.onFlashLoan&quot;),
+      &quot;IERC3156: Callback failed&quot;
+  );
+  ...
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><p>The <code>flashLoan</code> function MUST transfer <code>amount</code> of <code>token</code> to <code>receiver</code> before the callback to the receiver.</p> <p>The <code>flashLoan</code> function MUST include <code>msg.sender</code> as the <code>initiator</code> to <code>onFlashLoan</code>.</p> <p>The <code>flashLoan</code> function MUST NOT modify the <code>token</code>, <code>amount</code> and <code>data</code> parameter received, and MUST pass them on to <code>onFlashLoan</code>.</p> <p>The <code>flashLoan</code> function MUST include a <code>fee</code> argument to <code>onFlashLoan</code> with the fee to pay for the loan on top of the principal, ensuring that <code>fee == flashFee(token, amount)</code>.</p> <p>The <code>lender</code> MUST verify that the <code>onFlashLoan</code> callback returns the keccak256 hash of &quot;ERC3156FlashBorrower.onFlashLoan&quot;.</p> <p>After the callback, the <code>flashLoan</code> function MUST take the <code>amount + fee</code> <code>token</code> from the <code>receiver</code>, or revert if this is not successful.</p> <p>If successful, <code>flashLoan</code> MUST return <code>true</code>.</p> <h3 id="receiver-specification"><a href="#receiver-specification" class="header-anchor">#</a> Receiver Specification</h3> <p>A <code>receiver</code> of flash loans MUST implement the IERC3156FlashBorrower interface:</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>pragma solidity ^0.7.0 || ^0.8.0;
+
+
+interface IERC3156FlashBorrower {
+
+    /**
+     * @dev Receive a flash loan.
+     * @param initiator The initiator of the loan.
+     * @param token The loan currency.
+     * @param amount The amount of tokens lent.
+     * @param fee The additional amount of tokens to repay.
+     * @param data Arbitrary data structure, intended to contain user-defined parameters.
+     * @return The keccak256 hash of &quot;ERC3156FlashBorrower.onFlashLoan&quot;
+     */
+    function onFlashLoan(
+        address initiator,
+        address token,
+        uint256 amount,
+        uint256 fee,
+        bytes calldata data
+    ) external returns (bytes32);
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><p>For the transaction to not revert, <code>receiver</code> MUST approve <code>amount + fee</code> of <code>token</code> to be taken by <code>msg.sender</code> before the end of <code>onFlashLoan</code>.</p> <p>If successful, <code>onFlashLoan</code> MUST return the keccak256 hash of &quot;ERC3156FlashBorrower.onFlashLoan&quot;.</p> <h2 id="rationale"><a href="#rationale" class="header-anchor">#</a> Rationale</h2> <p>The interfaces described in this ERC have been chosen as to cover the known flash lending use cases, while allowing for safe and gas efficient implementations.</p> <p><code>flashFee</code> reverts on unsupported tokens, because returning a numerical value would be incorrect.</p> <p><code>flashLoan</code> has been chosen as a function name as descriptive enough, unlikely to clash with other functions in the lender, and including both the use cases in which the tokens lent are held or minted by the lender.</p> <p><code>receiver</code> is taken as a parameter to allow flexibility on the implementation of separate loan initiators and receivers.</p> <p>Existing flash lenders all provide flash loans of several token types from the same contract. Providing a <code>token</code> parameter in both the <code>flashLoan</code> and <code>onFlashLoan</code> functions matches closely the observed functionality.</p> <p>A <code>bytes calldata data</code> parameter is included for the caller to pass arbitrary information to the <code>receiver</code>, without impacting the utility of the <code>flashLoan</code> standard.</p> <p><code>onFlashLoan</code> has been chosen as a function name as descriptive enough, unlikely to clash with other functions in the <code>receiver</code>, and following the <code>onAction</code> naming pattern used as well in EIP-667.</p> <p>A <code>initiator</code> will often be required in the <code>onFlashLoan</code> function, which the lender knows as <code>msg.sender</code>. An alternative implementation which would embed the <code>initiator</code> in the <code>data</code> parameter by the caller would require an additional mechanism for the receiver to verify its accuracy, and is not advisable.</p> <p>The <code>amount</code> will be required in the <code>onFlashLoan</code> function, which the lender took as a parameter. An alternative implementation which would embed the <code>amount</code> in the <code>data</code> parameter by the caller would require an additional mechanism for the receiver to verify its accuracy, and is not advisable.</p> <p>A <code>fee</code> will often be calculated in the <code>flashLoan</code> function, which the <code>receiver</code> must be aware of for repayment. Passing the <code>fee</code> as a parameter instead of appended to <code>data</code> is simple and effective.</p> <p>The <code>amount + fee</code> are pulled from the <code>receiver</code> to allow the <code>lender</code> to implement other features that depend on using <code>transferFrom</code>, without having to lock them for the duration of a flash loan. An alternative implementation where the repayment is transferred to the <code>lender</code> is also possible, but would need all other features in the lender to be also based in using <code>transfer</code> instead of <code>transferFrom</code>. Given the lower complexity and prevalence of a &quot;pull&quot; architecture over a &quot;push&quot; architecture, &quot;pull&quot; was chosen.</p> <h2 id="backwards-compatibility"><a href="#backwards-compatibility" class="header-anchor">#</a> Backwards Compatibility</h2> <p>No backwards compatibility issues identified.</p> <h2 id="implementation"><a href="#implementation" class="header-anchor">#</a> Implementation</h2> <h3 id="flash-borrower-reference-implementation"><a href="#flash-borrower-reference-implementation" class="header-anchor">#</a> Flash Borrower Reference Implementation</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>pragma solidity ^0.8.0;
+
+import &quot;./interfaces/IERC20.sol&quot;;
+import &quot;./interfaces/IERC3156FlashBorrower.sol&quot;;
+import &quot;./interfaces/IERC3156FlashLender.sol&quot;;
+
+
+contract FlashBorrower is IERC3156FlashBorrower {
+    enum Action {NORMAL, OTHER}
+
+    IERC3156FlashLender lender;
+
+    constructor (
+        IERC3156FlashLender lender_
+    ) {
+        lender = lender_;
+    }
+
+    /// @dev ERC-3156 Flash loan callback
+    function onFlashLoan(
+        address initiator,
+        address token,
+        uint256 amount,
+        uint256 fee,
+        bytes calldata data
+    ) external override returns(bool) {
+        require(
+            msg.sender == address(lender),
+            &quot;FlashBorrower: Untrusted lender&quot;
+        );
+        require(
+            initiator == address(this),
+            &quot;FlashBorrower: Untrusted loan initiator&quot;
+        );
+        (Action action) = abi.decode(data, (Action));
+        if (action == Action.NORMAL) {
+            // do one thing
+        } else if (action == Action.OTHER) {
+            // do another
+        }
+        return keccak256(&quot;ERC3156FlashBorrower.onFlashLoan&quot;);
+    }
+
+    /// @dev Initiate a flash loan
+    function flashBorrow(
+        address token,
+        uint256 amount
+    ) public {
+        bytes memory data = abi.encode(Action.NORMAL);
+        uint256 _allowance = IERC20(token).allowance(address(this), address(lender));
+        uint256 _fee = lender.flashFee(token, amount);
+        uint256 _repayment = amount + _fee;
+        IERC20(token).approve(address(lender), _allowance + _repayment);
+        lender.flashLoan(this, token, amount, data);
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br></div></div><h3 id="flash-mint-reference-implementation"><a href="#flash-mint-reference-implementation" class="header-anchor">#</a> Flash Mint Reference Implementation</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>pragma solidity ^0.8.0;
+
+import &quot;../ERC20.sol&quot;;
+import &quot;../interfaces/IERC20.sol&quot;;
+import &quot;../interfaces/IERC3156FlashBorrower.sol&quot;;
+import &quot;../interfaces/IERC3156FlashLender.sol&quot;;
+
+
+/**
+ * @author Alberto Cuesta Cañada
+ * @dev Extension of {ERC20} that allows flash minting.
+ */
+contract FlashMinter is ERC20, IERC3156FlashLender {
+
+    bytes32 public constant CALLBACK_SUCCESS = keccak256(&quot;ERC3156FlashBorrower.onFlashLoan&quot;);
+    uint256 public fee; //  1 == 0.0001 %.
+
+    /**
+     * @param fee_ The percentage of the loan `amount` that needs to be repaid, in addition to `amount`.
+     */
+    constructor (
+        string memory name,
+        string memory symbol,
+        uint256 fee_
+    ) ERC20(name, symbol) {
+        fee = fee_;
+    }
+
+    /**
+     * @dev The amount of currency available to be lent.
+     * @param token The loan currency.
+     * @return The amount of `token` that can be borrowed.
+     */
+    function maxFlashLoan(
+        address token
+    ) external view override returns (uint256) {
+        return type(uint256).max - totalSupply();
+    }
+
+    /**
+     * @dev The fee to be charged for a given loan.
+     * @param token The loan currency. Must match the address of this contract.
+     * @param amount The amount of tokens lent.
+     * @return The amount of `token` to be charged for the loan, on top of the returned principal.
+     */
+    function flashFee(
+        address token,
+        uint256 amount
+    ) external view override returns (uint256) {
+        require(
+            token == address(this),
+            &quot;FlashMinter: Unsupported currency&quot;
+        );
+        return _flashFee(token, amount);
+    }
+
+    /**
+     * @dev Loan `amount` tokens to `receiver`, and takes it back plus a `flashFee` after the ERC3156 callback.
+     * @param receiver The contract receiving the tokens, needs to implement the `onFlashLoan(address user, uint256 amount, uint256 fee, bytes calldata)` interface.
+     * @param token The loan currency. Must match the address of this contract.
+     * @param amount The amount of tokens lent.
+     * @param data A data parameter to be passed on to the `receiver` for any custom use.
+     */
+    function flashLoan(
+        IERC3156FlashBorrower receiver,
+        address token,
+        uint256 amount,
+        bytes calldata data
+    ) external override returns (bool){
+        require(
+            token == address(this),
+            &quot;FlashMinter: Unsupported currency&quot;
+        );
+        uint256 fee = _flashFee(token, amount);
+        _mint(address(receiver), amount);
+        require(
+            receiver.onFlashLoan(msg.sender, token, amount, fee, data) == CALLBACK_SUCCESS,
+            &quot;FlashMinter: Callback failed&quot;
+        );
+        uint256 _allowance = allowance(address(receiver), address(this));
+        require(
+            _allowance &gt;= (amount + fee),
+            &quot;FlashMinter: Repay not approved&quot;
+        );
+        _approve(address(receiver), address(this), _allowance - (amount + fee));
+        _burn(address(receiver), amount + fee);
+        return true;
+    }
+
+    /**
+     * @dev The fee to be charged for a given loan. Internal function with no checks.
+     * @param token The loan currency.
+     * @param amount The amount of tokens lent.
+     * @return The amount of `token` to be charged for the loan, on top of the returned principal.
+     */
+    function _flashFee(
+        address token,
+        uint256 amount
+    ) internal view returns (uint256) {
+        return amount * fee / 10000;
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br></div></div><h3 id="flash-loan-reference-implementation"><a href="#flash-loan-reference-implementation" class="header-anchor">#</a> Flash Loan Reference Implementation</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>pragma solidity ^0.8.0;
+
+import &quot;../interfaces/IERC20.sol&quot;;
+import &quot;../interfaces/IERC3156FlashBorrower.sol&quot;;
+import &quot;../interfaces/IERC3156FlashLender.sol&quot;;
+
+
+/**
+ * @author Alberto Cuesta Cañada
+ * @dev Extension of {ERC20} that allows flash lending.
+ */
+contract FlashLender is IERC3156FlashLender {
+
+    bytes32 public constant CALLBACK_SUCCESS = keccak256(&quot;ERC3156FlashBorrower.onFlashLoan&quot;);
+    mapping(address =&gt; bool) public supportedTokens;
+    uint256 public fee; //  1 == 0.0001 %.
+
+
+    /**
+     * @param supportedTokens_ Token contracts supported for flash lending.
+     * @param fee_ The percentage of the loan `amount` that needs to be repaid, in addition to `amount`.
+     */
+    constructor(
+        address[] memory supportedTokens_,
+        uint256 fee_
+    ) {
+        for (uint256 i = 0; i &lt; supportedTokens_.length; i++) {
+            supportedTokens[supportedTokens_[i]] = true;
+        }
+        fee = fee_;
+    }
+
+    /**
+     * @dev Loan `amount` tokens to `receiver`, and takes it back plus a `flashFee` after the callback.
+     * @param receiver The contract receiving the tokens, needs to implement the `onFlashLoan(address user, uint256 amount, uint256 fee, bytes calldata)` interface.
+     * @param token The loan currency.
+     * @param amount The amount of tokens lent.
+     * @param data A data parameter to be passed on to the `receiver` for any custom use.
+     */
+    function flashLoan(
+        IERC3156FlashBorrower receiver,
+        address token,
+        uint256 amount,
+        bytes calldata data
+    ) external override returns(bool) {
+        require(
+            supportedTokens[token],
+            &quot;FlashLender: Unsupported currency&quot;
+        );
+        uint256 fee = _flashFee(token, amount);
+        require(
+            IERC20(token).transfer(address(receiver), amount),
+            &quot;FlashLender: Transfer failed&quot;
+        );
+        require(
+            receiver.onFlashLoan(msg.sender, token, amount, fee, data) == CALLBACK_SUCCESS,
+            &quot;FlashLender: Callback failed&quot;
+        );
+        require(
+            IERC20(token).transferFrom(address(receiver), address(this), amount + fee),
+            &quot;FlashLender: Repay failed&quot;
+        );
+        return true;
+    }
+
+    /**
+     * @dev The fee to be charged for a given loan.
+     * @param token The loan currency.
+     * @param amount The amount of tokens lent.
+     * @return The amount of `token` to be charged for the loan, on top of the returned principal.
+     */
+    function flashFee(
+        address token,
+        uint256 amount
+    ) external view override returns (uint256) {
+        require(
+            supportedTokens[token],
+            &quot;FlashLender: Unsupported currency&quot;
+        );
+        return _flashFee(token, amount);
+    }
+
+    /**
+     * @dev The fee to be charged for a given loan. Internal function with no checks.
+     * @param token The loan currency.
+     * @param amount The amount of tokens lent.
+     * @return The amount of `token` to be charged for the loan, on top of the returned principal.
+     */
+    function _flashFee(
+        address token,
+        uint256 amount
+    ) internal view returns (uint256) {
+        return amount * fee / 10000;
+    }
+
+    /**
+     * @dev The amount of currency available to be lent.
+     * @param token The loan currency.
+     * @return The amount of `token` that can be borrowed.
+     */
+    function maxFlashLoan(
+        address token
+    ) external view override returns (uint256) {
+        return supportedTokens[token] ? IERC20(token).balanceOf(address(this)) : 0;
+    }
+}
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br></div></div><h2 id="security-considerations"><a href="#security-considerations" class="header-anchor">#</a> Security Considerations</h2> <h3 id="verification-of-callback-arguments"><a href="#verification-of-callback-arguments" class="header-anchor">#</a> Verification of callback arguments</h3> <p>The arguments of <code>onFlashLoan</code> are expected to reflect the conditions of the flash loan, but cannot be trusted unconditionally. They can be divided in two groups, that require different checks before they can be trusted to be genuine.</p> <ol start="0"><li>No arguments can be assumed to be genuine without some kind of verification. <code>initiator</code>, <code>token</code> and <code>amount</code> refer to a past transaction that might not have happened if the caller of <code>onFlashLoan</code> decides to lie. <code>fee</code> might be false or calculated incorrectly. <code>data</code> might have been manipulated by the caller.</li> <li>To trust that the value of <code>initiator</code>, <code>token</code>, <code>amount</code> and <code>fee</code> are genuine a reasonable pattern is to verify that the <code>onFlashLoan</code> caller is in a whitelist of verified flash lenders. Since often the caller of <code>flashLoan</code> will also be receiving the <code>onFlashLoan</code> callback this will be trivial. In all other cases flash lenders will need to be approved if the arguments in <code>onFlashLoan</code> are to be trusted.</li> <li>To trust that the value of <code>data</code> is genuine, in addition to the check in point 1, it is recommended to verify that the <code>initiator</code> belongs to a group of trusted addresses. Trusting the <code>lender</code> and the <code>initiator</code> is enough to trust that the contents of <code>data</code> are genuine.</li></ol> <h3 id="flash-lending-security-considerations"><a href="#flash-lending-security-considerations" class="header-anchor">#</a> Flash lending security considerations</h3> <h4 id="automatic-approvals"><a href="#automatic-approvals" class="header-anchor">#</a> Automatic approvals</h4> <p>The safest approach is to implement an approval for <code>amount+fee</code> before the <code>flashLoan</code> is executed.</p> <p>Any <code>receiver</code> that keeps an approval for a given <code>lender</code> needs to include in <code>onFlashLoan</code> a mechanism to verify that the initiator is trusted.</p> <p>Any <code>receiver</code> that includes in <code>onFlashLoan</code> the approval for the <code>lender</code> to take the <code>amount + fee</code> needs to be combined with a mechanism to verify that the initiator is trusted.</p> <p>If an unsuspecting contract with a non-reverting fallback function, or an EOA, would approve a <code>lender</code> implementing ERC3156, and not immediately use the approval, and if the <code>lender</code> would not verify the return value of <code>onFlashLoan</code>, then the unsuspecting contract or EOA could be drained of funds up to their allowance or balance limit. This would be executed by an <code>initiator</code> calling <code>flashLoan</code> on the victim. The flash loan would be executed and repaid, plus any fees, which would be accumulated by the <code>lender</code>. For this reason, it is important that the <code>lender</code> implements the specification in full and reverts if <code>onFlashLoan</code> doesn't return the keccak256 hash for &quot;ERC3156FlashBorrower.onFlashLoan&quot;.</p> <h3 id="flash-minting-external-security-considerations"><a href="#flash-minting-external-security-considerations" class="header-anchor">#</a> Flash minting external security considerations</h3> <p>The typical quantum of tokens involved in flash mint transactions will give rise to new innovative attack vectors.</p> <h4 id="example-1-interest-rate-attack"><a href="#example-1-interest-rate-attack" class="header-anchor">#</a> Example 1 - interest rate attack</h4> <p>If there exists a lending protocol that offers stable interests rates, but it does not have floor/ceiling rate limits and it does not rebalance the fixed rate based on flash-induced liquidity changes, then it could be susceptible to the following scenario:</p> <p>FreeLoanAttack.sol</p> <ol><li>Flash mint 1 quintillion STAB</li> <li>Deposit the 1 quintillion STAB + $1.5 million worth of ETH collateral</li> <li>The quantum of your total deposit now pushes the stable interest rate down to 0.00001% stable interest rate</li> <li>Borrow 1 million STAB on 0.00001% stable interest rate based on the 1.5M ETH collateral</li> <li>Withdraw and burn the 1 quint STAB to close the original flash mint</li> <li>You now have a 1 million STAB loan that is practically interest free for perpetuity ($0.10 / year in interest)</li></ol> <p>The key takeaway being the obvious need to implement a flat floor/ceiling rate limit and to rebalance the rate based on short term liquidity changes.</p> <h4 id="example-2-arithmetic-overflow-and-underflow"><a href="#example-2-arithmetic-overflow-and-underflow" class="header-anchor">#</a> Example 2 - arithmetic overflow and underflow</h4> <p>If the flash mint provider does not place any limits on the amount of flash mintable tokens in a transaction, then anyone can flash mint 2^256-1 amount of tokens.</p> <p>The protocols on the receiving end of the flash mints will need to ensure their contracts can handle this, either by using a compiler that embeds overflow protection in the smart contract bytecode, or by setting explicit checks.</p> <h3 id="flash-minting-internal-security-considerations"><a href="#flash-minting-internal-security-considerations" class="header-anchor">#</a> Flash minting internal security considerations</h3> <p>The coupling of flash minting with business specific features in the same platform can easily lead to unintended consequences.</p> <h4 id="example-treasury-draining"><a href="#example-treasury-draining" class="header-anchor">#</a> Example - Treasury draining</h4> <p>Assume a smart contract that flash lends its native token. The same smart contract borrows from a third party when users burn the native token. This pattern would be used to aggregate in the smart contract the collateralized debt of several users into a single account in the third party. The flash mint could be used to cause the lender to borrow to its limit, and then pushing interest rates in the underlying lender, liquidate the flash lender:</p> <ol><li>Flash mint from <code>lender</code> a very large amount of FOO.</li> <li>Redeem FOO for BAR, causing <code>lender</code> to borrow from <code>underwriter</code> all the way to its borrowing limit.</li> <li>Trigger a debt rate increase in <code>underwriter</code>, making <code>lender</code> undercollateralized.</li> <li>Liquidate the <code>lender</code> for profit.</li></ol> <h2 id="copyright"><a href="#copyright" class="header-anchor">#</a> Copyright</h2> <p>Copyright and related rights waived via <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener noreferrer">CC0<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>.</p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/ethlibrary/EIPs/edit/master/EIPS/eip-3156.md" target="_blank" rel="noopener noreferrer">帮助完善文档</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">9/26/2021, 5:29:34 AM</span></div></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.a13d8931.js" defer></script><script src="/assets/js/3.afc73834.js" defer></script><script src="/assets/js/299.ed75d8ac.js" defer></script>
+  </body>
+</html>
