@@ -1,0 +1,8 @@
+api_token_env: CROWDIN_PERSONAL_TOKEN_SECRET
+project_id: 480385
+files: [
+  {
+    source: '/EIPS/*.md',
+    translation: '/EIPS/%two_letters_code%/%original_file_name%',
+  }
+]
