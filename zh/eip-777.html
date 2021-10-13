@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Token Standard | 以太坊改进提案 EIPs</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="以太坊改进提案（EIPs）描述了以太坊平台的标准，包括核心协议规范，客户端API和合约标准。">
+    
+    <link rel="preload" href="/assets/css/0.styles.824bfe15.css" as="style"><link rel="preload" href="/assets/js/app.f4044d78.js" as="script"><link rel="preload" href="/assets/js/3.b2dd2bf7.js" as="script"><link rel="preload" href="/assets/js/788.17f768ab.js" as="script"><link rel="prefetch" href="/assets/js/10.7fdc1213.js"><link rel="prefetch" href="/assets/js/100.e628be7e.js"><link rel="prefetch" href="/assets/js/101.2c8bffca.js"><link rel="prefetch" href="/assets/js/102.b69bf0d4.js"><link rel="prefetch" href="/assets/js/103.9ec6cdf9.js"><link rel="prefetch" href="/assets/js/104.a5a2102f.js"><link rel="prefetch" href="/assets/js/105.45043b5b.js"><link rel="prefetch" href="/assets/js/106.bb6c4d2d.js"><link rel="prefetch" href="/assets/js/107.65241e0c.js"><link rel="prefetch" href="/assets/js/108.977b2591.js"><link rel="prefetch" href="/assets/js/109.c6edd62e.js"><link rel="prefetch" href="/assets/js/11.5d74a3e1.js"><link rel="prefetch" href="/assets/js/110.d0e6feeb.js"><link rel="prefetch" href="/assets/js/111.b6f99c0b.js"><link rel="prefetch" href="/assets/js/112.4d741d11.js"><link rel="prefetch" href="/assets/js/113.14166d15.js"><link rel="prefetch" href="/assets/js/114.2f9337b9.js"><link rel="prefetch" href="/assets/js/115.d24ca8ef.js"><link rel="prefetch" href="/assets/js/116.34e3f36f.js"><link rel="prefetch" href="/assets/js/117.44a03c8b.js"><link rel="prefetch" href="/assets/js/118.628292d5.js"><link rel="prefetch" href="/assets/js/119.754c3ac4.js"><link rel="prefetch" href="/assets/js/12.9905595c.js"><link rel="prefetch" href="/assets/js/120.654069a6.js"><link rel="prefetch" href="/assets/js/121.f16404e9.js"><link rel="prefetch" href="/assets/js/122.facf6439.js"><link rel="prefetch" href="/assets/js/123.a6fc769c.js"><link rel="prefetch" href="/assets/js/124.0d6fb1a2.js"><link rel="prefetch" href="/assets/js/125.dd1d1771.js"><link rel="prefetch" href="/assets/js/126.b3abbf7c.js"><link rel="prefetch" href="/assets/js/127.6f3ddde9.js"><link rel="prefetch" href="/assets/js/128.61ccd696.js"><link rel="prefetch" href="/assets/js/129.462e6c85.js"><link rel="prefetch" href="/assets/js/13.b2db9bad.js"><link rel="prefetch" href="/assets/js/130.95c80a8f.js"><link rel="prefetch" href="/assets/js/131.1c34eac1.js"><link rel="prefetch" href="/assets/js/132.c1318d26.js"><link rel="prefetch" href="/assets/js/133.17237807.js"><link rel="prefetch" href="/assets/js/134.97d720fd.js"><link rel="prefetch" href="/assets/js/135.d9c182a9.js"><link rel="prefetch" href="/assets/js/136.a94b3ec1.js"><link rel="prefetch" href="/assets/js/137.1daa955b.js"><link rel="prefetch" href="/assets/js/138.aa305ab8.js"><link rel="prefetch" href="/assets/js/139.9026b5b3.js"><link rel="prefetch" href="/assets/js/14.2b370f2d.js"><link rel="prefetch" href="/assets/js/140.47d5ef9c.js"><link rel="prefetch" href="/assets/js/141.69f6f4d4.js"><link rel="prefetch" href="/assets/js/142.f27fbcc1.js"><link rel="prefetch" href="/assets/js/143.508132a5.js"><link rel="prefetch" href="/assets/js/144.491d7500.js"><link rel="prefetch" href="/assets/js/145.4282ab52.js"><link rel="prefetch" href="/assets/js/146.e9f412e3.js"><link rel="prefetch" href="/assets/js/147.810514de.js"><link rel="prefetch" href="/assets/js/148.19b1fa1c.js"><link rel="prefetch" href="/assets/js/149.b3243593.js"><link rel="prefetch" href="/assets/js/15.da0ef45c.js"><link rel="prefetch" href="/assets/js/150.6d6eaf7d.js"><link rel="prefetch" href="/assets/js/151.97c0bfa7.js"><link rel="prefetch" href="/assets/js/152.98b231d6.js"><link rel="prefetch" href="/assets/js/153.66704c57.js"><link rel="prefetch" href="/assets/js/154.1be3a025.js"><link rel="prefetch" href="/assets/js/155.204bc393.js"><link rel="prefetch" href="/assets/js/156.16461c31.js"><link rel="prefetch" href="/assets/js/157.c8cbd330.js"><link rel="prefetch" href="/assets/js/158.4c00acc6.js"><link rel="prefetch" href="/assets/js/159.3c236eb0.js"><link rel="prefetch" href="/assets/js/16.76878893.js"><link rel="prefetch" href="/assets/js/160.4aac70e2.js"><link rel="prefetch" href="/assets/js/161.e8c5bd65.js"><link rel="prefetch" href="/assets/js/162.73cc2559.js"><link rel="prefetch" href="/assets/js/163.7d2561cc.js"><link rel="prefetch" href="/assets/js/164.cf21f901.js"><link rel="prefetch" href="/assets/js/165.cbbd4d02.js"><link rel="prefetch" href="/assets/js/166.be91edfe.js"><link rel="prefetch" href="/assets/js/167.ac32605d.js"><link rel="prefetch" href="/assets/js/168.e8c16159.js"><link rel="prefetch" href="/assets/js/169.d1807890.js"><link rel="prefetch" href="/assets/js/17.17f33d45.js"><link rel="prefetch" href="/assets/js/170.465b71b5.js"><link rel="prefetch" href="/assets/js/171.6761cf3b.js"><link rel="prefetch" href="/assets/js/172.69c1f216.js"><link rel="prefetch" href="/assets/js/173.fc57ea59.js"><link rel="prefetch" href="/assets/js/174.cba66874.js"><link rel="prefetch" href="/assets/js/175.28a2e81c.js"><link rel="prefetch" href="/assets/js/176.352cfb8a.js"><link rel="prefetch" href="/assets/js/177.cf5d4759.js"><link rel="prefetch" href="/assets/js/178.3d7adddf.js"><link rel="prefetch" href="/assets/js/179.8655d166.js"><link rel="prefetch" href="/assets/js/18.c20d7cbc.js"><link rel="prefetch" href="/assets/js/180.8d69d039.js"><link rel="prefetch" href="/assets/js/181.c58bd928.js"><link rel="prefetch" href="/assets/js/182.3cc41f65.js"><link rel="prefetch" href="/assets/js/183.17d7c4d8.js"><link rel="prefetch" href="/assets/js/184.51675398.js"><link rel="prefetch" href="/assets/js/185.dd9015aa.js"><link rel="prefetch" href="/assets/js/186.cb61609f.js"><link rel="prefetch" href="/assets/js/187.5c4c757c.js"><link rel="prefetch" href="/assets/js/188.3ac2a7ab.js"><link rel="prefetch" href="/assets/js/189.17f4c3b7.js"><link rel="prefetch" href="/assets/js/19.3716bc6a.js"><link rel="prefetch" href="/assets/js/190.1cc1ab12.js"><link rel="prefetch" href="/assets/js/191.fb0b4e1a.js"><link rel="prefetch" href="/assets/js/192.8b46b19f.js"><link rel="prefetch" href="/assets/js/193.9c976833.js"><link rel="prefetch" href="/assets/js/194.70aa6ace.js"><link rel="prefetch" href="/assets/js/195.7223aca6.js"><link rel="prefetch" href="/assets/js/196.7f6fdc35.js"><link rel="prefetch" href="/assets/js/197.cfdfe704.js"><link rel="prefetch" href="/assets/js/198.684d55ee.js"><link rel="prefetch" href="/assets/js/199.cc81873b.js"><link rel="prefetch" href="/assets/js/20.8a049a7c.js"><link rel="prefetch" href="/assets/js/200.df094b29.js"><link rel="prefetch" href="/assets/js/201.db0752aa.js"><link rel="prefetch" href="/assets/js/202.7522141e.js"><link rel="prefetch" href="/assets/js/203.2ec1b532.js"><link rel="prefetch" href="/assets/js/204.b5a2593f.js"><link rel="prefetch" href="/assets/js/205.f0d96dfd.js"><link rel="prefetch" href="/assets/js/206.83f26844.js"><link rel="prefetch" href="/assets/js/207.446045f2.js"><link rel="prefetch" href="/assets/js/208.b48d7c2d.js"><link rel="prefetch" href="/assets/js/209.4538cbd0.js"><link rel="prefetch" href="/assets/js/21.c3c0520b.js"><link rel="prefetch" href="/assets/js/210.e605e9eb.js"><link rel="prefetch" href="/assets/js/211.c6a2d923.js"><link rel="prefetch" href="/assets/js/212.9a0c4171.js"><link rel="prefetch" href="/assets/js/213.62753f3b.js"><link rel="prefetch" href="/assets/js/214.8cf38e2e.js"><link rel="prefetch" href="/assets/js/215.c87d65e9.js"><link rel="prefetch" href="/assets/js/216.b543d2b3.js"><link rel="prefetch" href="/assets/js/217.d67371ba.js"><link rel="prefetch" href="/assets/js/218.562ed9cd.js"><link rel="prefetch" href="/assets/js/219.3802247f.js"><link rel="prefetch" href="/assets/js/22.d6836509.js"><link rel="prefetch" href="/assets/js/220.2d0ae96d.js"><link rel="prefetch" href="/assets/js/221.1a5095d6.js"><link rel="prefetch" href="/assets/js/222.480534d7.js"><link rel="prefetch" href="/assets/js/223.98196dd5.js"><link rel="prefetch" href="/assets/js/224.37cb361d.js"><link rel="prefetch" href="/assets/js/225.91114a0c.js"><link rel="prefetch" href="/assets/js/226.5931aef1.js"><link rel="prefetch" href="/assets/js/227.f7de9e30.js"><link rel="prefetch" href="/assets/js/228.a71d7bfc.js"><link rel="prefetch" href="/assets/js/229.a2e9e18b.js"><link rel="prefetch" href="/assets/js/23.f3714681.js"><link rel="prefetch" href="/assets/js/230.0f5f828a.js"><link rel="prefetch" href="/assets/js/231.e0c3ff43.js"><link rel="prefetch" href="/assets/js/232.75745b57.js"><link rel="prefetch" href="/assets/js/233.de07ed2d.js"><link rel="prefetch" href="/assets/js/234.126b6323.js"><link rel="prefetch" href="/assets/js/235.ffe32641.js"><link rel="prefetch" href="/assets/js/236.e84de197.js"><link rel="prefetch" href="/assets/js/237.d71e152f.js"><link rel="prefetch" href="/assets/js/238.0a017500.js"><link rel="prefetch" href="/assets/js/239.cf6610d0.js"><link rel="prefetch" href="/assets/js/24.a2d62072.js"><link rel="prefetch" href="/assets/js/240.e07a69fc.js"><link rel="prefetch" href="/assets/js/241.15e1f274.js"><link rel="prefetch" href="/assets/js/242.e9ef30e4.js"><link rel="prefetch" href="/assets/js/243.e75f0f29.js"><link rel="prefetch" href="/assets/js/244.11180b47.js"><link rel="prefetch" href="/assets/js/245.695c71d3.js"><link rel="prefetch" href="/assets/js/246.9fcc8bda.js"><link rel="prefetch" href="/assets/js/247.f06ff274.js"><link rel="prefetch" href="/assets/js/248.3385d317.js"><link rel="prefetch" href="/assets/js/249.2f44583c.js"><link rel="prefetch" href="/assets/js/25.aa017576.js"><link rel="prefetch" href="/assets/js/250.a7b72386.js"><link rel="prefetch" href="/assets/js/251.2d753ff7.js"><link rel="prefetch" href="/assets/js/252.cade08e2.js"><link rel="prefetch" href="/assets/js/253.dd571915.js"><link rel="prefetch" href="/assets/js/254.6a63013c.js"><link rel="prefetch" href="/assets/js/255.07a1fb28.js"><link rel="prefetch" href="/assets/js/256.1d212439.js"><link rel="prefetch" href="/assets/js/257.7b6c1944.js"><link rel="prefetch" href="/assets/js/258.6aa44201.js"><link rel="prefetch" href="/assets/js/259.ba0a1809.js"><link rel="prefetch" href="/assets/js/26.f1bd4976.js"><link rel="prefetch" href="/assets/js/260.290e1656.js"><link rel="prefetch" href="/assets/js/261.a59e4248.js"><link rel="prefetch" href="/assets/js/262.68dfbe7a.js"><link rel="prefetch" href="/assets/js/263.a02b9c5e.js"><link rel="prefetch" href="/assets/js/264.c5f166f0.js"><link rel="prefetch" href="/assets/js/265.2086b87f.js"><link rel="prefetch" href="/assets/js/266.e309b2a8.js"><link rel="prefetch" href="/assets/js/267.5cb2b00e.js"><link rel="prefetch" href="/assets/js/268.1cdf691e.js"><link rel="prefetch" href="/assets/js/269.a2af1b08.js"><link rel="prefetch" href="/assets/js/27.dad79b45.js"><link rel="prefetch" href="/assets/js/270.a95650f3.js"><link rel="prefetch" href="/assets/js/271.8e3027fd.js"><link rel="prefetch" href="/assets/js/272.22730f2d.js"><link rel="prefetch" href="/assets/js/273.1fefb58d.js"><link rel="prefetch" href="/assets/js/274.93c80542.js"><link rel="prefetch" href="/assets/js/275.3da00be3.js"><link rel="prefetch" href="/assets/js/276.b0e503f1.js"><link rel="prefetch" href="/assets/js/277.75d8ee46.js"><link rel="prefetch" href="/assets/js/278.f09a0a56.js"><link rel="prefetch" href="/assets/js/279.63451175.js"><link rel="prefetch" href="/assets/js/28.8c327cde.js"><link rel="prefetch" href="/assets/js/280.f0eb3b28.js"><link rel="prefetch" href="/assets/js/281.0acedeb2.js"><link rel="prefetch" href="/assets/js/282.08ba88f5.js"><link rel="prefetch" href="/assets/js/283.593fdc0c.js"><link rel="prefetch" href="/assets/js/284.b53e4d17.js"><link rel="prefetch" href="/assets/js/285.bc1e7708.js"><link rel="prefetch" href="/assets/js/286.c6008ffa.js"><link rel="prefetch" href="/assets/js/287.7a30f77f.js"><link rel="prefetch" href="/assets/js/288.10ea1b87.js"><link rel="prefetch" href="/assets/js/289.c495f499.js"><link rel="prefetch" href="/assets/js/29.626c3777.js"><link rel="prefetch" href="/assets/js/290.e465d06d.js"><link rel="prefetch" href="/assets/js/291.cd45750f.js"><link rel="prefetch" href="/assets/js/292.b98cae15.js"><link rel="prefetch" href="/assets/js/293.7418aaa4.js"><link rel="prefetch" href="/assets/js/294.1b63101a.js"><link rel="prefetch" href="/assets/js/295.41c843db.js"><link rel="prefetch" href="/assets/js/296.a8cbd185.js"><link rel="prefetch" href="/assets/js/297.bbc48a9c.js"><link rel="prefetch" href="/assets/js/298.f033cdb2.js"><link rel="prefetch" href="/assets/js/299.8540f7ae.js"><link rel="prefetch" href="/assets/js/30.d70265c1.js"><link rel="prefetch" href="/assets/js/300.37be68c5.js"><link rel="prefetch" href="/assets/js/301.67381adc.js"><link rel="prefetch" href="/assets/js/302.5f3fe150.js"><link rel="prefetch" href="/assets/js/303.f901fe65.js"><link rel="prefetch" href="/assets/js/304.64bc8f90.js"><link rel="prefetch" href="/assets/js/305.072ea45c.js"><link rel="prefetch" href="/assets/js/306.347b4372.js"><link rel="prefetch" href="/assets/js/307.1633310c.js"><link rel="prefetch" href="/assets/js/308.c117f94a.js"><link rel="prefetch" href="/assets/js/309.42b0d9e9.js"><link rel="prefetch" href="/assets/js/31.0f0b8a61.js"><link rel="prefetch" href="/assets/js/310.42afb523.js"><link rel="prefetch" href="/assets/js/311.5bfddb6a.js"><link rel="prefetch" href="/assets/js/312.f4d9c528.js"><link rel="prefetch" href="/assets/js/313.04f19cc5.js"><link rel="prefetch" href="/assets/js/314.2a8de916.js"><link rel="prefetch" href="/assets/js/315.eb0d12f0.js"><link rel="prefetch" href="/assets/js/316.29fca9d3.js"><link rel="prefetch" href="/assets/js/317.d706b6cd.js"><link rel="prefetch" href="/assets/js/318.6f1be4b9.js"><link rel="prefetch" href="/assets/js/319.1a760b8e.js"><link rel="prefetch" href="/assets/js/32.f920a919.js"><link rel="prefetch" href="/assets/js/320.62b7e851.js"><link rel="prefetch" href="/assets/js/321.7c7032d4.js"><link rel="prefetch" href="/assets/js/322.0fe5f35d.js"><link rel="prefetch" href="/assets/js/323.429c602e.js"><link rel="prefetch" href="/assets/js/324.83cfca1e.js"><link rel="prefetch" href="/assets/js/325.0911f7c3.js"><link rel="prefetch" href="/assets/js/326.735f0288.js"><link rel="prefetch" href="/assets/js/327.adbf59b2.js"><link rel="prefetch" href="/assets/js/328.e043e8b1.js"><link rel="prefetch" href="/assets/js/329.4b45bc97.js"><link rel="prefetch" href="/assets/js/33.d742ed14.js"><link rel="prefetch" href="/assets/js/330.769653a4.js"><link rel="prefetch" href="/assets/js/331.7c8c8dee.js"><link rel="prefetch" href="/assets/js/332.7acecacd.js"><link rel="prefetch" href="/assets/js/333.d91a2278.js"><link rel="prefetch" href="/assets/js/334.b05577e0.js"><link rel="prefetch" href="/assets/js/335.a8f8a81d.js"><link rel="prefetch" href="/assets/js/336.fe00c52d.js"><link rel="prefetch" href="/assets/js/337.b2fe6a8f.js"><link rel="prefetch" href="/assets/js/338.5c0cfb48.js"><link rel="prefetch" href="/assets/js/339.daa0736e.js"><link rel="prefetch" href="/assets/js/34.3335e6b1.js"><link rel="prefetch" href="/assets/js/340.875b35c8.js"><link rel="prefetch" href="/assets/js/341.8b333d04.js"><link rel="prefetch" href="/assets/js/342.50eb4315.js"><link rel="prefetch" href="/assets/js/343.6729f6fe.js"><link rel="prefetch" href="/assets/js/344.ba0aebf0.js"><link rel="prefetch" href="/assets/js/345.603c7a9d.js"><link rel="prefetch" href="/assets/js/346.bfd3996c.js"><link rel="prefetch" href="/assets/js/347.e75c4c2e.js"><link rel="prefetch" href="/assets/js/348.2ce5e323.js"><link rel="prefetch" href="/assets/js/349.94f9ffcd.js"><link rel="prefetch" href="/assets/js/35.d4f69b11.js"><link rel="prefetch" href="/assets/js/350.768be47f.js"><link rel="prefetch" href="/assets/js/351.3c81ccd9.js"><link rel="prefetch" href="/assets/js/352.41480369.js"><link rel="prefetch" href="/assets/js/353.07646fe5.js"><link rel="prefetch" href="/assets/js/354.0e543899.js"><link rel="prefetch" href="/assets/js/355.9504e55f.js"><link rel="prefetch" href="/assets/js/356.2796ac18.js"><link rel="prefetch" href="/assets/js/357.03739a55.js"><link rel="prefetch" href="/assets/js/358.6a69b604.js"><link rel="prefetch" href="/assets/js/359.1ea28c51.js"><link rel="prefetch" href="/assets/js/36.ee587217.js"><link rel="prefetch" href="/assets/js/360.63562610.js"><link rel="prefetch" href="/assets/js/361.fb957a59.js"><link rel="prefetch" href="/assets/js/362.9d0c1000.js"><link rel="prefetch" href="/assets/js/363.3d8fd310.js"><link rel="prefetch" href="/assets/js/364.b63d3a90.js"><link rel="prefetch" href="/assets/js/365.ce645de0.js"><link rel="prefetch" href="/assets/js/366.5a0c5839.js"><link rel="prefetch" href="/assets/js/367.885a62f9.js"><link rel="prefetch" href="/assets/js/368.b7829bb4.js"><link rel="prefetch" href="/assets/js/369.55a0ea41.js"><link rel="prefetch" href="/assets/js/37.2067376e.js"><link rel="prefetch" href="/assets/js/370.80d68e15.js"><link rel="prefetch" href="/assets/js/371.df25541e.js"><link rel="prefetch" href="/assets/js/372.5330d13b.js"><link rel="prefetch" href="/assets/js/373.837037fd.js"><link rel="prefetch" href="/assets/js/374.4c562b48.js"><link rel="prefetch" href="/assets/js/375.ad34be5f.js"><link rel="prefetch" href="/assets/js/376.c2fd12f6.js"><link rel="prefetch" href="/assets/js/377.c76e56ca.js"><link rel="prefetch" href="/assets/js/378.346bc921.js"><link rel="prefetch" href="/assets/js/379.d7a06112.js"><link rel="prefetch" href="/assets/js/38.fce9bf70.js"><link rel="prefetch" href="/assets/js/380.85b8abab.js"><link rel="prefetch" href="/assets/js/381.f21c69de.js"><link rel="prefetch" href="/assets/js/382.922e6ec8.js"><link rel="prefetch" href="/assets/js/383.4340a59c.js"><link rel="prefetch" href="/assets/js/384.3bb3293c.js"><link rel="prefetch" href="/assets/js/385.c433082e.js"><link rel="prefetch" href="/assets/js/386.da76691f.js"><link rel="prefetch" href="/assets/js/387.5a5919c3.js"><link rel="prefetch" href="/assets/js/388.14153742.js"><link rel="prefetch" href="/assets/js/389.29998498.js"><link rel="prefetch" href="/assets/js/39.f9bd3fa9.js"><link rel="prefetch" href="/assets/js/390.dca629c8.js"><link rel="prefetch" href="/assets/js/391.2cd5488e.js"><link rel="prefetch" href="/assets/js/392.1588f4b7.js"><link rel="prefetch" href="/assets/js/393.0f40c9e1.js"><link rel="prefetch" href="/assets/js/394.df64266e.js"><link rel="prefetch" href="/assets/js/395.fb63264a.js"><link rel="prefetch" href="/assets/js/396.1e981f60.js"><link rel="prefetch" href="/assets/js/397.2aaf4dc9.js"><link rel="prefetch" href="/assets/js/398.9159a990.js"><link rel="prefetch" href="/assets/js/399.3a536a52.js"><link rel="prefetch" href="/assets/js/4.61f436cc.js"><link rel="prefetch" href="/assets/js/40.32329e8b.js"><link rel="prefetch" href="/assets/js/400.f6aa2879.js"><link rel="prefetch" href="/assets/js/401.47c891dd.js"><link rel="prefetch" href="/assets/js/402.ce41a3e9.js"><link rel="prefetch" href="/assets/js/403.adb6c1ba.js"><link rel="prefetch" href="/assets/js/404.9ecdc183.js"><link rel="prefetch" href="/assets/js/405.81c74dfc.js"><link rel="prefetch" href="/assets/js/406.e3e0281f.js"><link rel="prefetch" href="/assets/js/407.b4acfe4a.js"><link rel="prefetch" href="/assets/js/408.97ec18e2.js"><link rel="prefetch" href="/assets/js/409.3d99afb9.js"><link rel="prefetch" href="/assets/js/41.7d80f5d9.js"><link rel="prefetch" href="/assets/js/410.ab5c17f4.js"><link rel="prefetch" href="/assets/js/411.dbd131e4.js"><link rel="prefetch" href="/assets/js/412.7df10c97.js"><link rel="prefetch" href="/assets/js/413.e164e334.js"><link rel="prefetch" href="/assets/js/414.8ba69e4d.js"><link rel="prefetch" href="/assets/js/415.c759932f.js"><link rel="prefetch" href="/assets/js/416.b3022271.js"><link rel="prefetch" href="/assets/js/417.62438771.js"><link rel="prefetch" href="/assets/js/418.c65f2d5b.js"><link rel="prefetch" href="/assets/js/419.e645add4.js"><link rel="prefetch" href="/assets/js/42.11534673.js"><link rel="prefetch" href="/assets/js/420.7fcb53ce.js"><link rel="prefetch" href="/assets/js/421.86e728c0.js"><link rel="prefetch" href="/assets/js/422.4a0fe5ab.js"><link rel="prefetch" href="/assets/js/423.394ce704.js"><link rel="prefetch" href="/assets/js/424.4f305822.js"><link rel="prefetch" href="/assets/js/425.a17b64d8.js"><link rel="prefetch" href="/assets/js/426.fa6c1fd4.js"><link rel="prefetch" href="/assets/js/427.117a77d7.js"><link rel="prefetch" href="/assets/js/428.a1b1d081.js"><link rel="prefetch" href="/assets/js/429.4cc05a46.js"><link rel="prefetch" href="/assets/js/43.4142467c.js"><link rel="prefetch" href="/assets/js/430.7a034bba.js"><link rel="prefetch" href="/assets/js/431.5c3599c5.js"><link rel="prefetch" href="/assets/js/432.c28e00f9.js"><link rel="prefetch" href="/assets/js/433.6aa3ab0a.js"><link rel="prefetch" href="/assets/js/434.1424dbd9.js"><link rel="prefetch" href="/assets/js/435.7365f32d.js"><link rel="prefetch" href="/assets/js/436.c5c33523.js"><link rel="prefetch" href="/assets/js/437.45b56d43.js"><link rel="prefetch" href="/assets/js/438.8a3a4370.js"><link rel="prefetch" href="/assets/js/439.da24bbeb.js"><link rel="prefetch" href="/assets/js/44.9e1caaff.js"><link rel="prefetch" href="/assets/js/440.275d1310.js"><link rel="prefetch" href="/assets/js/441.0c302829.js"><link rel="prefetch" href="/assets/js/442.886f4d2a.js"><link rel="prefetch" href="/assets/js/443.cb4c774f.js"><link rel="prefetch" href="/assets/js/444.64cbcdf5.js"><link rel="prefetch" href="/assets/js/445.b95587b0.js"><link rel="prefetch" href="/assets/js/446.b196b9a4.js"><link rel="prefetch" href="/assets/js/447.cb64f126.js"><link rel="prefetch" href="/assets/js/448.e5b143aa.js"><link rel="prefetch" href="/assets/js/449.d1c441ce.js"><link rel="prefetch" href="/assets/js/45.877040cd.js"><link rel="prefetch" href="/assets/js/450.0d35700e.js"><link rel="prefetch" href="/assets/js/451.152252a3.js"><link rel="prefetch" href="/assets/js/452.567a408c.js"><link rel="prefetch" href="/assets/js/453.fa30d65b.js"><link rel="prefetch" href="/assets/js/454.37f99a9c.js"><link rel="prefetch" href="/assets/js/455.3d1fe197.js"><link rel="prefetch" href="/assets/js/456.c3e688c5.js"><link rel="prefetch" href="/assets/js/457.9652760b.js"><link rel="prefetch" href="/assets/js/458.f249da0f.js"><link rel="prefetch" href="/assets/js/459.aa95bfbe.js"><link rel="prefetch" href="/assets/js/46.e9366a33.js"><link rel="prefetch" href="/assets/js/460.e77a6a67.js"><link rel="prefetch" href="/assets/js/461.610476f5.js"><link rel="prefetch" href="/assets/js/462.57aca968.js"><link rel="prefetch" href="/assets/js/463.66f2e426.js"><link rel="prefetch" href="/assets/js/464.6d5f887d.js"><link rel="prefetch" href="/assets/js/465.2b587db7.js"><link rel="prefetch" href="/assets/js/466.aa81feff.js"><link rel="prefetch" href="/assets/js/467.418aec75.js"><link rel="prefetch" href="/assets/js/468.af91cf68.js"><link rel="prefetch" href="/assets/js/469.b5ce9520.js"><link rel="prefetch" href="/assets/js/47.cdeec524.js"><link rel="prefetch" href="/assets/js/470.59fa84a5.js"><link rel="prefetch" href="/assets/js/471.da12be2b.js"><link rel="prefetch" href="/assets/js/472.37d5542e.js"><link rel="prefetch" href="/assets/js/473.b226afd2.js"><link rel="prefetch" href="/assets/js/474.121a435b.js"><link rel="prefetch" href="/assets/js/475.13b66655.js"><link rel="prefetch" href="/assets/js/476.200b7086.js"><link rel="prefetch" href="/assets/js/477.cb235ff5.js"><link rel="prefetch" href="/assets/js/478.96e58a65.js"><link rel="prefetch" href="/assets/js/479.904e6de5.js"><link rel="prefetch" href="/assets/js/48.cce7bd0c.js"><link rel="prefetch" href="/assets/js/480.464c1400.js"><link rel="prefetch" href="/assets/js/481.622b5e26.js"><link rel="prefetch" href="/assets/js/482.9c0f6d46.js"><link rel="prefetch" href="/assets/js/483.145b753b.js"><link rel="prefetch" href="/assets/js/484.94de4359.js"><link rel="prefetch" href="/assets/js/485.fdb537bd.js"><link rel="prefetch" href="/assets/js/486.33b6102c.js"><link rel="prefetch" href="/assets/js/487.437d2d63.js"><link rel="prefetch" href="/assets/js/488.7f58da5c.js"><link rel="prefetch" href="/assets/js/489.0cc84777.js"><link rel="prefetch" href="/assets/js/49.e9c9c5a5.js"><link rel="prefetch" href="/assets/js/490.4ac3f7f8.js"><link rel="prefetch" href="/assets/js/491.3749551b.js"><link rel="prefetch" href="/assets/js/492.c7f43456.js"><link rel="prefetch" href="/assets/js/493.2fb5bece.js"><link rel="prefetch" href="/assets/js/494.2a865fb0.js"><link rel="prefetch" href="/assets/js/495.28d2b23b.js"><link rel="prefetch" href="/assets/js/496.4e03cb34.js"><link rel="prefetch" href="/assets/js/497.297b7336.js"><link rel="prefetch" href="/assets/js/498.f29f308a.js"><link rel="prefetch" href="/assets/js/499.e99deb01.js"><link rel="prefetch" href="/assets/js/5.bfbbc7f5.js"><link rel="prefetch" href="/assets/js/50.0c53fb33.js"><link rel="prefetch" href="/assets/js/500.89423aac.js"><link rel="prefetch" href="/assets/js/501.b68bad3d.js"><link rel="prefetch" href="/assets/js/502.235b1e36.js"><link rel="prefetch" href="/assets/js/503.687a9adc.js"><link rel="prefetch" href="/assets/js/504.d4d1fab1.js"><link rel="prefetch" href="/assets/js/505.9276b1df.js"><link rel="prefetch" href="/assets/js/506.7b051d75.js"><link rel="prefetch" href="/assets/js/507.5827bc32.js"><link rel="prefetch" href="/assets/js/508.b4126a4f.js"><link rel="prefetch" href="/assets/js/509.f1097fcd.js"><link rel="prefetch" href="/assets/js/51.f3da6a3c.js"><link rel="prefetch" href="/assets/js/510.421ddebb.js"><link rel="prefetch" href="/assets/js/511.a56623d3.js"><link rel="prefetch" href="/assets/js/512.b0433b31.js"><link rel="prefetch" href="/assets/js/513.d8331670.js"><link rel="prefetch" href="/assets/js/514.99782183.js"><link rel="prefetch" href="/assets/js/515.541f3439.js"><link rel="prefetch" href="/assets/js/516.4fc9d696.js"><link rel="prefetch" href="/assets/js/517.6f1314ba.js"><link rel="prefetch" href="/assets/js/518.ec7de1f5.js"><link rel="prefetch" href="/assets/js/519.ce9dadc6.js"><link rel="prefetch" href="/assets/js/52.7df3e065.js"><link rel="prefetch" href="/assets/js/520.eb1a78f2.js"><link rel="prefetch" href="/assets/js/521.f9451c09.js"><link rel="prefetch" href="/assets/js/522.8265d8bd.js"><link rel="prefetch" href="/assets/js/523.33bf9ad9.js"><link rel="prefetch" href="/assets/js/524.c671cb63.js"><link rel="prefetch" href="/assets/js/525.c7d942ee.js"><link rel="prefetch" href="/assets/js/526.18ebe542.js"><link rel="prefetch" href="/assets/js/527.50f0d74e.js"><link rel="prefetch" href="/assets/js/528.66deda8d.js"><link rel="prefetch" href="/assets/js/529.16b600b4.js"><link rel="prefetch" href="/assets/js/53.5ba2caae.js"><link rel="prefetch" href="/assets/js/530.62c25145.js"><link rel="prefetch" href="/assets/js/531.9b580ff0.js"><link rel="prefetch" href="/assets/js/532.6f648be1.js"><link rel="prefetch" href="/assets/js/533.cdb21999.js"><link rel="prefetch" href="/assets/js/534.78bc0972.js"><link rel="prefetch" href="/assets/js/535.3dbe5b43.js"><link rel="prefetch" href="/assets/js/536.b902b962.js"><link rel="prefetch" href="/assets/js/537.1bfac335.js"><link rel="prefetch" href="/assets/js/538.8d07637f.js"><link rel="prefetch" href="/assets/js/539.30c27d53.js"><link rel="prefetch" href="/assets/js/54.183b8288.js"><link rel="prefetch" href="/assets/js/540.dfac49a8.js"><link rel="prefetch" href="/assets/js/541.793792f1.js"><link rel="prefetch" href="/assets/js/542.9b888682.js"><link rel="prefetch" href="/assets/js/543.911305c1.js"><link rel="prefetch" href="/assets/js/544.1d18637a.js"><link rel="prefetch" href="/assets/js/545.96525b63.js"><link rel="prefetch" href="/assets/js/546.cfdd52b5.js"><link rel="prefetch" href="/assets/js/547.4264d889.js"><link rel="prefetch" href="/assets/js/548.5dd59960.js"><link rel="prefetch" href="/assets/js/549.792f91cb.js"><link rel="prefetch" href="/assets/js/55.d1df239a.js"><link rel="prefetch" href="/assets/js/550.85ef8f3f.js"><link rel="prefetch" href="/assets/js/551.2b894a73.js"><link rel="prefetch" href="/assets/js/552.8ae1b60b.js"><link rel="prefetch" href="/assets/js/553.b7696e31.js"><link rel="prefetch" href="/assets/js/554.86bfdcbb.js"><link rel="prefetch" href="/assets/js/555.13489a7d.js"><link rel="prefetch" href="/assets/js/556.6a67e81d.js"><link rel="prefetch" href="/assets/js/557.061af115.js"><link rel="prefetch" href="/assets/js/558.bc48fbcd.js"><link rel="prefetch" href="/assets/js/559.c4753455.js"><link rel="prefetch" href="/assets/js/56.e6d73dc0.js"><link rel="prefetch" href="/assets/js/560.31f919d0.js"><link rel="prefetch" href="/assets/js/561.864c958d.js"><link rel="prefetch" href="/assets/js/562.210e09c3.js"><link rel="prefetch" href="/assets/js/563.c3bf409f.js"><link rel="prefetch" href="/assets/js/564.7ddb0510.js"><link rel="prefetch" href="/assets/js/565.f822b292.js"><link rel="prefetch" href="/assets/js/566.00a3e5fc.js"><link rel="prefetch" href="/assets/js/567.f67e61ef.js"><link rel="prefetch" href="/assets/js/568.acc68552.js"><link rel="prefetch" href="/assets/js/569.c55cdda6.js"><link rel="prefetch" href="/assets/js/57.cb3f0be8.js"><link rel="prefetch" href="/assets/js/570.e154113d.js"><link rel="prefetch" href="/assets/js/571.6b115e23.js"><link rel="prefetch" href="/assets/js/572.f4efbe9f.js"><link rel="prefetch" href="/assets/js/573.5c638cea.js"><link rel="prefetch" href="/assets/js/574.a2b0ccfc.js"><link rel="prefetch" href="/assets/js/575.07423afc.js"><link rel="prefetch" href="/assets/js/576.d87cd746.js"><link rel="prefetch" href="/assets/js/577.362175f5.js"><link rel="prefetch" href="/assets/js/578.eaeee42a.js"><link rel="prefetch" href="/assets/js/579.55a0f831.js"><link rel="prefetch" href="/assets/js/58.d165c407.js"><link rel="prefetch" href="/assets/js/580.ef297aa1.js"><link rel="prefetch" href="/assets/js/581.06204c28.js"><link rel="prefetch" href="/assets/js/582.a0b2e4e5.js"><link rel="prefetch" href="/assets/js/583.75f5c75a.js"><link rel="prefetch" href="/assets/js/584.25af20a4.js"><link rel="prefetch" href="/assets/js/585.17a770c8.js"><link rel="prefetch" href="/assets/js/586.4ad4dcc7.js"><link rel="prefetch" href="/assets/js/587.69713c3a.js"><link rel="prefetch" href="/assets/js/588.b79b42b2.js"><link rel="prefetch" href="/assets/js/589.a3f52c55.js"><link rel="prefetch" href="/assets/js/59.d9c8e9bf.js"><link rel="prefetch" href="/assets/js/590.88f8a919.js"><link rel="prefetch" href="/assets/js/591.f157e96a.js"><link rel="prefetch" href="/assets/js/592.1f6a61c5.js"><link rel="prefetch" href="/assets/js/593.9517585f.js"><link rel="prefetch" href="/assets/js/594.b8744173.js"><link rel="prefetch" href="/assets/js/595.65a6c8dc.js"><link rel="prefetch" href="/assets/js/596.3684f5eb.js"><link rel="prefetch" href="/assets/js/597.53a178f3.js"><link rel="prefetch" href="/assets/js/598.d82b3f6b.js"><link rel="prefetch" href="/assets/js/599.649f5ec3.js"><link rel="prefetch" href="/assets/js/6.585b2ace.js"><link rel="prefetch" href="/assets/js/60.8a396769.js"><link rel="prefetch" href="/assets/js/600.e857d502.js"><link rel="prefetch" href="/assets/js/601.ac1d30a2.js"><link rel="prefetch" href="/assets/js/602.fe8f4aaf.js"><link rel="prefetch" href="/assets/js/603.52d03968.js"><link rel="prefetch" href="/assets/js/604.d2ef842f.js"><link rel="prefetch" href="/assets/js/605.0176c796.js"><link rel="prefetch" href="/assets/js/606.e5142cf2.js"><link rel="prefetch" href="/assets/js/607.3655eec9.js"><link rel="prefetch" href="/assets/js/608.2a9cb63f.js"><link rel="prefetch" href="/assets/js/609.786d6a87.js"><link rel="prefetch" href="/assets/js/61.58eaac48.js"><link rel="prefetch" href="/assets/js/610.c7404ce4.js"><link rel="prefetch" href="/assets/js/611.010f68c7.js"><link rel="prefetch" href="/assets/js/612.f8a6602c.js"><link rel="prefetch" href="/assets/js/613.34c28faf.js"><link rel="prefetch" href="/assets/js/614.75af3c98.js"><link rel="prefetch" href="/assets/js/615.cdcc849f.js"><link rel="prefetch" href="/assets/js/616.0a0bb772.js"><link rel="prefetch" href="/assets/js/617.86895de9.js"><link rel="prefetch" href="/assets/js/618.92e77d09.js"><link rel="prefetch" href="/assets/js/619.fd4bea1e.js"><link rel="prefetch" href="/assets/js/62.0efd4699.js"><link rel="prefetch" href="/assets/js/620.426eb2b7.js"><link rel="prefetch" href="/assets/js/621.886944db.js"><link rel="prefetch" href="/assets/js/622.b3bcaa1c.js"><link rel="prefetch" href="/assets/js/623.c1589c50.js"><link rel="prefetch" href="/assets/js/624.c0ff1263.js"><link rel="prefetch" href="/assets/js/625.1c9ffa8a.js"><link rel="prefetch" href="/assets/js/626.2b058261.js"><link rel="prefetch" href="/assets/js/627.9d662c55.js"><link rel="prefetch" href="/assets/js/628.61212449.js"><link rel="prefetch" href="/assets/js/629.cc7deec2.js"><link rel="prefetch" href="/assets/js/63.d21fe8a8.js"><link rel="prefetch" href="/assets/js/630.16ca5f44.js"><link rel="prefetch" href="/assets/js/631.8d35d4bc.js"><link rel="prefetch" href="/assets/js/632.2ca97d32.js"><link rel="prefetch" href="/assets/js/633.6629ef5d.js"><link rel="prefetch" href="/assets/js/634.0c171112.js"><link rel="prefetch" href="/assets/js/635.982b1817.js"><link rel="prefetch" href="/assets/js/636.a8ee1b86.js"><link rel="prefetch" href="/assets/js/637.a5cbdd6b.js"><link rel="prefetch" href="/assets/js/638.bca53699.js"><link rel="prefetch" href="/assets/js/639.f344996a.js"><link rel="prefetch" href="/assets/js/64.564c4d45.js"><link rel="prefetch" href="/assets/js/640.ff201bf8.js"><link rel="prefetch" href="/assets/js/641.1a1c6a57.js"><link rel="prefetch" href="/assets/js/642.e521b79b.js"><link rel="prefetch" href="/assets/js/643.4099ed72.js"><link rel="prefetch" href="/assets/js/644.3cfdfde9.js"><link rel="prefetch" href="/assets/js/645.29e002dc.js"><link rel="prefetch" href="/assets/js/646.cc3374a3.js"><link rel="prefetch" href="/assets/js/647.8d10f01f.js"><link rel="prefetch" href="/assets/js/648.d1a04bdb.js"><link rel="prefetch" href="/assets/js/649.9207c1bf.js"><link rel="prefetch" href="/assets/js/65.fe093264.js"><link rel="prefetch" href="/assets/js/650.eaa321b2.js"><link rel="prefetch" href="/assets/js/651.71555afe.js"><link rel="prefetch" href="/assets/js/652.03d38e3c.js"><link rel="prefetch" href="/assets/js/653.f02f74fa.js"><link rel="prefetch" href="/assets/js/654.7c654a00.js"><link rel="prefetch" href="/assets/js/655.3a541db7.js"><link rel="prefetch" href="/assets/js/656.69686326.js"><link rel="prefetch" href="/assets/js/657.718799bb.js"><link rel="prefetch" href="/assets/js/658.00967b11.js"><link rel="prefetch" href="/assets/js/659.d63e0ae1.js"><link rel="prefetch" href="/assets/js/66.96de1be0.js"><link rel="prefetch" href="/assets/js/660.690d4dda.js"><link rel="prefetch" href="/assets/js/661.5bd35d8c.js"><link rel="prefetch" href="/assets/js/662.6118ac39.js"><link rel="prefetch" href="/assets/js/663.846b7d9e.js"><link rel="prefetch" href="/assets/js/664.5f546884.js"><link rel="prefetch" href="/assets/js/665.915b70d8.js"><link rel="prefetch" href="/assets/js/666.2d00c0e9.js"><link rel="prefetch" href="/assets/js/667.db1cb5e6.js"><link rel="prefetch" href="/assets/js/668.6c898dc1.js"><link rel="prefetch" href="/assets/js/669.76db0899.js"><link rel="prefetch" href="/assets/js/67.cbba9208.js"><link rel="prefetch" href="/assets/js/670.b09306a0.js"><link rel="prefetch" href="/assets/js/671.d8c46607.js"><link rel="prefetch" href="/assets/js/672.d6972d60.js"><link rel="prefetch" href="/assets/js/673.5378f9ad.js"><link rel="prefetch" href="/assets/js/674.995ea672.js"><link rel="prefetch" href="/assets/js/675.dcc727fe.js"><link rel="prefetch" href="/assets/js/676.665ed3aa.js"><link rel="prefetch" href="/assets/js/677.2442d360.js"><link rel="prefetch" href="/assets/js/678.37319c68.js"><link rel="prefetch" href="/assets/js/679.0477a4d3.js"><link rel="prefetch" href="/assets/js/68.96631b23.js"><link rel="prefetch" href="/assets/js/680.4db29320.js"><link rel="prefetch" href="/assets/js/681.646d80ed.js"><link rel="prefetch" href="/assets/js/682.20600348.js"><link rel="prefetch" href="/assets/js/683.b3e07e4a.js"><link rel="prefetch" href="/assets/js/684.fe30751b.js"><link rel="prefetch" href="/assets/js/685.695a878f.js"><link rel="prefetch" href="/assets/js/686.f02ac2b5.js"><link rel="prefetch" href="/assets/js/687.e7479f7d.js"><link rel="prefetch" href="/assets/js/688.ec8502c6.js"><link rel="prefetch" href="/assets/js/689.2118e4c7.js"><link rel="prefetch" href="/assets/js/69.30e0ad00.js"><link rel="prefetch" href="/assets/js/690.04adb557.js"><link rel="prefetch" href="/assets/js/691.54436bec.js"><link rel="prefetch" href="/assets/js/692.3c4e088b.js"><link rel="prefetch" href="/assets/js/693.6e35e166.js"><link rel="prefetch" href="/assets/js/694.5a18834d.js"><link rel="prefetch" href="/assets/js/695.74321579.js"><link rel="prefetch" href="/assets/js/696.902b85a4.js"><link rel="prefetch" href="/assets/js/697.895cfafb.js"><link rel="prefetch" href="/assets/js/698.a4168a45.js"><link rel="prefetch" href="/assets/js/699.ab1e4601.js"><link rel="prefetch" href="/assets/js/7.981fdcae.js"><link rel="prefetch" href="/assets/js/70.39d99d0d.js"><link rel="prefetch" href="/assets/js/700.020f819a.js"><link rel="prefetch" href="/assets/js/701.a8177b01.js"><link rel="prefetch" href="/assets/js/702.f5bbfc7a.js"><link rel="prefetch" href="/assets/js/703.55f02b30.js"><link rel="prefetch" href="/assets/js/704.97cf859f.js"><link rel="prefetch" href="/assets/js/705.46223799.js"><link rel="prefetch" href="/assets/js/706.817d4dab.js"><link rel="prefetch" href="/assets/js/707.f0e103b7.js"><link rel="prefetch" href="/assets/js/708.2b02b234.js"><link rel="prefetch" href="/assets/js/709.46a0a136.js"><link rel="prefetch" href="/assets/js/71.55c84885.js"><link rel="prefetch" href="/assets/js/710.7b45ca9e.js"><link rel="prefetch" href="/assets/js/711.c2e818b1.js"><link rel="prefetch" href="/assets/js/712.85f937a3.js"><link rel="prefetch" href="/assets/js/713.a5e0053c.js"><link rel="prefetch" href="/assets/js/714.74b9590b.js"><link rel="prefetch" href="/assets/js/715.17ef4c76.js"><link rel="prefetch" href="/assets/js/716.c915000f.js"><link rel="prefetch" href="/assets/js/717.c6a00145.js"><link rel="prefetch" href="/assets/js/718.c8fbfcb2.js"><link rel="prefetch" href="/assets/js/719.1907b689.js"><link rel="prefetch" href="/assets/js/72.55a3b8e5.js"><link rel="prefetch" href="/assets/js/720.95ac22ab.js"><link rel="prefetch" href="/assets/js/721.218c64b8.js"><link rel="prefetch" href="/assets/js/722.b70d164f.js"><link rel="prefetch" href="/assets/js/723.f5831e93.js"><link rel="prefetch" href="/assets/js/724.5122965b.js"><link rel="prefetch" href="/assets/js/725.a55093ca.js"><link rel="prefetch" href="/assets/js/726.1b4811e1.js"><link rel="prefetch" href="/assets/js/727.93f80f68.js"><link rel="prefetch" href="/assets/js/728.0c3844fb.js"><link rel="prefetch" href="/assets/js/729.f8472f3f.js"><link rel="prefetch" href="/assets/js/73.01a73eb0.js"><link rel="prefetch" href="/assets/js/730.7a52bdb7.js"><link rel="prefetch" href="/assets/js/731.d91afc5e.js"><link rel="prefetch" href="/assets/js/732.23e6fafe.js"><link rel="prefetch" href="/assets/js/733.bb6eabf3.js"><link rel="prefetch" href="/assets/js/734.e7a03870.js"><link rel="prefetch" href="/assets/js/735.3daf0253.js"><link rel="prefetch" href="/assets/js/736.ef37a2dc.js"><link rel="prefetch" href="/assets/js/737.28b2dea4.js"><link rel="prefetch" href="/assets/js/738.1de74088.js"><link rel="prefetch" href="/assets/js/739.fa109b7c.js"><link rel="prefetch" href="/assets/js/74.8696d02d.js"><link rel="prefetch" href="/assets/js/740.5c496bcc.js"><link rel="prefetch" href="/assets/js/741.dd0a343d.js"><link rel="prefetch" href="/assets/js/742.cfa411bd.js"><link rel="prefetch" href="/assets/js/743.33fc207a.js"><link rel="prefetch" href="/assets/js/744.05748f05.js"><link rel="prefetch" href="/assets/js/745.12f59e0a.js"><link rel="prefetch" href="/assets/js/746.2a1d428d.js"><link rel="prefetch" href="/assets/js/747.5d28e593.js"><link rel="prefetch" href="/assets/js/748.2a487681.js"><link rel="prefetch" href="/assets/js/749.91ac8e4f.js"><link rel="prefetch" href="/assets/js/75.f67c1da4.js"><link rel="prefetch" href="/assets/js/750.f9dfde12.js"><link rel="prefetch" href="/assets/js/751.9f0bb371.js"><link rel="prefetch" href="/assets/js/752.aee1debd.js"><link rel="prefetch" href="/assets/js/753.9f64a14b.js"><link rel="prefetch" href="/assets/js/754.df21dca2.js"><link rel="prefetch" href="/assets/js/755.b5543787.js"><link rel="prefetch" href="/assets/js/756.caae26ee.js"><link rel="prefetch" href="/assets/js/757.2f63ae44.js"><link rel="prefetch" href="/assets/js/758.276543ea.js"><link rel="prefetch" href="/assets/js/759.65f2e55e.js"><link rel="prefetch" href="/assets/js/76.caf41d78.js"><link rel="prefetch" href="/assets/js/760.0c3d7dc4.js"><link rel="prefetch" href="/assets/js/761.7ccfce12.js"><link rel="prefetch" href="/assets/js/762.0c129786.js"><link rel="prefetch" href="/assets/js/763.d19e69a4.js"><link rel="prefetch" href="/assets/js/764.de9ec6d6.js"><link rel="prefetch" href="/assets/js/765.c90b4b24.js"><link rel="prefetch" href="/assets/js/766.436bb0b5.js"><link rel="prefetch" href="/assets/js/767.487d8bcb.js"><link rel="prefetch" href="/assets/js/768.19381437.js"><link rel="prefetch" href="/assets/js/769.3904e456.js"><link rel="prefetch" href="/assets/js/77.8bf9f706.js"><link rel="prefetch" href="/assets/js/770.3ef087be.js"><link rel="prefetch" href="/assets/js/771.d3fd43a2.js"><link rel="prefetch" href="/assets/js/772.3310da42.js"><link rel="prefetch" href="/assets/js/773.2f435100.js"><link rel="prefetch" href="/assets/js/774.48241f01.js"><link rel="prefetch" href="/assets/js/775.6a89ba5e.js"><link rel="prefetch" href="/assets/js/776.7be90d6f.js"><link rel="prefetch" href="/assets/js/777.ab7acd36.js"><link rel="prefetch" href="/assets/js/778.f951db11.js"><link rel="prefetch" href="/assets/js/779.bc447feb.js"><link rel="prefetch" href="/assets/js/78.2f2ef6f5.js"><link rel="prefetch" href="/assets/js/780.b9a6ff22.js"><link rel="prefetch" href="/assets/js/781.2e36fd47.js"><link rel="prefetch" href="/assets/js/782.9277a1d5.js"><link rel="prefetch" href="/assets/js/783.b9b49e69.js"><link rel="prefetch" href="/assets/js/784.b9e20458.js"><link rel="prefetch" href="/assets/js/785.e21b5e36.js"><link rel="prefetch" href="/assets/js/786.f7596533.js"><link rel="prefetch" href="/assets/js/787.bab98c15.js"><link rel="prefetch" href="/assets/js/789.1e963fe3.js"><link rel="prefetch" href="/assets/js/79.fcb84140.js"><link rel="prefetch" href="/assets/js/790.fa353a98.js"><link rel="prefetch" href="/assets/js/791.afcbea4b.js"><link rel="prefetch" href="/assets/js/792.b794a94e.js"><link rel="prefetch" href="/assets/js/793.2e1573fb.js"><link rel="prefetch" href="/assets/js/794.f23063b7.js"><link rel="prefetch" href="/assets/js/795.8d0497c2.js"><link rel="prefetch" href="/assets/js/796.a46f617e.js"><link rel="prefetch" href="/assets/js/797.288e11a8.js"><link rel="prefetch" href="/assets/js/798.8658fafe.js"><link rel="prefetch" href="/assets/js/799.31340218.js"><link rel="prefetch" href="/assets/js/8.bc26605a.js"><link rel="prefetch" href="/assets/js/80.dc5ad892.js"><link rel="prefetch" href="/assets/js/800.e3c3b1e2.js"><link rel="prefetch" href="/assets/js/801.e3d48afc.js"><link rel="prefetch" href="/assets/js/802.1e1cf39a.js"><link rel="prefetch" href="/assets/js/803.d0ee9622.js"><link rel="prefetch" href="/assets/js/804.01da2c0e.js"><link rel="prefetch" href="/assets/js/805.6072deb5.js"><link rel="prefetch" href="/assets/js/806.edc15681.js"><link rel="prefetch" href="/assets/js/807.76ada894.js"><link rel="prefetch" href="/assets/js/808.17ae67fa.js"><link rel="prefetch" href="/assets/js/809.1a0938c2.js"><link rel="prefetch" href="/assets/js/81.5a129bc4.js"><link rel="prefetch" href="/assets/js/810.7b226e94.js"><link rel="prefetch" href="/assets/js/811.af14bd69.js"><link rel="prefetch" href="/assets/js/812.6971b23b.js"><link rel="prefetch" href="/assets/js/813.4a486a53.js"><link rel="prefetch" href="/assets/js/814.4b446cd8.js"><link rel="prefetch" href="/assets/js/815.bc849d6c.js"><link rel="prefetch" href="/assets/js/816.ec3e3468.js"><link rel="prefetch" href="/assets/js/817.0e681682.js"><link rel="prefetch" href="/assets/js/818.74a0be0a.js"><link rel="prefetch" href="/assets/js/819.9cecf970.js"><link rel="prefetch" href="/assets/js/82.7069ffb7.js"><link rel="prefetch" href="/assets/js/820.15b760ea.js"><link rel="prefetch" href="/assets/js/821.1f7183ab.js"><link rel="prefetch" href="/assets/js/822.41d8acd2.js"><link rel="prefetch" href="/assets/js/823.c911d7a6.js"><link rel="prefetch" href="/assets/js/824.e558ffac.js"><link rel="prefetch" href="/assets/js/825.ffa6a9d8.js"><link rel="prefetch" href="/assets/js/83.e4728eb6.js"><link rel="prefetch" href="/assets/js/84.2b85d953.js"><link rel="prefetch" href="/assets/js/85.6408041d.js"><link rel="prefetch" href="/assets/js/86.ab541d0f.js"><link rel="prefetch" href="/assets/js/87.f0a4571d.js"><link rel="prefetch" href="/assets/js/88.8ce9826e.js"><link rel="prefetch" href="/assets/js/89.2f735a0d.js"><link rel="prefetch" href="/assets/js/9.040fe770.js"><link rel="prefetch" href="/assets/js/90.570047f0.js"><link rel="prefetch" href="/assets/js/91.131e80e5.js"><link rel="prefetch" href="/assets/js/92.602ba21b.js"><link rel="prefetch" href="/assets/js/93.6f005216.js"><link rel="prefetch" href="/assets/js/94.d224d2c6.js"><link rel="prefetch" href="/assets/js/95.8ec6aaea.js"><link rel="prefetch" href="/assets/js/96.ff622d4d.js"><link rel="prefetch" href="/assets/js/97.fb8277b2.js"><link rel="prefetch" href="/assets/js/98.82eb0e48.js"><link rel="prefetch" href="/assets/js/99.61defa07.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.2c597f57.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.824bfe15.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/zh/" class="home-link router-link-active"><!----> <span class="site-name">以太坊改进提案 EIPs</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="https://ethlibrary.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  关于我们
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="选择语言" class="dropdown-title"><span class="title">选择语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="选择语言" class="mobile-dropdown-title"><span class="title">选择语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/eip-777.html" class="nav-link">
+  English
+</a></li><li class="dropdown-item"><!----> <a href="/zh/eip-777.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  简体中文
+</a></li></ul></div></div> <a href="https://github.com/ethlibrary/EIPs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="https://ethlibrary.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  关于我们
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="选择语言" class="dropdown-title"><span class="title">选择语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="选择语言" class="mobile-dropdown-title"><span class="title">选择语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/eip-777.html" class="nav-link">
+  English
+</a></li><li class="dropdown-item"><!----> <a href="/zh/eip-777.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  简体中文
+</a></li></ul></div></div> <a href="https://github.com/ethlibrary/EIPs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><a href="/summary/all.html" class="sidebar-link">概览</a></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>提案按状态分类</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/zh/summary/living.html" class="sidebar-link">迭代中 Living (1)</a></li><li><a href="/zh/summary/final.html" class="sidebar-link">已完结 Final (88)</a></li><li><a href="/zh/summary/draft.html" class="sidebar-link">草案中 Draft (157)</a></li><li><a href="/zh/summary/stagnant.html" class="sidebar-link">已停滞 (101)</a></li><li><a href="/zh/summary/withdrawn.html" class="sidebar-link">已撤销 Withdraw (22)</a></li><li><a href="/zh/summary/last-call.html" class="sidebar-link">最后征求意见中 Last Call (8)</a></li><li><a href="/zh/summary/review.html" class="sidebar-link">审议中 Review (14)</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>提案按类型分类</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/zh/summary/meta.html" class="sidebar-link">元信息 Meta (18)</a></li><li><a href="/zh/summary/standards-track.html" class="sidebar-link">标准跟进 Standards Track (367)</a></li><li><a href="/zh/summary/informational.html" class="sidebar-link">信息类 (6)</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>提案按目录分类</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/zh/summary/core.html" class="sidebar-link">核心 Core (165)</a></li><li><a href="/zh/summary/erc.html" class="sidebar-link">ERC (153)</a></li><li><a href="/zh/summary/interface.html" class="sidebar-link">接口 Interface (38)</a></li><li><a href="/zh/summary/networking.html" class="sidebar-link">网络 Networking (11)</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="simple-summary"><a href="#simple-summary" class="header-anchor">#</a> Simple Summary</h2> <p>This EIP defines standard interfaces and behaviors for token contracts.</p> <h2 id="abstract"><a href="#abstract" class="header-anchor">#</a> Abstract</h2> <p>This standard defines a new way to interact with a token contract while remaining backward compatible with <a href="/zh/eip-20.html">ERC-20</a>.</p> <p>It defines advanced features to interact with tokens. Namely, <em>operators</em> to send tokens on behalf of another address—contract or regular account—and send/receive <em>hooks</em> to offer token holders more control over their tokens.</p> <p>It takes advantage of <a href="/zh/eip-1820.html">ERC-1820</a> to find out whether and where to notify contracts and regular addresses when they receive tokens as well as to allow compatibility with already-deployed contracts.</p> <h2 id="motivation"><a href="#motivation" class="header-anchor">#</a> Motivation</h2> <p>This standard tries to improve upon the widely used <a href="/zh/eip-20.html">ERC-20</a> token standard. The main advantages of this standard are:</p> <ol><li><p>Uses the same philosophy as Ether in that tokens are sent with <code>send(dest, value, data)</code>.</p></li> <li><p>Both contracts and regular addresses can control and reject which token they send by registering a <code>tokensToSend</code> hook. (Rejection is done by <code>revert</code>ing in the hook function.)</p></li> <li><p>Both contracts and regular addresses can control and reject which token they receive by registering a <code>tokensReceived</code> hook. (Rejection is done by <code>revert</code>ing in the hook function.)</p></li> <li><p>The <code>tokensReceived</code> hook allows to send tokens to a contract and notify it in a single transaction, unlike <a href="/zh/eip-20.html">ERC-20</a> which requires a double call (<code>approve</code>/<code>transferFrom</code>) to achieve this.</p></li> <li><p>The holder can &quot;authorize&quot; and &quot;revoke&quot; operators which can send tokens on their behalf. These operators are intended to be verified contracts such as an exchange, a cheque processor or an automatic charging system.</p></li> <li><p>Every token transaction contains <code>data</code> and <code>operatorData</code> bytes fields to be used freely to pass data from the holder and the operator, respectively.</p></li> <li><p>It is backward compatible with wallets that do not contain the <code>tokensReceived</code> hook function by deploying a proxy contract implementing the <code>tokensReceived</code> hook for the wallet.</p></li></ol> <h2 id="specification"><a href="#specification" class="header-anchor">#</a> Specification</h2> <h3 id="erc777token-token-contract"><a href="#erc777token-token-contract" class="header-anchor">#</a> ERC777Token (Token Contract)</h3> <div class="language-solidity line-numbers-mode"><pre class="language-solidity"><code><span class="token keyword">interface</span> <span class="token class-name">ERC777Token</span> <span class="token punctuation">{</span>
+    <span class="token keyword">function</span> <span class="token function">name</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">external</span> <span class="token keyword">view</span> <span class="token keyword">returns</span> <span class="token punctuation">(</span><span class="token builtin">string</span> <span class="token keyword">memory</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">function</span> <span class="token function">symbol</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">external</span> <span class="token keyword">view</span> <span class="token keyword">returns</span> <span class="token punctuation">(</span><span class="token builtin">string</span> <span class="token keyword">memory</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">function</span> <span class="token function">totalSupply</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">external</span> <span class="token keyword">view</span> <span class="token keyword">returns</span> <span class="token punctuation">(</span><span class="token builtin">uint256</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">function</span> <span class="token function">balanceOf</span><span class="token punctuation">(</span><span class="token builtin">address</span> holder<span class="token punctuation">)</span> <span class="token keyword">external</span> <span class="token keyword">view</span> <span class="token keyword">returns</span> <span class="token punctuation">(</span><span class="token builtin">uint256</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">function</span> <span class="token function">granularity</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">external</span> <span class="token keyword">view</span> <span class="token keyword">returns</span> <span class="token punctuation">(</span><span class="token builtin">uint256</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">function</span> <span class="token function">defaultOperators</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">external</span> <span class="token keyword">view</span> <span class="token keyword">returns</span> <span class="token punctuation">(</span><span class="token builtin">address</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token keyword">memory</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">function</span> <span class="token function">isOperatorFor</span><span class="token punctuation">(</span>
+        <span class="token builtin">address</span> operator<span class="token punctuation">,</span>
+        <span class="token builtin">address</span> holder
+    <span class="token punctuation">)</span> <span class="token keyword">external</span> <span class="token keyword">view</span> <span class="token keyword">returns</span> <span class="token punctuation">(</span><span class="token builtin">bool</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">function</span> <span class="token function">authorizeOperator</span><span class="token punctuation">(</span><span class="token builtin">address</span> operator<span class="token punctuation">)</span> <span class="token keyword">external</span><span class="token punctuation">;</span>
+    <span class="token keyword">function</span> <span class="token function">revokeOperator</span><span class="token punctuation">(</span><span class="token builtin">address</span> operator<span class="token punctuation">)</span> <span class="token keyword">external</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">function</span> <span class="token function">send</span><span class="token punctuation">(</span><span class="token builtin">address</span> to<span class="token punctuation">,</span> <span class="token builtin">uint256</span> amount<span class="token punctuation">,</span> <span class="token builtin">bytes</span> <span class="token keyword">calldata</span> data<span class="token punctuation">)</span> <span class="token keyword">external</span><span class="token punctuation">;</span>
+    <span class="token keyword">function</span> <span class="token function">operatorSend</span><span class="token punctuation">(</span>
+        <span class="token builtin">address</span> <span class="token keyword">from</span><span class="token punctuation">,</span>
+        <span class="token builtin">address</span> to<span class="token punctuation">,</span>
+        <span class="token builtin">uint256</span> amount<span class="token punctuation">,</span>
+        <span class="token builtin">bytes</span> <span class="token keyword">calldata</span> data<span class="token punctuation">,</span>
+        <span class="token builtin">bytes</span> <span class="token keyword">calldata</span> operatorData
+    <span class="token punctuation">)</span> <span class="token keyword">external</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">function</span> <span class="token function">burn</span><span class="token punctuation">(</span><span class="token builtin">uint256</span> amount<span class="token punctuation">,</span> <span class="token builtin">bytes</span> <span class="token keyword">calldata</span> data<span class="token punctuation">)</span> <span class="token keyword">external</span><span class="token punctuation">;</span>
+    <span class="token keyword">function</span> <span class="token function">operatorBurn</span><span class="token punctuation">(</span>
+        <span class="token builtin">address</span> <span class="token keyword">from</span><span class="token punctuation">,</span>
+        <span class="token builtin">uint256</span> amount<span class="token punctuation">,</span>
+        <span class="token builtin">bytes</span> <span class="token keyword">calldata</span> data<span class="token punctuation">,</span>
+        <span class="token builtin">bytes</span> <span class="token keyword">calldata</span> operatorData
+    <span class="token punctuation">)</span> <span class="token keyword">external</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">event</span> <span class="token function">Sent</span><span class="token punctuation">(</span>
+        <span class="token builtin">address</span> <span class="token keyword">indexed</span> operator<span class="token punctuation">,</span>
+        <span class="token builtin">address</span> <span class="token keyword">indexed</span> <span class="token keyword">from</span><span class="token punctuation">,</span>
+        <span class="token builtin">address</span> <span class="token keyword">indexed</span> to<span class="token punctuation">,</span>
+        <span class="token builtin">uint256</span> amount<span class="token punctuation">,</span>
+        <span class="token builtin">bytes</span> data<span class="token punctuation">,</span>
+        <span class="token builtin">bytes</span> operatorData
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">event</span> <span class="token function">Minted</span><span class="token punctuation">(</span>
+        <span class="token builtin">address</span> <span class="token keyword">indexed</span> operator<span class="token punctuation">,</span>
+        <span class="token builtin">address</span> <span class="token keyword">indexed</span> to<span class="token punctuation">,</span>
+        <span class="token builtin">uint256</span> amount<span class="token punctuation">,</span>
+        <span class="token builtin">bytes</span> data<span class="token punctuation">,</span>
+        <span class="token builtin">bytes</span> operatorData
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">event</span> <span class="token function">Burned</span><span class="token punctuation">(</span>
+        <span class="token builtin">address</span> <span class="token keyword">indexed</span> operator<span class="token punctuation">,</span>
+        <span class="token builtin">address</span> <span class="token keyword">indexed</span> <span class="token keyword">from</span><span class="token punctuation">,</span>
+        <span class="token builtin">uint256</span> amount<span class="token punctuation">,</span>
+        <span class="token builtin">bytes</span> data<span class="token punctuation">,</span>
+        <span class="token builtin">bytes</span> operatorData
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">event</span> <span class="token function">AuthorizedOperator</span><span class="token punctuation">(</span>
+        <span class="token builtin">address</span> <span class="token keyword">indexed</span> operator<span class="token punctuation">,</span>
+        <span class="token builtin">address</span> <span class="token keyword">indexed</span> holder
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">event</span> <span class="token function">RevokedOperator</span><span class="token punctuation">(</span><span class="token builtin">address</span> <span class="token keyword">indexed</span> operator<span class="token punctuation">,</span> <span class="token builtin">address</span> <span class="token keyword">indexed</span> holder<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br></div></div><p>The token contract MUST implement the above interface. The implementation MUST follow the specifications described below.</p> <p>The token contract MUST register the <code>ERC777Token</code> interface with its own address via <a href="/zh/eip-1820.html">ERC-1820</a>.</p> <blockquote><p>This is done by calling the <code>setInterfaceImplementer</code> function on the <a href="/zh/eip-1820.html">ERC-1820</a> registry with the token contract address as both the address and the implementer and the <code>keccak256</code> hash of <code>ERC777Token</code> (<code>0xac7fbab5f54a3ca8194167523c6753bfeb96a445279294b6125b68cce2177054</code>) as the interface hash.</p></blockquote> <p>If the contract has a switch to enable or disable ERC777 functions, every time the switch is triggered, the token MUST register or unregister the <code>ERC777Token</code> interface for its own address accordingly via ERC1820. Unregistering implies calling the <code>setInterfaceImplementer</code> with the token contract address as the address, the <code>keccak256</code> hash of <code>ERC777Token</code> as the interface hash and <code>0x0</code> as the implementer. (See <a href="/zh/eip-1820.html#set-an-interface-for-an-address">Set An Interface For An Address</a> in <a href="/zh/eip-1820.html">ERC-1820</a> for more details.)</p> <p>When interacting with the token contract, all amounts and balances MUST be unsigned integers. I.e. internally, all values are stored as a denomination of 1E-18 of a token. The display denomination—to display any amount to the end user—MUST be 10<sup>18</sup> of the internal denomination.</p> <p>In other words, the internal denomination is similar to a wei and the display denomination is similar to an ether. It is equivalent to an <a href="/zh/eip-20.html">ERC-20</a>'s <code>decimals</code> function returning <code>18</code>. E.g. if a token contract returns a balance of <code>500,000,000,000,000,000</code> (0.5×10<sup>18</sup>) for a user, the user interface MUST show <code>0.5</code> tokens to the user. If the user wishes to send <code>0.3</code> tokens, the contract MUST be called with an amount of <code>300,000,000,000,000,000</code> (0.3×10<sup>18</sup>).</p> <p>User Interfaces which are generated programmatically from the ABI of the token contract MAY use and display the internal denomination. But this MUST be made clear, for example by displaying the <code>uint256</code> type.</p> <h4 id="view-functions"><a href="#view-functions" class="header-anchor">#</a> <strong>View Functions</strong></h4> <p>The <code>view</code> functions detailed below MUST be implemented.</p> <p><strong><code>name</code> function</strong></p> <div class="language-solidity line-numbers-mode"><pre class="language-solidity"><code><span class="token keyword">function</span> <span class="token function">name</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">external</span> <span class="token keyword">view</span> <span class="token keyword">returns</span> <span class="token punctuation">(</span><span class="token builtin">string</span> <span class="token keyword">memory</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>Get the name of the token, e.g., <code>&quot;MyToken&quot;</code>.</p> <blockquote><p><small><strong>identifier:</strong> <code>06fdde03</code></small><br> <small><strong>returns:</strong> Name of the token.</small></p></blockquote> <p><strong><code>symbol</code> function</strong></p> <div class="language-solidity line-numbers-mode"><pre class="language-solidity"><code><span class="token keyword">function</span> <span class="token function">symbol</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">external</span> <span class="token keyword">view</span> <span class="token keyword">returns</span> <span class="token punctuation">(</span><span class="token builtin">string</span> <span class="token keyword">memory</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>Get the symbol of the token, e.g., <code>&quot;MYT&quot;</code>.</p> <blockquote><p><small><strong>identifier:</strong> <code>95d89b41</code></small><br> <small><strong>returns:</strong> Symbol of the token.</small></p></blockquote> <p><strong><code>totalSupply</code> function</strong></p> <div class="language-solidity line-numbers-mode"><pre class="language-solidity"><code><span class="token keyword">function</span> <span class="token function">totalSupply</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">external</span> <span class="token keyword">view</span> <span class="token keyword">returns</span> <span class="token punctuation">(</span><span class="token builtin">uint256</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>Get the total number of minted tokens.</p> <p><em>NOTE</em>: The total supply MUST be equal to the sum of the balances of all addresses—as returned by the <code>balanceOf</code> function.</p> <p><em>NOTE</em>: The total supply MUST be equal to the sum of all the minted tokens as defined in all the <code>Minted</code> events minus the sum of all the burned tokens as defined in all the <code>Burned</code> events.</p> <blockquote><p><small><strong>identifier:</strong> <code>18160ddd</code></small><br> <small><strong>returns:</strong> Total supply of tokens currently in circulation.</small></p></blockquote> <p><strong><code>balanceOf</code> function</strong></p> <div class="language-solidity line-numbers-mode"><pre class="language-solidity"><code><span class="token keyword">function</span> <span class="token function">balanceOf</span><span class="token punctuation">(</span><span class="token builtin">address</span> holder<span class="token punctuation">)</span> <span class="token keyword">external</span> <span class="token keyword">view</span> <span class="token keyword">returns</span> <span class="token punctuation">(</span><span class="token builtin">uint256</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>Get the balance of the account with address <code>holder</code>.</p> <p>The balance MUST be zero (<code>0</code>) or higher.</p> <blockquote><p><small><strong>identifier:</strong> <code>70a08231</code></small><br> <small><strong>parameters</strong></small><br> <small><code>holder</code>: Address for which the balance is returned.</small></p> <p><small><strong>returns:</strong> Amount of tokens held by <code>holder</code> in the token contract.</small></p></blockquote> <p><strong><code>granularity</code> function</strong></p> <div class="language-solidity line-numbers-mode"><pre class="language-solidity"><code><span class="token keyword">function</span> <span class="token function">granularity</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">external</span> <span class="token keyword">view</span> <span class="token keyword">returns</span> <span class="token punctuation">(</span><span class="token builtin">uint256</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>Get the smallest part of the token that's not divisible.</p> <p>In other words, the granularity is the smallest amount of tokens (in the internal denomination) which MAY be minted, sent or burned at any time.</p> <p>The following rules MUST be applied regarding the <em>granularity</em>:</p> <ul><li><p>The <em>granularity</em> value MUST be set at creation time.</p></li> <li><p>The <em>granularity</em> value MUST NOT be changed, ever.</p></li> <li><p>The <em>granularity</em> value MUST be greater than or equal to <code>1</code>.</p></li> <li><p>All balances MUST be a multiple of the granularity.</p></li> <li><p>Any amount of tokens (in the internal denomination) minted, sent or burned MUST be a multiple of the <em>granularity</em> value.</p></li> <li><p>Any operation that would result in a balance that's not a multiple of the <em>granularity</em> value MUST be considered invalid, and the transaction MUST <code>revert</code>.</p></li></ul> <p><em>NOTE</em>: Most tokens SHOULD be fully partition-able. I.e., this function SHOULD return <code>1</code> unless there is a good reason for not allowing any fraction of the token.</p> <blockquote><p><small><strong>identifier:</strong> <code>556f0dc7</code></small><br> <small><strong>returns:</strong> The smallest non-divisible part of the token.</small></p></blockquote> <p><em>NOTE</em>: <a href="#defaultOperators"><code>defaultOperators</code></a> and <a href="#isOperatorFor"><code>isOperatorFor</code></a> are also <code>view</code> functions, defined under the <a href="#operators">operators</a> for consistency.</p> <p><em><a href="/zh/eip-20.html">ERC-20</a> compatibility requirement</em>:<br>
+The decimals of the token MUST always be <code>18</code>. For a <em>pure</em> ERC777 token the <a href="/zh/eip-20.html">ERC-20</a> <code>decimals</code> function is OPTIONAL, and its existence SHALL NOT be relied upon when interacting with the token contract. (The decimal value of <code>18</code> is implied.) For an <a href="/zh/eip-20.html">ERC-20</a> compatible token, the <code>decimals</code> function is REQUIRED and MUST return <code>18</code>. (In <a href="/zh/eip-20.html">ERC-20</a>, the <code>decimals</code> function is OPTIONAL. If the function is not present, the <code>decimals</code> value is not clearly defined and may be assumed to be <code>0</code>. Hence for compatibility reasons, <code>decimals</code> MUST be implemented for <a href="/zh/eip-20.html">ERC-20</a> compatible tokens.)</p> <h4 id="operators"><a href="#operators" class="header-anchor">#</a> <strong>Operators</strong></h4> <p>An <code>operator</code> is an address which is allowed to send and burn tokens on behalf of some <em>holder</em>.</p> <p>When an address becomes an <em>operator</em> for a <em>holder</em>, an <code>AuthorizedOperator</code> event MUST be emitted. The <code>AuthorizedOperator</code>'s <code>operator</code> (topic 1) and <code>holder</code> (topic 2) MUST be the addresses of the <em>operator</em> and the <em>holder</em> respectively.</p> <p>When a <em>holder</em> revokes an <em>operator</em>, a <code>RevokedOperator</code> event MUST be emitted. The <code>RevokedOperator</code>'s <code>operator</code> (topic 1) and <code>holder</code> (topic 2) MUST be the addresses of the <em>operator</em> and the <em>holder</em> respectively.</p> <p><em>NOTE</em>: A <em>holder</em> MAY have multiple <em>operators</em> at the same time.</p> <p>The token MAY define <em>default operators</em>. A <em>default operator</em> is an implicitly authorized <em>operator</em> for all <em>holders</em>. <code>AuthorizedOperator</code> events MUST NOT be emitted when defining the <em>default operators</em>. The rules below apply to <em>default operators</em>:</p> <ul><li><p>The token contract MUST define <em>default operators</em> at creation time.</p></li> <li><p>The <em>default operators</em> MUST be invariants. I.e., the token contract MUST NOT add or remove <em>default operators</em> ever.</p></li> <li><p><code>AuthorizedOperator</code> events MUST NOT be emitted when defining <em>default operators</em>.</p></li> <li><p>A <em>holder</em> MUST be allowed to revoke a <em>default operator</em> (unless the <em>holder</em> is the <em>default operator</em> in question).</p></li> <li><p>A <em>holder</em> MUST be allowed to re-authorize a previously revoked <em>default operator</em>.</p></li> <li><p>When a <em>default operator</em> is explicitly authorized or revoked for a specific <em>holder</em>, an <code>AuthorizedOperator</code> or <code>RevokedOperator</code> event (respectively) MUST be emitted.</p></li></ul> <p>The following rules apply to any <em>operator</em>:</p> <ul><li><p>An address MUST always be an <em>operator</em> for itself. Hence an address MUST NOT ever be revoked as its own <em>operator</em>.</p></li> <li><p>If an address is an <em>operator</em> for a <em>holder</em>, <code>isOperatorFor</code> MUST return <code>true</code>.</p></li> <li><p>If an address is not an <em>operator</em> for a <em>holder</em>, <code>isOperatorFor</code> MUST return <code>false</code>.</p></li> <li><p>The token contract MUST emit an <code>AuthorizedOperator</code> event with the correct values when a <em>holder</em> authorizes an address as its <em>operator</em> as defined in the <a href="#authorizedoperator"><code>AuthorizedOperator</code> Event</a>.</p></li> <li><p>The token contract MUST emit a <code>RevokedOperator</code> event with the correct values when a <em>holder</em> revokes an address as its <em>operator</em> as defined in the <a href="#revokedoperator"><code>RevokedOperator</code> Event</a>.</p></li></ul> <p><em>NOTE</em>: A <em>holder</em> MAY authorize an already authorized <em>operator</em>. An <code>AuthorizedOperator</code> MUST be emitted each time.</p> <p><em>NOTE</em>: A <em>holder</em> MAY revoke an already revoked <em>operator</em>. A <code>RevokedOperator</code> MUST be emitted each time.</p> <p><strong><code>AuthorizedOperator</code> event</strong> <a id="authorizedoperator"></a></p> <div class="language-solidity line-numbers-mode"><pre class="language-solidity"><code><span class="token keyword">event</span> <span class="token function">AuthorizedOperator</span><span class="token punctuation">(</span><span class="token builtin">address</span> <span class="token keyword">indexed</span> operator<span class="token punctuation">,</span> <span class="token builtin">address</span> <span class="token keyword">indexed</span> holder<span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>Indicates the authorization of <code>operator</code> as an <em>operator</em> for <code>holder</code>.</p> <p><em>NOTE</em>: This event MUST NOT be emitted outside of an <em>operator</em> authorization process.</p> <blockquote><p><small><strong>parameters</strong></small><br> <small><code>operator</code>: Address which became an <em>operator</em> of <code>holder</code>.</small><br> <small><code>holder</code>: Address of a <em>holder</em> which authorized the <code>operator</code> address as an <em>operator</em>.</small></p></blockquote> <p><strong><code>RevokedOperator</code> event</strong> <a id="revokedoperator"></a></p> <div class="language-solidity line-numbers-mode"><pre class="language-solidity"><code><span class="token keyword">event</span> <span class="token function">RevokedOperator</span><span class="token punctuation">(</span><span class="token builtin">address</span> <span class="token keyword">indexed</span> operator<span class="token punctuation">,</span> <span class="token builtin">address</span> <span class="token keyword">indexed</span> holder<span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>Indicates the revocation of <code>operator</code> as an <em>operator</em> for <code>holder</code>.</p> <p><em>NOTE</em>: This event MUST NOT be emitted outside of an <em>operator</em> revocation process.</p> <blockquote><p><small><strong>parameters</strong></small><br> <small><code>operator</code>: Address which was revoked as an <em>operator</em> of <code>holder</code>.</small><br> <small><code>holder</code>: Address of a <em>holder</em> which revoked the <code>operator</code> address as an <em>operator</em>.</small></p></blockquote> <p>The <code>defaultOperators</code>, <code>authorizeOperator</code>, <code>revokeOperator</code> and <code>isOperatorFor</code> functions described below MUST be implemented to manage <em>operators</em>. Token contracts MAY implement other functions to manage <em>operators</em>.</p> <p><strong><code>defaultOperators</code> function</strong> <a id="defaultOperators"></a></p> <div class="language-solidity line-numbers-mode"><pre class="language-solidity"><code><span class="token keyword">function</span> <span class="token function">defaultOperators</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">external</span> <span class="token keyword">view</span> <span class="token keyword">returns</span> <span class="token punctuation">(</span><span class="token builtin">address</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token keyword">memory</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>Get the list of <em>default operators</em> as defined by the token contract.</p> <p><em>NOTE</em>: If the token contract does not have any <em>default operators</em>, this function MUST return an empty list.</p> <blockquote><p><small><strong>identifier:</strong> <code>06e48538</code></small><br> <small><strong x-id="1">returns:</strong> List of addresses of all the <em x-id="3">default operators</em>.</small></p></blockquote><p></p> <p spaces-before="0"><strong x-id="1"><code>authorizeOperator</code> function</strong></p> <pre><code class="solidity">function authorizeOperator(address operator) external
+
+<p></p></code></pre><p></p> <blockquote><p spaces-before="0">
+  Set a third party <code>operator</code> address as an <em x-id="3">operator</em> of <code>msg.sender</code> to send and burn tokens on its behalf.
+</p> <p spaces-before="0"><em x-id="3">NOTE</em>: The <em x-id="3">holder</em> (<code>msg.sender</code>) is always an <em x-id="3">operator</em> for itself. This right SHALL NOT be revoked. Hence this function MUST <code>revert</code> if it is called to authorize the holder (<code>msg.sender</code>) as an <em x-id="3">operator</em> for itself (i.e. if <code>operator</code> is equal to <code>msg.sender</code>).
+</p> <blockquote spaces-before="0"><p spaces-before="0"><small>**identifier:** `959b8c3f`</small><br x-id="2"> <small>**parameters**</small><br x-id="2"> <small>`operator`: Address to set as an *operator* for `msg.sender`.</small></p></blockquote> <p spaces-before="0"><strong x-id="1"><code>revokeOperator</code> function</strong></p> <pre><code class="solidity">function revokeOperator(address operator) external
+</code></pre></blockquote> <p></p> <blockquote><p spaces-before="0">
+  Remove the right of the <code>operator</code> address to be an <em x-id="3">operator</em> for <code>msg.sender</code> and to send and burn tokens on its behalf.
+</p> <p spaces-before="0"><em x-id="3">NOTE</em>: The <em x-id="3">holder</em> (<code>msg.sender</code>) is always an <em x-id="3">operator</em> for itself. This right SHALL NOT be revoked. Hence this function MUST <code>revert</code> if it is called to revoke the holder (<code>msg.sender</code>) as an <em x-id="3">operator</em> for itself (i.e., if <code>operator</code> is equal to <code>msg.sender</code>).
+</p> <blockquote spaces-before="0"><p spaces-before="0"><small>**identifier:** `fad8b32a`</small><br x-id="2"> <small>**parameters**</small><br x-id="2"> <small>`operator`: Address to rescind as an *operator* for `msg.sender`.</small></p></blockquote> <p spaces-before="0"><strong x-id="1"><code>isOperatorFor</code> function</strong> <a id="isOperatorFor"></a></p></blockquote> <blockquote><p></p> <pre><code class="solidity">function isOperatorFor(
+</code></pre></blockquote> <div class="language- extra-class"><pre><code>address operator,
+address holder
+</code></pre></div><p>) external view returns (bool)
+</p> <blockquote><p spaces-before="0">
+  Indicate whether the <code>operator</code> address is an <em x-id="3">operator</em> of the <code>holder</code> address.
+</p> <blockquote spaces-before="0"><p spaces-before="0"><small>**identifier:** `d95b6371`</small><br x-id="2"> <small>**parameters**</small><br x-id="2"> <small>`operator`: Address which may be an *operator* of `holder`.</small><br x-id="2"> <small>`holder`: Address of a *holder* which may have the `operator` address as an *operator*.</small></p> <p spaces-before="0"><small><strong x-id="1">returns:</strong> <code>true</code> if <code>operator</code> is an <em x-id="3">operator</em> of <code>holder</code> and <code>false</code> otherwise.</small></p></blockquote> <div class="language- extra-class"><pre><code>&lt;p spaces-before=&quot;0&quot;&gt;
+  &lt;em x-id=&quot;3&quot;&gt;NOTE&lt;/em&gt;: To know which addresses are &lt;em x-id=&quot;3&quot;&gt;operators&lt;/em&gt; for a given &lt;em x-id=&quot;3&quot;&gt;holder&lt;/em&gt;, one MUST call &lt;code&gt;isOperatorFor&lt;/code&gt; with the &lt;em x-id=&quot;3&quot;&gt;holder&lt;/em&gt; for each &lt;em x-id=&quot;3&quot;&gt;default operator&lt;/em&gt; and parse the &lt;code&gt;AuthorizedOperator&lt;/code&gt;, and &lt;code&gt;RevokedOperator&lt;/code&gt; events for the &lt;em x-id=&quot;3&quot;&gt;holder&lt;/em&gt; in question.
+&lt;/p&gt;
+
+&lt;h4 spaces-before=&quot;0&quot;&gt;
+  &lt;strong x-id=&quot;1&quot;&gt;Sending Tokens&lt;/strong&gt;
+&lt;/h4&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  When an &lt;em x-id=&quot;3&quot;&gt;operator&lt;/em&gt; sends an &lt;code&gt;amount&lt;/code&gt; of tokens from a &lt;em x-id=&quot;3&quot;&gt;holder&lt;/em&gt; to a &lt;em x-id=&quot;3&quot;&gt;recipient&lt;/em&gt; with the associated &lt;code&gt;data&lt;/code&gt; and &lt;code&gt;operatorData&lt;/code&gt;, the token contract MUST apply the following rules:
+&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      Any authorized &lt;em x-id=&quot;3&quot;&gt;operator&lt;/em&gt; MAY send tokens to any &lt;em x-id=&quot;3&quot;&gt;recipient&lt;/em&gt; (except to &lt;code&gt;0x0&lt;/code&gt;).
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      The balance of the &lt;em x-id=&quot;3&quot;&gt;holder&lt;/em&gt; MUST be decreased by the &lt;code&gt;amount&lt;/code&gt;.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      The balance of the &lt;em x-id=&quot;3&quot;&gt;recipient&lt;/em&gt; MUST be increased by the &lt;code&gt;amount&lt;/code&gt;.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      The balance of the &lt;em x-id=&quot;3&quot;&gt;holder&lt;/em&gt; MUST be greater or equal to the &lt;code&gt;amount&lt;/code&gt;&amp;mdash;such that its resulting balance is greater or equal to zero (&lt;code&gt;0&lt;/code&gt;) after the send.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      The token contract MUST emit a &lt;code&gt;Sent&lt;/code&gt; event with the correct values as defined in the &lt;a href=&quot;#sent&quot; f-id=&quot;sent&quot; fo=&quot;22&quot;&gt;&lt;code&gt;Sent&lt;/code&gt; Event&lt;/a&gt;.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      The &lt;em x-id=&quot;3&quot;&gt;operator&lt;/em&gt; MAY include information in the &lt;code&gt;operatorData&lt;/code&gt;.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      The token contract MUST call the &lt;code&gt;tokensToSend&lt;/code&gt; hook of the &lt;em x-id=&quot;3&quot;&gt;holder&lt;/em&gt; if the &lt;em x-id=&quot;3&quot;&gt;holder&lt;/em&gt; registers an &lt;code&gt;ERC777TokensSender&lt;/code&gt; implementation via &lt;a href=&quot;./eip-1820.md&quot; fo=&quot;8&quot;&gt;ERC-1820&lt;/a&gt;.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      The token contract MUST call the &lt;code&gt;tokensReceived&lt;/code&gt; hook of the &lt;em x-id=&quot;3&quot;&gt;recipient&lt;/em&gt; if the &lt;em x-id=&quot;3&quot;&gt;recipient&lt;/em&gt; registers an &lt;code&gt;ERC777TokensRecipient&lt;/code&gt; implementation via &lt;a href=&quot;./eip-1820.md&quot; fo=&quot;8&quot;&gt;ERC-1820&lt;/a&gt;.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      The &lt;code&gt;data&lt;/code&gt; and &lt;code&gt;operatorData&lt;/code&gt; MUST be immutable during the entire send process&amp;mdash;hence the same &lt;code&gt;data&lt;/code&gt; and &lt;code&gt;operatorData&lt;/code&gt; MUST be used to call both hooks and emit the &lt;code&gt;Sent&lt;/code&gt; event.
+    &lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  The token contract MUST &lt;code&gt;revert&lt;/code&gt; when sending in any of the following cases:
+&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      The &lt;em x-id=&quot;3&quot;&gt;operator&lt;/em&gt; address is not an authorized operator for the &lt;em x-id=&quot;3&quot;&gt;holder&lt;/em&gt;.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      The resulting &lt;em x-id=&quot;3&quot;&gt;holder&lt;/em&gt; balance or &lt;em x-id=&quot;3&quot;&gt;recipient&lt;/em&gt; balance after the send is not a multiple of the &lt;em x-id=&quot;3&quot;&gt;granularity&lt;/em&gt; defined by the token contract.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      The &lt;em x-id=&quot;3&quot;&gt;recipient&lt;/em&gt; is a contract, and it does not implement the &lt;code&gt;ERC777TokensRecipient&lt;/code&gt; interface via &lt;a href=&quot;./eip-1820.md&quot; fo=&quot;8&quot;&gt;ERC-1820&lt;/a&gt;.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      The address of the &lt;em x-id=&quot;3&quot;&gt;holder&lt;/em&gt; or the &lt;em x-id=&quot;3&quot;&gt;recipient&lt;/em&gt; is &lt;code&gt;0x0&lt;/code&gt;.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      Any of the resulting balances becomes negative, i.e. becomes less than zero (&lt;code&gt;0&lt;/code&gt;).
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      The &lt;code&gt;tokensToSend&lt;/code&gt; hook of the &lt;em x-id=&quot;3&quot;&gt;holder&lt;/em&gt; &lt;code&gt;revert&lt;/code&gt;s.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      The &lt;code&gt;tokensReceived&lt;/code&gt; hook of the &lt;em x-id=&quot;3&quot;&gt;recipient&lt;/em&gt; &lt;code&gt;revert&lt;/code&gt;s.
+    &lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  The token contract MAY send tokens from many &lt;em x-id=&quot;3&quot;&gt;holders&lt;/em&gt;, to many &lt;em x-id=&quot;3&quot;&gt;recipients&lt;/em&gt;, or both. In this case:
+&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    The previous send rules MUST apply to all the &lt;em x-id=&quot;3&quot;&gt;holders&lt;/em&gt; and all the &lt;em x-id=&quot;3&quot;&gt;recipients&lt;/em&gt;.
+  &lt;/li&gt;
+  &lt;li&gt;
+    The sum of all the balances incremented MUST be equal to the total sent &lt;code&gt;amount&lt;/code&gt;.
+  &lt;/li&gt;
+  &lt;li&gt;
+    The sum of all the balances decremented MUST be equal to the total sent &lt;code&gt;amount&lt;/code&gt;.
+  &lt;/li&gt;
+  &lt;li&gt;
+    A &lt;code&gt;Sent&lt;/code&gt; event MUST be emitted for every &lt;em x-id=&quot;3&quot;&gt;holder&lt;/em&gt; and &lt;em x-id=&quot;3&quot;&gt;recipient&lt;/em&gt; pair with the corresponding amount for each pair.
+  &lt;/li&gt;
+  &lt;li&gt;
+    The sum of all the amounts from the &lt;code&gt;Sent&lt;/code&gt; event MUST be equal to the total sent &lt;code&gt;amount&lt;/code&gt;.
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  &lt;em x-id=&quot;3&quot;&gt;NOTE&lt;/em&gt;: Mechanisms such as applying a fee on a send is considered as a send to multiple &lt;em x-id=&quot;3&quot;&gt;recipients&lt;/em&gt;: the intended &lt;em x-id=&quot;3&quot;&gt;recipient&lt;/em&gt; and the fee &lt;em x-id=&quot;3&quot;&gt;recipient&lt;/em&gt;.
+&lt;/p&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  &lt;em x-id=&quot;3&quot;&gt;NOTE&lt;/em&gt;: Movements of tokens MAY be chained. For example, if a contract upon receiving tokens sends them further to another address. In this case, the previous send rules apply to each send, in order.
+&lt;/p&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  &lt;em x-id=&quot;3&quot;&gt;NOTE&lt;/em&gt;: Sending an amount of zero (&lt;code&gt;0&lt;/code&gt;) tokens is valid and MUST be treated as a regular send.
+&lt;/p&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  &lt;em x-id=&quot;3&quot;&gt;Implementation Requirement&lt;/em&gt;:
+&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    The token contract MUST call the &lt;code&gt;tokensToSend&lt;/code&gt; hook &lt;em x-id=&quot;3&quot;&gt;before&lt;/em&gt; updating the state.
+  &lt;/li&gt;
+  &lt;li&gt;
+    The token contract MUST call the &lt;code&gt;tokensReceived&lt;/code&gt; hook &lt;em x-id=&quot;3&quot;&gt;after&lt;/em&gt; updating the state.&lt;br x-id=&quot;2&quot; /&gt; I.e., &lt;code&gt;tokensToSend&lt;/code&gt; MUST be called first, then the balances MUST be updated to reflect the send, and finally &lt;code&gt;tokensReceived&lt;/code&gt; MUST be called &lt;em x-id=&quot;3&quot;&gt;afterward&lt;/em&gt;. Thus a &lt;code&gt;balanceOf&lt;/code&gt; call within &lt;code&gt;tokensToSend&lt;/code&gt; returns the balance of the address &lt;em x-id=&quot;3&quot;&gt;before&lt;/em&gt; the send and a &lt;code&gt;balanceOf&lt;/code&gt; call within &lt;code&gt;tokensReceived&lt;/code&gt; returns the balance of the address &lt;em x-id=&quot;3&quot;&gt;after&lt;/em&gt; the send.
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  &lt;em x-id=&quot;3&quot;&gt;NOTE&lt;/em&gt;: The &lt;code&gt;data&lt;/code&gt; field contains information provided by the &lt;em x-id=&quot;3&quot;&gt;holder&lt;/em&gt;&amp;mdash;similar to the data field in a regular ether send transaction. The &lt;code&gt;tokensToSend()&lt;/code&gt; hook, the &lt;code&gt;tokensReceived()&lt;/code&gt;, or both MAY use the information to decide if they wish to reject the transaction.
+&lt;/p&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  &lt;em x-id=&quot;3&quot;&gt;NOTE&lt;/em&gt;: The &lt;code&gt;operatorData&lt;/code&gt; field is analogous to the &lt;code&gt;data&lt;/code&gt; field except it SHALL be provided by the &lt;em x-id=&quot;3&quot;&gt;operator&lt;/em&gt;.
+&lt;/p&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  The &lt;code&gt;operatorData&lt;/code&gt; MUST only be provided by the &lt;em x-id=&quot;3&quot;&gt;operator&lt;/em&gt;. It is intended more for logging purposes and particular cases. (Examples include payment references, cheque numbers, countersignatures and more.) In most of the cases the recipient would ignore the &lt;code&gt;operatorData&lt;/code&gt;, or at most, it would log the &lt;code&gt;operatorData&lt;/code&gt;.
+&lt;/p&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  &lt;strong x-id=&quot;1&quot;&gt;&lt;code&gt;Sent&lt;/code&gt; event&lt;/strong&gt; &lt;a id=&quot;sent&quot;&gt;&lt;/a&gt;
+</code></pre></div></blockquote> <blockquote><div class="language- extra-class"><pre><code>&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;solidity&quot;&gt;event Sent(
+</code></pre></div></blockquote> <div class="language- extra-class"><pre><code>address indexed operator,
+address indexed from,
+address indexed to,
+uint256 amount,
+bytes data,
+bytes operatorData
+</code></pre></div><p>)
+</p> <blockquote><div class="language- extra-class"><pre><code>&lt;p spaces-before=&quot;0&quot;&gt;
+  Indicate a send of &lt;code&gt;amount&lt;/code&gt; of tokens from the &lt;code&gt;from&lt;/code&gt; address to the &lt;code&gt;to&lt;/code&gt; address by the &lt;code&gt;operator&lt;/code&gt; address.
+&lt;/p&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  &lt;em x-id=&quot;3&quot;&gt;NOTE&lt;/em&gt;: This event MUST NOT be emitted outside of a send or an &lt;a href=&quot;./eip-20.md&quot; lbb=&quot;2&quot; fo=&quot;2&quot;&gt;ERC-20&lt;/a&gt; transfer process.
+&lt;/p&gt;
+
+&lt;blockquote spaces-before=&quot;0&quot;&gt;
+  &lt;p spaces-before=&quot;0&quot;&gt;
+    &lt;small&gt;**parameters**&lt;/small&gt;&lt;br x-id=&quot;2&quot; /&gt; &lt;small&gt;`operator`: Address which triggered the send.&lt;/small&gt;&lt;br x-id=&quot;2&quot; /&gt; &lt;small&gt;`from`: *Holder* whose tokens were sent.&lt;/small&gt;&lt;br x-id=&quot;2&quot; /&gt; &lt;small&gt;`to`: Recipient of the tokens.&lt;/small&gt;&lt;br x-id=&quot;2&quot; /&gt; &lt;small&gt;`amount`: Number of tokens sent.&lt;/small&gt;&lt;br x-id=&quot;2&quot; /&gt; &lt;small&gt;`data`: Information provided by the *holder*.&lt;/small&gt;&lt;br x-id=&quot;2&quot; /&gt; &lt;small&gt;`operatorData`: Information provided by the *operator*.&lt;/small&gt;
+  &lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  The &lt;code&gt;send&lt;/code&gt; and &lt;code&gt;operatorSend&lt;/code&gt; functions described below MUST be implemented to send tokens. Token contracts MAY implement other functions to send tokens.
+&lt;/p&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  &lt;strong x-id=&quot;1&quot;&gt;&lt;code&gt;send&lt;/code&gt; function&lt;/strong&gt;
+&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;solidity&quot;&gt;function send(address to, uint256 amount, bytes calldata data) external
+</code></pre></div></blockquote> <p></p> <blockquote><div class="language- extra-class"><pre><code>&lt;p spaces-before=&quot;0&quot;&gt;
+  Send the &lt;code&gt;amount&lt;/code&gt; of tokens from the address &lt;code&gt;msg.sender&lt;/code&gt; to the address &lt;code&gt;to&lt;/code&gt;.
+&lt;/p&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  The &lt;em x-id=&quot;3&quot;&gt;operator&lt;/em&gt; and the &lt;em x-id=&quot;3&quot;&gt;holder&lt;/em&gt; MUST both be the &lt;code&gt;msg.sender&lt;/code&gt;.
+&lt;/p&gt;
+
+&lt;blockquote spaces-before=&quot;0&quot;&gt;
+  &lt;p spaces-before=&quot;0&quot;&gt;
+    &lt;small&gt;**identifier:** `9bd9bbc6`&lt;/small&gt;&lt;br x-id=&quot;2&quot; /&gt; &lt;small&gt;**parameters**&lt;/small&gt;&lt;br x-id=&quot;2&quot; /&gt; &lt;small&gt;`to`: Recipient of the tokens.&lt;/small&gt;&lt;br x-id=&quot;2&quot; /&gt; &lt;small&gt;`amount`: Number of tokens to send.&lt;/small&gt;&lt;br x-id=&quot;2&quot; /&gt; &lt;small&gt;`data`: Information provided by the *holder*.&lt;/small&gt;
+  &lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  &lt;strong x-id=&quot;1&quot;&gt;&lt;code&gt;operatorSend&lt;/code&gt; function&lt;/strong&gt;
+&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;solidity&quot;&gt;function operatorSend(
+</code></pre></div></blockquote> <div class="language- extra-class"><pre><code>address from,
+address to,
+uint256 amount,
+bytes calldata data,
+bytes calldata operatorData
+</code></pre></div><p>) external
+</p> <blockquote><div class="language- extra-class"><pre><code>&lt;p spaces-before=&quot;0&quot;&gt;
+  Send the &lt;code&gt;amount&lt;/code&gt; of tokens on behalf of the address &lt;code&gt;from&lt;/code&gt; to the address &lt;code&gt;to&lt;/code&gt;.
+&lt;/p&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  &lt;em x-id=&quot;3&quot;&gt;Reminder&lt;/em&gt;: If the &lt;em x-id=&quot;3&quot;&gt;operator&lt;/em&gt; address is not an authorized operator of the &lt;code&gt;from&lt;/code&gt; address, then the send process MUST &lt;code&gt;revert&lt;/code&gt;.
+&lt;/p&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  &lt;em x-id=&quot;3&quot;&gt;NOTE&lt;/em&gt;: &lt;code&gt;from&lt;/code&gt; and &lt;code&gt;msg.sender&lt;/code&gt; MAY be the same address. I.e., an address MAY call &lt;code&gt;operatorSend&lt;/code&gt; for itself. This call MUST be equivalent to &lt;code&gt;send&lt;/code&gt; with the addition that the &lt;em x-id=&quot;3&quot;&gt;operator&lt;/em&gt; MAY specify an explicit value for &lt;code&gt;operatorData&lt;/code&gt; (which cannot be done with the &lt;code&gt;send&lt;/code&gt; function).
+&lt;/p&gt;
+
+&lt;blockquote spaces-before=&quot;0&quot;&gt;
+  &lt;p spaces-before=&quot;0&quot;&gt;
+    &lt;small&gt;**identifier:** `62ad1b83`&lt;/small&gt;&lt;br x-id=&quot;2&quot; /&gt; &lt;small&gt;**parameters**&lt;/small&gt;&lt;br x-id=&quot;2&quot; /&gt; &lt;small&gt;`from`: *Holder* whose tokens are being sent.&lt;/small&gt;&lt;br x-id=&quot;2&quot; /&gt; &lt;small&gt;`to`: Recipient of the tokens.&lt;/small&gt;&lt;br x-id=&quot;2&quot; /&gt; &lt;small&gt;`amount`: Number of tokens to send.&lt;/small&gt;&lt;br x-id=&quot;2&quot; /&gt; &lt;small&gt;`data`: Information provided by the *holder*.&lt;/small&gt;&lt;br x-id=&quot;2&quot; /&gt; &lt;small&gt;`operatorData`: Information provided by the *operator*.&lt;/small&gt;
+  &lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 spaces-before=&quot;0&quot;&gt;
+  &lt;strong x-id=&quot;1&quot;&gt;Minting Tokens&lt;/strong&gt;
+&lt;/h4&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  Minting tokens is the act of producing new tokens. &lt;a href=&quot;./eip-777.md&quot; fo=&quot;5&quot;&gt;ERC-777&lt;/a&gt; intentionally does not define specific functions to mint tokens. This intent comes from the wish not to limit the use of the &lt;a href=&quot;./eip-777.md&quot; fo=&quot;5&quot;&gt;ERC-777&lt;/a&gt; standard as the minting process is generally specific for every token.
+&lt;/p&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  Nonetheless, the rules below MUST be respected when minting for a &lt;em x-id=&quot;3&quot;&gt;recipient&lt;/em&gt;:
+&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      Tokens MAY be minted for any &lt;em x-id=&quot;3&quot;&gt;recipient&lt;/em&gt; address (except &lt;code&gt;0x0&lt;/code&gt;).
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      The total supply MUST be increased by the amount of tokens minted.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      The balance of &lt;code&gt;0x0&lt;/code&gt; MUST NOT be decreased.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      The balance of the &lt;em x-id=&quot;3&quot;&gt;recipient&lt;/em&gt; MUST be increased by the amount of tokens minted.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      The token contract MUST emit a &lt;code&gt;Minted&lt;/code&gt; event with the correct values as defined in the &lt;a href=&quot;#minted&quot; f-id=&quot;minted&quot; fo=&quot;23&quot;&gt;&lt;code&gt;Minted&lt;/code&gt; Event&lt;/a&gt;.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      The token contract MUST call the &lt;code&gt;tokensReceived&lt;/code&gt; hook of the &lt;em x-id=&quot;3&quot;&gt;recipient&lt;/em&gt; if the &lt;em x-id=&quot;3&quot;&gt;recipient&lt;/em&gt; registers an &lt;code&gt;ERC777TokensRecipient&lt;/code&gt; implementation via &lt;a href=&quot;./eip-1820.md&quot; fo=&quot;8&quot;&gt;ERC-1820&lt;/a&gt;.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      The &lt;code&gt;data&lt;/code&gt; and &lt;code&gt;operatorData&lt;/code&gt; MUST be immutable during the entire mint process&amp;mdash;hence the same &lt;code&gt;data&lt;/code&gt; and &lt;code&gt;operatorData&lt;/code&gt; MUST be used to call the &lt;code&gt;tokensReceived&lt;/code&gt; hook and emit the &lt;code&gt;Minted&lt;/code&gt; event.
+    &lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  The token contract MUST &lt;code&gt;revert&lt;/code&gt; when minting in any of the following cases:
+&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    The resulting &lt;em x-id=&quot;3&quot;&gt;recipient&lt;/em&gt; balance after the mint is not a multiple of the &lt;em x-id=&quot;3&quot;&gt;granularity&lt;/em&gt; defined by the token contract.
+  &lt;/li&gt;
+  &lt;li&gt;
+    The &lt;em x-id=&quot;3&quot;&gt;recipient&lt;/em&gt; is a contract, and it does not implement the &lt;code&gt;ERC777TokensRecipient&lt;/code&gt; interface via &lt;a href=&quot;./eip-1820.md&quot; fo=&quot;8&quot;&gt;ERC-1820&lt;/a&gt;.
+  &lt;/li&gt;
+  &lt;li&gt;
+    The address of the &lt;em x-id=&quot;3&quot;&gt;recipient&lt;/em&gt; is &lt;code&gt;0x0&lt;/code&gt;.
+  &lt;/li&gt;
+  &lt;li&gt;
+    The &lt;code&gt;tokensReceived&lt;/code&gt; hook of the &lt;em x-id=&quot;3&quot;&gt;recipient&lt;/em&gt; &lt;code&gt;revert&lt;/code&gt;s.
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  &lt;em x-id=&quot;3&quot;&gt;NOTE&lt;/em&gt;: The initial token supply at the creation of the token contract MUST be considered as minting for the amount of the initial supply to the address(es) receiving the initial supply. This means one or more &lt;code&gt;Minted&lt;/code&gt; events must be emitted and the &lt;code&gt;tokensReceived&lt;/code&gt; hook of the recipient(s) MUST be called.
+&lt;/p&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  &lt;em x-id=&quot;3&quot;&gt;&lt;a href=&quot;./eip-20.md&quot; lbb=&quot;2&quot; fo=&quot;2&quot;&gt;ERC-20&lt;/a&gt; compatibility requirement&lt;/em&gt;:&lt;br x-id=&quot;2&quot; /&gt; While a &lt;code&gt;Sent&lt;/code&gt; event MUST NOT be emitted when minting, if the token contract is &lt;a href=&quot;./eip-20.md&quot; lbb=&quot;2&quot; fo=&quot;2&quot;&gt;ERC-20&lt;/a&gt; backward compatible, a &lt;code&gt;Transfer&lt;/code&gt; event with the &lt;code&gt;from&lt;/code&gt; parameter set to &lt;code&gt;0x0&lt;/code&gt; SHOULD be emitted as defined in the &lt;a href=&quot;./eip-20.md&quot; lbb=&quot;2&quot; fo=&quot;2&quot;&gt;ERC-20&lt;/a&gt; standard.
+&lt;/p&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  The token contract MAY mint tokens for multiple &lt;em x-id=&quot;3&quot;&gt;recipients&lt;/em&gt; at once. In this case:
+&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    The previous mint rules MUST apply to all the &lt;em x-id=&quot;3&quot;&gt;recipients&lt;/em&gt;.
+  &lt;/li&gt;
+  &lt;li&gt;
+    The sum of all the balances incremented MUST be equal to the total minted amount.
+  &lt;/li&gt;
+  &lt;li&gt;
+    A &lt;code&gt;Minted&lt;/code&gt; event MUST be emitted for every &lt;em x-id=&quot;3&quot;&gt;recipient&lt;/em&gt; with the corresponding amount for each &lt;em x-id=&quot;3&quot;&gt;recipient&lt;/em&gt;.
+  &lt;/li&gt;
+  &lt;li&gt;
+    The sum of all the amounts from the &lt;code&gt;Minted&lt;/code&gt; event MUST be equal to the total minted &lt;code&gt;amount&lt;/code&gt;.
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  &lt;em x-id=&quot;3&quot;&gt;NOTE&lt;/em&gt;: Minting an amount of zero (&lt;code&gt;0&lt;/code&gt;) tokens is valid and MUST be treated as a regular mint.
+&lt;/p&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  &lt;em x-id=&quot;3&quot;&gt;NOTE&lt;/em&gt;: While during a send or a burn, the data is provided by the &lt;em x-id=&quot;3&quot;&gt;holder&lt;/em&gt;, it is inapplicable for a mint. In this case the data MAY be provided by the token contract or the &lt;em x-id=&quot;3&quot;&gt;operator&lt;/em&gt;, for example to ensure a successful minting to a &lt;em x-id=&quot;3&quot;&gt;holder&lt;/em&gt; expecting specific data.
+&lt;/p&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  &lt;em x-id=&quot;3&quot;&gt;NOTE&lt;/em&gt;: The &lt;code&gt;operatorData&lt;/code&gt; field contains information provided by the &lt;em x-id=&quot;3&quot;&gt;operator&lt;/em&gt;&amp;mdash;similar to the data field in a regular ether send transaction. The &lt;code&gt;tokensReceived()&lt;/code&gt; hooks MAY use the information to decide if it wish to reject the transaction.
+&lt;/p&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  &lt;strong x-id=&quot;1&quot;&gt;&lt;code&gt;Minted&lt;/code&gt; event&lt;/strong&gt; &lt;a id=&quot;minted&quot;&gt;&lt;/a&gt;
+</code></pre></div></blockquote> <blockquote><div class="language- extra-class"><pre><code>&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;solidity&quot;&gt;event Minted(
+</code></pre></div></blockquote> <div class="language- extra-class"><pre><code>address indexed operator,
+address indexed to,
+uint256 amount,
+bytes data,
+bytes operatorData
+</code></pre></div><p>)
+</p> <blockquote><div class="language- extra-class"><pre><code>&lt;p spaces-before=&quot;0&quot;&gt;
+  Indicate the minting of &lt;code&gt;amount&lt;/code&gt; of tokens to the &lt;code&gt;to&lt;/code&gt; address by the &lt;code&gt;operator&lt;/code&gt; address.
+&lt;/p&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  &lt;em x-id=&quot;3&quot;&gt;NOTE&lt;/em&gt;: This event MUST NOT be emitted outside of a mint process.
+&lt;/p&gt;
+
+&lt;blockquote spaces-before=&quot;0&quot;&gt;
+  &lt;p spaces-before=&quot;0&quot;&gt;
+    &lt;small&gt;**parameters**&lt;/small&gt;&lt;br x-id=&quot;2&quot; /&gt; &lt;small&gt;`operator`: Address which triggered the mint.&lt;/small&gt;&lt;br x-id=&quot;2&quot; /&gt; &lt;small&gt;`to`: Recipient of the tokens.&lt;/small&gt;&lt;br x-id=&quot;2&quot; /&gt; &lt;small&gt;`amount`: Number of tokens minted.&lt;/small&gt;&lt;br x-id=&quot;2&quot; /&gt; &lt;small&gt;`data`: Information provided for the *recipient*.&lt;/small&gt;&lt;br x-id=&quot;2&quot; /&gt; &lt;small&gt;`operatorData`: Information provided by the *operator*.&lt;/small&gt;
+  &lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 spaces-before=&quot;0&quot;&gt;
+  &lt;strong x-id=&quot;1&quot;&gt;Burning Tokens&lt;/strong&gt;
+&lt;/h4&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  Burning tokens is the act of destroying existing tokens. &lt;a href=&quot;./eip-777.md&quot; fo=&quot;5&quot;&gt;ERC-777&lt;/a&gt; explicitly defines two functions to burn tokens (&lt;code&gt;burn&lt;/code&gt; and &lt;code&gt;operatorBurn&lt;/code&gt;). These functions facilitate the integration of the burning process in wallets and dapps. However, the token contract MAY prevent some or all &lt;em x-id=&quot;3&quot;&gt;holders&lt;/em&gt; from burning tokens for any reason. The token contract MAY also define other functions to burn tokens.
+&lt;/p&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  The rules below MUST be respected when burning the tokens of a &lt;em x-id=&quot;3&quot;&gt;holder&lt;/em&gt;:
+&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      Tokens MAY be burned from any &lt;em x-id=&quot;3&quot;&gt;holder&lt;/em&gt; address (except &lt;code&gt;0x0&lt;/code&gt;).
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      The total supply MUST be decreased by the amount of tokens burned.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      The balance of &lt;code&gt;0x0&lt;/code&gt; MUST NOT be increased.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      The balance of the &lt;em x-id=&quot;3&quot;&gt;holder&lt;/em&gt; MUST be decreased by amount of tokens burned.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      The token contract MUST emit a &lt;code&gt;Burned&lt;/code&gt; event with the correct values as defined in the &lt;a href=&quot;#burned&quot; f-id=&quot;burned&quot; fo=&quot;24&quot;&gt;&lt;code&gt;Burned&lt;/code&gt; Event&lt;/a&gt;.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      The token contract MUST call the &lt;code&gt;tokensToSend&lt;/code&gt; hook of the &lt;em x-id=&quot;3&quot;&gt;holder&lt;/em&gt; if the &lt;em x-id=&quot;3&quot;&gt;holder&lt;/em&gt; registers an &lt;code&gt;ERC777TokensSender&lt;/code&gt; implementation via &lt;a href=&quot;./eip-1820.md&quot; fo=&quot;8&quot;&gt;ERC-1820&lt;/a&gt;.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      The &lt;code&gt;operatorData&lt;/code&gt; MUST be immutable during the entire burn process&amp;mdash;hence the same &lt;code&gt;operatorData&lt;/code&gt; MUST be used to call the &lt;code&gt;tokensToSend&lt;/code&gt; hook and emit the &lt;code&gt;Burned&lt;/code&gt; event.
+    &lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  The token contract MUST &lt;code&gt;revert&lt;/code&gt; when burning in any of the following cases:
+&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      The &lt;em x-id=&quot;3&quot;&gt;operator&lt;/em&gt; address is not an authorized operator for the &lt;em x-id=&quot;3&quot;&gt;holder&lt;/em&gt;.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      The resulting &lt;em x-id=&quot;3&quot;&gt;holder&lt;/em&gt; balance after the burn is not a multiple of the &lt;em x-id=&quot;3&quot;&gt;granularity&lt;/em&gt; defined by the token contract.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      The balance of &lt;em x-id=&quot;3&quot;&gt;holder&lt;/em&gt; is inferior to the amount of tokens to burn (i.e., resulting in a negative balance for the &lt;em x-id=&quot;3&quot;&gt;holder&lt;/em&gt;).
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      The address of the &lt;em x-id=&quot;3&quot;&gt;holder&lt;/em&gt; is &lt;code&gt;0x0&lt;/code&gt;.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      The &lt;code&gt;tokensToSend&lt;/code&gt; hook of the &lt;em x-id=&quot;3&quot;&gt;holder&lt;/em&gt; &lt;code&gt;revert&lt;/code&gt;s.
+    &lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  &lt;em x-id=&quot;3&quot;&gt;&lt;a href=&quot;./eip-20.md&quot; lbb=&quot;2&quot; fo=&quot;2&quot;&gt;ERC-20&lt;/a&gt; compatibility requirement&lt;/em&gt;:&lt;br x-id=&quot;2&quot; /&gt; While a &lt;code&gt;Sent&lt;/code&gt; event MUST NOT be emitted when burning; if the token contract is &lt;a href=&quot;./eip-20.md&quot; lbb=&quot;2&quot; fo=&quot;2&quot;&gt;ERC-20&lt;/a&gt; enabled, a &lt;code&gt;Transfer&lt;/code&gt; event with the &lt;code&gt;to&lt;/code&gt; parameter set to &lt;code&gt;0x0&lt;/code&gt; SHOULD be emitted. The &lt;a href=&quot;./eip-20.md&quot; lbb=&quot;2&quot; fo=&quot;2&quot;&gt;ERC-20&lt;/a&gt; standard does not define the concept of burning tokens, but this is a commonly accepted practice.
+&lt;/p&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  The token contract MAY burn tokens for multiple &lt;em x-id=&quot;3&quot;&gt;holders&lt;/em&gt; at once. In this case:
+&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    The previous burn rules MUST apply to each &lt;em x-id=&quot;3&quot;&gt;holders&lt;/em&gt;.
+  &lt;/li&gt;
+  &lt;li&gt;
+    The sum of all the balances decremented MUST be equal to the total burned amount.
+  &lt;/li&gt;
+  &lt;li&gt;
+    A &lt;code&gt;Burned&lt;/code&gt; event MUST be emitted for every &lt;em x-id=&quot;3&quot;&gt;holder&lt;/em&gt; with the corresponding amount for each &lt;em x-id=&quot;3&quot;&gt;holder&lt;/em&gt;.
+  &lt;/li&gt;
+  &lt;li&gt;
+    The sum of all the amounts from the &lt;code&gt;Burned&lt;/code&gt; event MUST be equal to the total burned &lt;code&gt;amount&lt;/code&gt;.
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  &lt;em x-id=&quot;3&quot;&gt;NOTE&lt;/em&gt;: Burning an amount of zero (&lt;code&gt;0&lt;/code&gt;) tokens is valid and MUST be treated as a regular burn.
+&lt;/p&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  &lt;em x-id=&quot;3&quot;&gt;NOTE&lt;/em&gt;: The &lt;code&gt;data&lt;/code&gt; field contains information provided by the holder&amp;mdash;similar to the data field in a regular ether send transaction. The &lt;code&gt;tokensToSend()&lt;/code&gt; hook, the &lt;code&gt;tokensReceived()&lt;/code&gt;, or both MAY use the information to decide if they wish to reject the transaction.
+&lt;/p&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  &lt;em x-id=&quot;3&quot;&gt;NOTE&lt;/em&gt;: The &lt;code&gt;operatorData&lt;/code&gt; field is analogous to the &lt;code&gt;data&lt;/code&gt; field except it SHALL be provided by the &lt;em x-id=&quot;3&quot;&gt;operator&lt;/em&gt;.
+&lt;/p&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  &lt;strong x-id=&quot;1&quot;&gt;&lt;code&gt;Burned&lt;/code&gt; event&lt;/strong&gt; &lt;a id=&quot;burned&quot;&gt;&lt;/a&gt;
+</code></pre></div></blockquote> <blockquote><div class="language- extra-class"><pre><code>&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;solidity&quot;&gt;event Burned(
+</code></pre></div></blockquote> <div class="language- extra-class"><pre><code>ddress indexed operator,
+address indexed from,
+uint256 amount,
+bytes data,
+bytes operatorData
+</code></pre></div><p>);
+</p> <blockquote><div class="language- extra-class"><pre><code>&lt;p spaces-before=&quot;0&quot;&gt;
+  Indicate the burning of &lt;code&gt;amount&lt;/code&gt; of tokens from the &lt;code&gt;from&lt;/code&gt; address by the &lt;code&gt;operator&lt;/code&gt; address.
+&lt;/p&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  &lt;em x-id=&quot;3&quot;&gt;NOTE&lt;/em&gt;: This event MUST NOT be emitted outside of a burn process.
+&lt;/p&gt;
+
+&lt;blockquote spaces-before=&quot;0&quot;&gt;
+  &lt;p spaces-before=&quot;0&quot;&gt;
+    &lt;small&gt;**parameters**&lt;/small&gt;&lt;br x-id=&quot;2&quot; /&gt; &lt;small&gt;`operator`: Address which triggered the burn.&lt;/small&gt;&lt;br x-id=&quot;2&quot; /&gt; &lt;small&gt;`from`: *Holder* whose tokens were burned.&lt;/small&gt;&lt;br x-id=&quot;2&quot; /&gt; &lt;small&gt;`amount`: Number of tokens burned.&lt;/small&gt;&lt;br x-id=&quot;2&quot; /&gt; &lt;small&gt;`data`: Information provided by the *holder*.&lt;/small&gt;&lt;br x-id=&quot;2&quot; /&gt; &lt;small&gt;`operatorData`: Information provided by the *operator*.&lt;/small&gt;
+  &lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  The &lt;code&gt;burn&lt;/code&gt; and &lt;code&gt;operatorBurn&lt;/code&gt; functions described below MUST be implemented to burn tokens. Token contracts MAY implement other functions to burn tokens.
+&lt;/p&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  &lt;strong x-id=&quot;1&quot;&gt;&lt;code&gt;burn&lt;/code&gt; function&lt;/strong&gt;
+&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;solidity&quot;&gt;function burn(uint256 amount, bytes calldata data) external
+</code></pre></div></blockquote> <p></p> <blockquote><div class="language- extra-class"><pre><code>&lt;p spaces-before=&quot;0&quot;&gt;
+  Burn the &lt;code&gt;amount&lt;/code&gt; of tokens from the address &lt;code&gt;msg.sender&lt;/code&gt;.
+&lt;/p&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  The &lt;em x-id=&quot;3&quot;&gt;operator&lt;/em&gt; and the &lt;em x-id=&quot;3&quot;&gt;holder&lt;/em&gt; MUST both be the &lt;code&gt;msg.sender&lt;/code&gt;.
+&lt;/p&gt;
+
+&lt;blockquote spaces-before=&quot;0&quot;&gt;
+  &lt;p spaces-before=&quot;0&quot;&gt;
+    &lt;small&gt;**identifier:** `fe9d9303`&lt;/small&gt;&lt;br x-id=&quot;2&quot; /&gt; &lt;small&gt;**parameters**&lt;/small&gt;&lt;br x-id=&quot;2&quot; /&gt; &lt;small&gt;`amount`: Number of tokens to burn.&lt;/small&gt;&lt;br x-id=&quot;2&quot; /&gt; &lt;small&gt;`data`: Information provided by the *holder*.&lt;/small&gt;
+  &lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  &lt;strong x-id=&quot;1&quot;&gt;&lt;code&gt;operatorBurn&lt;/code&gt; function&lt;/strong&gt;
+&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;solidity&quot;&gt;function operatorBurn(
+</code></pre></div></blockquote> <div class="language- extra-class"><pre><code>address from,
+uint256 amount,
+bytes calldata data,
+bytes calldata operatorData
+</code></pre></div><p>) external
+</p> <blockquote><div class="language- extra-class"><pre><code>&lt;p spaces-before=&quot;0&quot;&gt;
+  Burn the &lt;code&gt;amount&lt;/code&gt; of tokens on behalf of the address &lt;code&gt;from&lt;/code&gt;.
+&lt;/p&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  &lt;em x-id=&quot;3&quot;&gt;Reminder&lt;/em&gt;: If the &lt;em x-id=&quot;3&quot;&gt;operator&lt;/em&gt; address is not an authorized operator of the &lt;code&gt;from&lt;/code&gt; address, then the burn process MUST &lt;code&gt;revert&lt;/code&gt;.
+&lt;/p&gt;
+
+&lt;blockquote spaces-before=&quot;0&quot;&gt;
+  &lt;p spaces-before=&quot;0&quot;&gt;
+    &lt;small&gt;**identifier:** `fc673c4f`&lt;/small&gt;&lt;br x-id=&quot;2&quot; /&gt; &lt;small&gt;**parameters**&lt;/small&gt;&lt;br x-id=&quot;2&quot; /&gt; &lt;small&gt;`from`: *Holder* whose tokens will be burned.&lt;/small&gt;&lt;br x-id=&quot;2&quot; /&gt; &lt;small&gt;`amount`: Number of tokens to burn.&lt;/small&gt;&lt;br x-id=&quot;2&quot; /&gt; &lt;small&gt;`data`: Information provided by the *holder*.&lt;/small&gt;&lt;br x-id=&quot;2&quot; /&gt; &lt;small&gt;`operatorData`: Information provided by the *operator*.&lt;/small&gt;
+  &lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  &lt;em x-id=&quot;3&quot;&gt;NOTE&lt;/em&gt;: The &lt;em x-id=&quot;3&quot;&gt;operator&lt;/em&gt; MAY pass any information via &lt;code&gt;operatorData&lt;/code&gt;. The &lt;code&gt;operatorData&lt;/code&gt; MUST only be provided by the &lt;em x-id=&quot;3&quot;&gt;operator&lt;/em&gt;.
+&lt;/p&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  &lt;em x-id=&quot;3&quot;&gt;NOTE&lt;/em&gt;: &lt;code&gt;from&lt;/code&gt; and &lt;code&gt;msg.sender&lt;/code&gt; MAY be the same address. I.e., an address MAY call &lt;code&gt;operatorBurn&lt;/code&gt; for itself. This call MUST be equivalent to &lt;code&gt;burn&lt;/code&gt; with the addition that the &lt;em x-id=&quot;3&quot;&gt;operator&lt;/em&gt; MAY specify an explicit value for &lt;code&gt;operatorData&lt;/code&gt; (which cannot be done with the &lt;code&gt;burn&lt;/code&gt; function).
+&lt;/p&gt;
+
+&lt;h4 spaces-before=&quot;0&quot;&gt;
+  &lt;strong x-id=&quot;1&quot;&gt;&lt;code&gt;ERC777TokensSender&lt;/code&gt; And The &lt;code&gt;tokensToSend&lt;/code&gt; Hook&lt;/strong&gt;
+&lt;/h4&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  The &lt;code&gt;tokensToSend&lt;/code&gt; hook notifies of any request to decrement the balance (send and burn) for a given &lt;em x-id=&quot;3&quot;&gt;holder&lt;/em&gt;. Any address (regular or contract) wishing to be notified of token debits from their address MAY register the address of a contract implementing the &lt;code&gt;ERC777TokensSender&lt;/code&gt; interface described below via &lt;a href=&quot;./eip-1820.md&quot; fo=&quot;8&quot;&gt;ERC-1820&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;blockquote spaces-before=&quot;0&quot;&gt;
+  &lt;p spaces-before=&quot;0&quot;&gt;
+    This is done by calling the &lt;code&gt;setInterfaceImplementer&lt;/code&gt; function on the &lt;a href=&quot;./eip-1820.md&quot; fo=&quot;8&quot;&gt;ERC-1820&lt;/a&gt; registry with the &lt;em x-id=&quot;3&quot;&gt;holder&lt;/em&gt; address as the address, the &lt;code&gt;keccak256&lt;/code&gt; hash of &lt;code&gt;ERC777TokensSender&lt;/code&gt; (&lt;code&gt;0x29ddb589b1fb5fc7cf394961c1adf5f8c6454761adf795e67fe149f658abe895&lt;/code&gt;) as the interface hash, and the address of the contract implementing the &lt;code&gt;ERC777TokensSender&lt;/code&gt; as the implementer.
+  &lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code class=&quot;solidity&quot;&gt;interface ERC777TokensSender {
+</code></pre></div></blockquote> <div class="language- extra-class"><pre><code>function tokensToSend(
+    address operator,
+    address from,
+    address to,
+    uint256 amount,
+    bytes calldata userData,
+    bytes calldata operatorData
+) external;
+</code></pre></div><p>}
+</p> <blockquote><div class="language- extra-class"><pre><code>&lt;p spaces-before=&quot;0&quot;&gt;
+  &lt;em x-id=&quot;3&quot;&gt;NOTE&lt;/em&gt;: A regular address MAY register a different address&amp;mdash;the address of a contract&amp;mdash;implementing the interface on its behalf. A contract MAY register either its address or the address of another contract but said address MUST implement the interface on its behalf.
+&lt;/p&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  &lt;strong x-id=&quot;1&quot;&gt;&lt;code&gt;tokensToSend&lt;/code&gt;&lt;/strong&gt;
+&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;solidity&quot;&gt;function tokensToSend(
+</code></pre></div></blockquote> <div class="language- extra-class"><pre><code>address operator,
+address from,
+address to,
+uint256 amount,
+bytes calldata userData,
+bytes calldata operatorData
+</code></pre></div><p>) external
+</p> <blockquote><div class="language- extra-class"><pre><code>&lt;p spaces-before=&quot;0&quot;&gt;
+  Notify a request to send or burn (if &lt;code&gt;to&lt;/code&gt; is &lt;code&gt;0x0&lt;/code&gt;) an &lt;code&gt;amount&lt;/code&gt; tokens from the &lt;code&gt;from&lt;/code&gt; address to the &lt;code&gt;to&lt;/code&gt; address by the &lt;code&gt;operator&lt;/code&gt; address.
+&lt;/p&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  &lt;em x-id=&quot;3&quot;&gt;NOTE&lt;/em&gt;: This function MUST NOT be called outside of a burn, send or &lt;a href=&quot;./eip-20.md&quot; lbb=&quot;2&quot; fo=&quot;2&quot;&gt;ERC-20&lt;/a&gt; transfer process.
+&lt;/p&gt;
+
+&lt;blockquote spaces-before=&quot;0&quot;&gt;
+  &lt;p spaces-before=&quot;0&quot;&gt;
+    &lt;small&gt;**identifier:** `75ab9782`&lt;/small&gt;&lt;br x-id=&quot;2&quot; /&gt; &lt;small&gt;**parameters**&lt;/small&gt;&lt;br x-id=&quot;2&quot; /&gt; &lt;small&gt;`operator`: Address which triggered the balance decrease (through sending or burning).&lt;/small&gt;&lt;br x-id=&quot;2&quot; /&gt; &lt;small&gt;`from`: *Holder* whose tokens were sent.&lt;/small&gt;&lt;br x-id=&quot;2&quot; /&gt; &lt;small&gt;`to`: Recipient of the tokens for a send (or `0x0` for a burn).&lt;/small&gt;&lt;br x-id=&quot;2&quot; /&gt; &lt;small&gt;`amount`: Number of tokens the *holder* balance is decreased by.&lt;/small&gt;&lt;br x-id=&quot;2&quot; /&gt; &lt;small&gt;`data`: Information provided by the *holder*.&lt;/small&gt;&lt;br x-id=&quot;2&quot; /&gt; &lt;small&gt;`operatorData`: Information provided by the *operator*.&lt;/small&gt;
+  &lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  The following rules apply when calling the &lt;code&gt;tokensToSend&lt;/code&gt; hook:
+&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      The &lt;code&gt;tokensToSend&lt;/code&gt; hook MUST be called for every send and burn processes.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      The &lt;code&gt;tokensToSend&lt;/code&gt; hook MUST be called &lt;em x-id=&quot;3&quot;&gt;before&lt;/em&gt; the state is updated&amp;mdash;i.e. &lt;em x-id=&quot;3&quot;&gt;before&lt;/em&gt; the balance is decremented.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      &lt;code&gt;operator&lt;/code&gt; MUST be the address which triggered the send or burn process.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      &lt;code&gt;from&lt;/code&gt; MUST be the address of the &lt;em x-id=&quot;3&quot;&gt;holder&lt;/em&gt; whose tokens are sent or burned.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      &lt;code&gt;to&lt;/code&gt; MUST be the address of the &lt;em x-id=&quot;3&quot;&gt;recipient&lt;/em&gt; which receives the tokens for a send.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      &lt;code&gt;to&lt;/code&gt; MUST be &lt;code&gt;0x0&lt;/code&gt; for a burn.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      &lt;code&gt;amount&lt;/code&gt; MUST be the number of tokens the &lt;em x-id=&quot;3&quot;&gt;holder&lt;/em&gt; sent or burned.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      &lt;code&gt;data&lt;/code&gt; MUST contain the extra information (if any) provided to the send or the burn process.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      &lt;code&gt;operatorData&lt;/code&gt; MUST contain the extra information provided by the address which triggered the decrease of the balance (if any).
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      The &lt;em x-id=&quot;3&quot;&gt;holder&lt;/em&gt; MAY block a send or burn process by &lt;code&gt;revert&lt;/code&gt;ing. (I.e., reject the withdrawal of tokens from its account.)
+    &lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  &lt;em x-id=&quot;3&quot;&gt;NOTE&lt;/em&gt;: Multiple &lt;em x-id=&quot;3&quot;&gt;holders&lt;/em&gt; MAY use the same implementation of &lt;code&gt;ERC777TokensSender&lt;/code&gt;.
+&lt;/p&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  &lt;em x-id=&quot;3&quot;&gt;NOTE&lt;/em&gt;: An address can register at most one implementation at any given time for all &lt;a href=&quot;./eip-777.md&quot; fo=&quot;5&quot;&gt;ERC-777&lt;/a&gt; tokens. Hence the &lt;code&gt;ERC777TokensSender&lt;/code&gt; MUST expect to be called by different token contracts. The &lt;code&gt;msg.sender&lt;/code&gt; of the &lt;code&gt;tokensToSend&lt;/code&gt; call is expected to be the address of the token contract.
+&lt;/p&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  &lt;em x-id=&quot;3&quot;&gt;&lt;a href=&quot;./eip-20.md&quot; lbb=&quot;2&quot; fo=&quot;2&quot;&gt;ERC-20&lt;/a&gt; compatibility requirement&lt;/em&gt;:&lt;br x-id=&quot;2&quot; /&gt; This hook takes precedence over &lt;a href=&quot;./eip-20.md&quot; lbb=&quot;2&quot; fo=&quot;2&quot;&gt;ERC-20&lt;/a&gt; and MUST be called (if registered) when calling &lt;a href=&quot;./eip-20.md&quot; lbb=&quot;2&quot; fo=&quot;2&quot;&gt;ERC-20&lt;/a&gt;'s &lt;code&gt;transfer&lt;/code&gt; and &lt;code&gt;transferFrom&lt;/code&gt; event. When called from a &lt;code&gt;transfer&lt;/code&gt;, &lt;code&gt;operator&lt;/code&gt; MUST be the same value as the &lt;code&gt;from&lt;/code&gt;. When called from a &lt;code&gt;transferFrom&lt;/code&gt;, &lt;code&gt;operator&lt;/code&gt; MUST be the address which issued the &lt;code&gt;transferFrom&lt;/code&gt; call.
+&lt;/p&gt;
+
+&lt;h4 spaces-before=&quot;0&quot;&gt;
+  &lt;strong x-id=&quot;1&quot;&gt;&lt;code&gt;ERC777TokensRecipient&lt;/code&gt; And The &lt;code&gt;tokensReceived&lt;/code&gt; Hook&lt;/strong&gt;
+&lt;/h4&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  The &lt;code&gt;tokensReceived&lt;/code&gt; hook notifies of any increment of the balance (send and mint) for a given &lt;em x-id=&quot;3&quot;&gt;recipient&lt;/em&gt;. Any address (regular or contract) wishing to be notified of token credits to their address MAY register the address of a contract implementing the &lt;code&gt;ERC777TokensRecipient&lt;/code&gt; interface described below via &lt;a href=&quot;./eip-1820.md&quot; fo=&quot;8&quot;&gt;ERC-1820&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;blockquote spaces-before=&quot;0&quot;&gt;
+  &lt;p spaces-before=&quot;0&quot;&gt;
+    This is done by calling the &lt;code&gt;setInterfaceImplementer&lt;/code&gt; function on the &lt;a href=&quot;./eip-1820.md&quot; fo=&quot;8&quot;&gt;ERC-1820&lt;/a&gt; registry with the &lt;em x-id=&quot;3&quot;&gt;recipient&lt;/em&gt; address as the address, the &lt;code&gt;keccak256&lt;/code&gt; hash of &lt;code&gt;ERC777TokensRecipient&lt;/code&gt; (&lt;code&gt;0xb281fc8c12954d22544db45de3159a39272895b169a852b314f9cc762e44c53b&lt;/code&gt;) as the interface hash, and the address of the contract implementing the &lt;code&gt;ERC777TokensRecipient&lt;/code&gt; as the implementer.
+  &lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code class=&quot;solidity&quot;&gt;interface ERC777TokensRecipient {
+</code></pre></div></blockquote> <div class="language- extra-class"><pre><code>function tokensReceived(
+    address operator,
+    address from,
+    address to,
+    uint256 amount,
+    bytes calldata data,
+    bytes calldata operatorData
+) external;
+</code></pre></div><p>}
+</p> <blockquote><div class="language- extra-class"><pre><code>&lt;p spaces-before=&quot;0&quot;&gt;
+  If the &lt;em x-id=&quot;3&quot;&gt;recipient&lt;/em&gt; is a contract, which has not registered an &lt;code&gt;ERC777TokensRecipient&lt;/code&gt; implementation; then the token contract:
+&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      MUST &lt;code&gt;revert&lt;/code&gt; if the &lt;code&gt;tokensReceived&lt;/code&gt; hook is called from a mint or send call.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      SHOULD continue processing the transaction if the &lt;code&gt;tokensReceived&lt;/code&gt; hook is called from an ERC20 &lt;code&gt;transfer&lt;/code&gt; or &lt;code&gt;transferFrom&lt;/code&gt; call.
+    &lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  &lt;em x-id=&quot;3&quot;&gt;NOTE&lt;/em&gt;: A regular address MAY register a different address&amp;mdash;the address of a contract&amp;mdash;implementing the interface on its behalf. A contract MUST register either its address or the address of another contract but said address MUST implement the interface on its behalf.
+&lt;/p&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  &lt;strong x-id=&quot;1&quot;&gt;&lt;code&gt;tokensReceived&lt;/code&gt;&lt;/strong&gt;
+&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;solidity&quot;&gt;function tokensReceived(
+</code></pre></div></blockquote> <div class="language- extra-class"><pre><code>address operator,
+address from,
+address to,
+uint256 amount,
+bytes calldata data,
+bytes calldata operatorData
+</code></pre></div><p>) external
+</p> <blockquote><div class="language- extra-class"><pre><code>&lt;p spaces-before=&quot;0&quot;&gt;
+  Notify a send or mint (if &lt;code&gt;from&lt;/code&gt; is &lt;code&gt;0x0&lt;/code&gt;) of &lt;code&gt;amount&lt;/code&gt; tokens from the &lt;code&gt;from&lt;/code&gt; address to the &lt;code&gt;to&lt;/code&gt; address by the &lt;code&gt;operator&lt;/code&gt; address.
+&lt;/p&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  &lt;em x-id=&quot;3&quot;&gt;NOTE&lt;/em&gt;: This function MUST NOT be called outside of a mint, send or &lt;a href=&quot;./eip-20.md&quot; lbb=&quot;2&quot; fo=&quot;2&quot;&gt;ERC-20&lt;/a&gt; transfer process.
+&lt;/p&gt;
+
+&lt;blockquote spaces-before=&quot;0&quot;&gt;
+  &lt;p spaces-before=&quot;0&quot;&gt;
+    &lt;small&gt;**identifier:** `0023de29`&lt;/small&gt;&lt;br x-id=&quot;2&quot; /&gt; &lt;small&gt;**parameters**&lt;/small&gt;&lt;br x-id=&quot;2&quot; /&gt; &lt;small&gt;`operator`: Address which triggered the balance increase (through sending or minting).&lt;/small&gt;&lt;br x-id=&quot;2&quot; /&gt; &lt;small&gt;`from`: *Holder* whose tokens were sent (or `0x0` for a mint).&lt;/small&gt;&lt;br x-id=&quot;2&quot; /&gt; &lt;small&gt;`to`: Recipient of the tokens.&lt;/small&gt;&lt;br x-id=&quot;2&quot; /&gt; &lt;small&gt;`amount`: Number of tokens the *recipient* balance is increased by.&lt;/small&gt;&lt;br x-id=&quot;2&quot; /&gt; &lt;small&gt;`data`: Information provided by the *holder*.&lt;/small&gt;&lt;br x-id=&quot;2&quot; /&gt; &lt;small&gt;`operatorData`: Information provided by the *operator*.&lt;/small&gt;
+  &lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  The following rules apply when calling the &lt;code&gt;tokensReceived&lt;/code&gt; hook:
+&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      The &lt;code&gt;tokensReceived&lt;/code&gt; hook MUST be called for every send and mint processes.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      The &lt;code&gt;tokensReceived&lt;/code&gt; hook MUST be called &lt;em x-id=&quot;3&quot;&gt;after&lt;/em&gt; the state is updated&amp;mdash;i.e. &lt;em x-id=&quot;3&quot;&gt;after&lt;/em&gt; the balance is incremented.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      &lt;code&gt;operator&lt;/code&gt; MUST be the address which triggered the send or mint process.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      &lt;code&gt;from&lt;/code&gt; MUST be the address of the &lt;em x-id=&quot;3&quot;&gt;holder&lt;/em&gt; whose tokens are sent for a send.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      &lt;code&gt;from&lt;/code&gt; MUST be &lt;code&gt;0x0&lt;/code&gt; for a mint.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      &lt;code&gt;to&lt;/code&gt; MUST be the address of the &lt;em x-id=&quot;3&quot;&gt;recipient&lt;/em&gt; which receives the tokens.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      &lt;code&gt;amount&lt;/code&gt; MUST be the number of tokens the &lt;em x-id=&quot;3&quot;&gt;recipient&lt;/em&gt; sent or minted.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      &lt;code&gt;data&lt;/code&gt; MUST contain the extra information (if any) provided to the send or the mint process.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      &lt;code&gt;operatorData&lt;/code&gt; MUST contain the extra information provided by the address which triggered the increase of the balance (if any).
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p spaces-before=&quot;0&quot;&gt;
+      The &lt;em x-id=&quot;3&quot;&gt;holder&lt;/em&gt; MAY block a send or mint process by &lt;code&gt;revert&lt;/code&gt;ing. (I.e., reject the reception of tokens.)
+    &lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  &lt;em x-id=&quot;3&quot;&gt;NOTE&lt;/em&gt;: Multiple &lt;em x-id=&quot;3&quot;&gt;holders&lt;/em&gt; MAY use the same implementation of &lt;code&gt;ERC777TokensRecipient&lt;/code&gt;.
+&lt;/p&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  &lt;em x-id=&quot;3&quot;&gt;NOTE&lt;/em&gt;: An address can register at most one implementation at any given time for all &lt;a href=&quot;./eip-777.md&quot; fo=&quot;5&quot;&gt;ERC-777&lt;/a&gt; tokens. Hence the &lt;code&gt;ERC777TokensRecipient&lt;/code&gt; MUST expect to be called by different token contracts. The &lt;code&gt;msg.sender&lt;/code&gt; of the &lt;code&gt;tokensReceived&lt;/code&gt; call is expected to be the address of the token contract.
+&lt;/p&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  &lt;em x-id=&quot;3&quot;&gt;&lt;a href=&quot;./eip-20.md&quot; lbb=&quot;2&quot; fo=&quot;2&quot;&gt;ERC-20&lt;/a&gt; compatibility requirement&lt;/em&gt;:&lt;br x-id=&quot;2&quot; /&gt; This hook takes precedence over &lt;a href=&quot;./eip-20.md&quot; lbb=&quot;2&quot; fo=&quot;2&quot;&gt;ERC-20&lt;/a&gt; and MUST be called (if registered) when calling &lt;a href=&quot;./eip-20.md&quot; lbb=&quot;2&quot; fo=&quot;2&quot;&gt;ERC-20&lt;/a&gt;'s &lt;code&gt;transfer&lt;/code&gt; and &lt;code&gt;transferFrom&lt;/code&gt; event. When called from a &lt;code&gt;transfer&lt;/code&gt;, &lt;code&gt;operator&lt;/code&gt; MUST be the same value as the &lt;code&gt;from&lt;/code&gt;. When called from a &lt;code&gt;transferFrom&lt;/code&gt;, &lt;code&gt;operator&lt;/code&gt; MUST be the address which issued the &lt;code&gt;transferFrom&lt;/code&gt; call.
+&lt;/p&gt;
+
+&lt;h4 spaces-before=&quot;0&quot;&gt;
+  &lt;strong x-id=&quot;1&quot;&gt;Note On Gas Consumption&lt;/strong&gt;
+&lt;/h4&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  Dapps and wallets SHOULD first estimate the gas required when sending, minting, or burning tokens&amp;mdash;using &lt;a href=&quot;https://github.com/ethereum/wiki/wiki/JSON-RPC#eth_estimategas&quot; f-id=&quot;eth_estimateGas&quot; fo=&quot;17&quot;&gt;&lt;code&gt;eth_estimateGas&lt;/code&gt;&lt;/a&gt;&amp;mdash;to avoid running out of gas during the transaction.
+&lt;/p&gt;
+
+&lt;h3 spaces-before=&quot;0&quot;&gt;
+  Logo
+&lt;/h3&gt;
+</code></pre></div></blockquote> <table spaces-before="0">
+&gt;       <tr>
+&gt;         <th align="right">
+&gt;           <strong x-id="1">Image</strong>
+&gt;         </th>
+&gt;         
+&gt;         <th align="center">
+&gt;           !<a href="../../assets/eip-777/logo/png/ERC-777-logo-beige-48px.png" fo="26">beige logo</a>
+&gt;         </th>
+&gt;         
+&gt;         <th align="center">
+&gt;           !<a href="../../assets/eip-777/logo/png/ERC-777-logo-white-48px.png" fo="27">white logo</a>
+&gt;         </th>
+&gt;         
+&gt;         <th align="center">
+&gt;           !<a href="../../assets/eip-777/logo/png/ERC-777-logo-light_grey-48px.png" fo="28">light grey logo</a>
+&gt;         </th>
+&gt;         
+&gt;         <th align="center">
+&gt;           !<a href="../../assets/eip-777/logo/png/ERC-777-logo-dark_grey-48px.png" fo="29">dark grey logo</a>
+&gt;         </th>
+&gt;         
+&gt;         <th align="center">
+&gt;           !<a href="../../assets/eip-777/logo/png/ERC-777-logo-black-48px.png" fo="30">black logo</a>
+&gt;         </th>
+&gt;       </tr>
+&gt;       
+&gt;       <tr>
+&gt;         <td align="right">
+&gt;           <strong x-id="1">Color</strong>
+&gt;         </td>
+&gt;         
+&gt;         <td align="center">
+&gt;           beige
+&gt;         </td>
+&gt;         
+&gt;         <td align="center">
+&gt;           white
+&gt;         </td>
+&gt;         
+&gt;         <td align="center">
+&gt;           light grey
+&gt;         </td>
+&gt;         
+&gt;         <td align="center">
+&gt;           dark grey
+&gt;         </td>
+&gt;         
+&gt;         <td align="center">
+&gt;           black
+&gt;         </td>
+&gt;       </tr>
+&gt;       
+&gt;       <tr>
+&gt;         <td align="right">
+&gt;           <strong x-id="1">Hex</strong>
+&gt;         </td>
+&gt;         
+&gt;         <td align="center">
+&gt;           <code>#C99D66</code>
+&gt;         </td>
+&gt;         
+&gt;         <td align="center">
+&gt;           <code>#FFFFFF</code>
+&gt;         </td>
+&gt;         
+&gt;         <td align="center">
+&gt;           <code>#EBEFF0</code>
+&gt;         </td>
+&gt;         
+&gt;         <td align="center">
+&gt;           <code>#3C3C3D</code>
+&gt;         </td>
+&gt;         
+&gt;         <td align="center">
+&gt;           <code>#000000</code>
+&gt;         </td>
+&gt;       </tr>
+&gt;     </table>
+&gt;     
+&gt;     <p spaces-before="0">
+&gt;       The logo MAY be used, modified and adapted to promote valid <a href="./eip-777.md" fo="5">ERC-777</a> token implementations and <a href="./eip-777.md" fo="5">ERC-777</a> compliant technologies such as wallets and dapps.
+&gt;     </p>
+&gt;     
+&gt;     <p spaces-before="0">
+&gt;       <a href="./eip-777.md" fo="5">ERC-777</a> token contract authors MAY create a specific logo for their token based on this logo.
+&gt;     </p>
+&gt;     
+&gt;     <p spaces-before="0">
+&gt;       The logo MUST NOT be used to advertise, promote or associate in any way technology—such as tokens—which is not <a href="./eip-777.md" fo="5">ERC-777</a> compliant.
+&gt;     </p>
+&gt;     
+&gt;     <p spaces-before="0">
+&gt;       The logo for the standard can be found in the <a href="https://github.com/ethereum/EIPs/tree/master/assets/eip-777/logo" f-id="logos" lbb="2" fo="25"><code>/assets/eip-777/logo</code></a> folder in <code>SVG</code> and <code>PNG</code> formats. The <code>PNG</code> version of the logo offers a few sizes in pixels. If needed, other sizes MAY be created by converting from <code>SVG</code> into <code>PNG</code>.
+&gt;     </p>
+&gt;     
+&gt;     <h2 spaces-before="0">
+&gt;       Rationale
+&gt;     </h2>
+&gt;     
+&gt;     <p spaces-before="0">
+&gt;       The principal intent for this standard is to solve some of the shortcomings of <a href="./eip-20.md" lbb="2" fo="2">ERC-20</a> while maintaining backward compatibility with <a href="./eip-20.md" lbb="2" fo="2">ERC-20</a>, and avoiding the problems and vulnerabilities of <a href="https://github.com/ethereum/EIPs/issues/223" fo="16">EIP-223</a>.
+&gt;     </p>
+&gt;     
+&gt;     <p spaces-before="0">
+&gt;       Below are the rationales for the decisions regarding the main aspects of the standards.
+&gt;     </p>
+&gt;     
+&gt;     <p spaces-before="0">
+&gt;       <em x-id="3">NOTE</em>: Jacques Dafflon (<a href="https://github.com/0xjac" fo="10">0xjac</a>), one of the authors of the standard, conjointly wrote his <a href="https://github.com/0xjac/master-thesis" fo="12">master thesis</a> on the standard, which goes in more details than could reasonably fit directly within the standard, and can provide further clarifications regarding certain aspects or decisions.
+&gt;     </p>
+&gt;     
+&gt;     <h3 spaces-before="0">
+&gt;       Lifecycle
+&gt;     </h3>
+&gt;     
+&gt;     <p spaces-before="0">
+&gt;       More than just sending tokens, <a href="./eip-777.md" fo="5">ERC-777</a> defines the entire lifecycle of a token, starting with the minting process, followed by the sending process and terminating with the burn process.
+&gt;     </p>
+&gt;     
+&gt;     <p spaces-before="0">
+&gt;       Having a lifecycle clearly defined is important for consistency and accuracy, especially when value is derived from scarcity. In contrast when looking at some <a href="./eip-20.md" lbb="2" fo="2">ERC-20</a> tokens, a discrepancy can be observed between the value returned by the <code>totalSupply</code> and the actual circulating supply, as the standard does not clearly define a process to create and destroy tokens.
+&gt;     </p>
+&gt;     
+&gt;     <h3 spaces-before="0">
+&gt;       Data
+&gt;     </h3>
+&gt;     
+&gt;     <p spaces-before="0">
+&gt;       The mint, send and burn processes can all make use of a <code>data</code> and <code>operatorData</code> fields which are passed to any movement (mint, send or burn). Those fields may be empty for simple use cases, or they may contain valuable information related to the movement of tokens, similar to information attached to a bank transfer by the sender or the bank itself.
+&gt;     </p>
+&gt;     
+&gt;     <p spaces-before="0">
+&gt;       The use of a <code>data</code> field is equally present in other standard proposals such as <a href="https://github.com/ethereum/EIPs/issues/223" fo="16">EIP-223</a>, and was requested by multiple members of the community who reviewed this standard.
+&gt;     </p>
+&gt;     
+&gt;     <h3 spaces-before="0">
+&gt;       Hooks
+&gt;     </h3>
+&gt;     
+&gt;     <p spaces-before="0">
+&gt;       In most cases, <a href="./eip-20.md" lbb="2" fo="2">ERC-20</a> requires two calls to safely transfer tokens to a contract without locking them. A call from the sender, using the <code>approve</code> function and a call from the recipient using <code>transferFrom</code>. Furthermore, this requires extra communication between the parties which is not clearly defined. Finally, holders can get confused between <code>transfer</code> and <code>approve</code>/<code>transferFrom</code>. Using the former to transfer tokens to a contract will most likely result in locked tokens.
+&gt;     </p>
+&gt;     
+&gt;     <p spaces-before="0">
+&gt;       Hooks allow streamlining of the sending process and offer a single way to send tokens to any recipient. Thanks to the <code>tokensReceived</code> hook, contracts are able to react and prevent locking tokens upon reception.
+&gt;     </p>
+&gt;     
+&gt;     <h4 spaces-before="0">
+&gt;       <strong x-id="1">Greater Control For Holders</strong>
+&gt;     </h4>
+&gt;     
+&gt;     <p spaces-before="0">
+&gt;       The <code>tokensReceived</code> hook also allows holders to reject the reception of some tokens. This gives greater control to holders who can accept or reject incoming tokens based on some parameters, for example located in the <code>data</code> or <code>operatorData</code> fields.
+&gt;     </p>
+&gt;     
+&gt;     <p spaces-before="0">
+&gt;       Following the same intentions and based on suggestions from the community, the <code>tokensToSend</code> hook was added to give control over and prevent the movement of outgoing tokens.
+&gt;     </p>
+&gt;     
+&gt;     <h4 spaces-before="0">
+&gt;       <strong x-id="1"><a href="./eip-1820.md" fo="8">ERC-1820</a> Registry</strong>
+&gt;     </h4>
+&gt;     
+&gt;     <p spaces-before="0">
+&gt;       The <a href="./eip-1820.md" fo="8">ERC-1820</a> Registry allows holders to register their hooks. Other alternatives were examined beforehand to link hooks and holders.
+&gt;     </p>
+&gt;     
+&gt;     <p spaces-before="0">
+&gt;       The first was for hooks to be defined at the sender's or recipient's address. This approach is similar to <a href="https://github.com/ethereum/EIPs/issues/223" fo="16">EIP-223</a> which proposes a <code>tokenFallback</code> function on recipient contracts to be called when receiving tokens, but improves on it by relying on <a href="./eip-165.md" fo="3">ERC-165</a> for interface detection. While straightforward to implement, this approach imposes several limitations. In particular, the sender and recipient must be contracts in order to provide their implementation of the hooks. Preventing externally owned addresses to benefit from hooks. Existing contracts have a strong probability not to be compatible, as they undoubtedly were unaware and do not define the new hooks. Consequently existing smart contract infrastructure such as multisig wallets which potentially hold large amounts of ether and tokens would need to be migrated to new updated contracts.
+&gt;     </p>
+&gt;     
+&gt;     <p spaces-before="0">
+&gt;       The second approach considered was to use <a href="https://github.com/ethereum/EIPs/issues/672" fo="4">ERC-672</a> which offered pseudo-introspection for addresses using reverse-ENS. However, this approach relied heavily on ENS, on top of which reverse lookup would need to be implemented. Analysis of this approach promptly revealed a certain degree of complexity and security concerns which would transcend the benefits of approach.
+&gt;     </p>
+&gt;     
+&gt;     <p spaces-before="0">
+&gt;       The third solution—used in this standard—is to rely on a unique registry where any address can register the addresses of contracts implementing the hooks on its behalf. This approach has the advantage that externally owned accounts and contracts can benefit from hooks, including existing contracts which can rely on hooks deployed on proxy contracts.
+&gt;     </p>
+&gt;     
+&gt;     <p spaces-before="0">
+&gt;       The decision was made to keep this registry in a separate EIP, as to not over complicate this standard. More importantly, the registry is designed in a flexible fashion, such that other EIPs and smart contract infrastructures can benefit from it for their own use cases, outside the realm of <a href="./eip-777.md" fo="5">ERC-777</a> and tokens. The first proposal for this registry was <a href="./eip-820.md" fo="6">ERC-820</a>. Unfortunately, issues emanating from upgrades in the Solidity language to versions 0.5 and above resulted in a bug in a separated part of the registry, which required changes. This was discovered right after the last call period. Attempts made to avoid creating a separate EIP, such as <a href="https://github.com/ethereum/EIPs/pull/1758" fo="7">ERC820a</a>, were rejected. Hence the standard for the registry used for <a href="./eip-777.md" fo="5">ERC-777</a> became <a href="./eip-1820.md" fo="8">ERC-1820</a>. <a href="./eip-1820.md" fo="8">ERC-1820</a> and <a href="./eip-820.md" fo="6">ERC-820</a> are functionally equivalent. <a href="./eip-1820.md" fo="8">ERC-1820</a> simply contains the fix for newer versions of Solidity.
+&gt;     </p>
+&gt;     
+&gt;     <h3 spaces-before="0">
+&gt;       Operators
+&gt;     </h3>
+&gt;     
+&gt;     <p spaces-before="0">
+&gt;       The standard defines the concept of operators as any address which moves tokens. While intuitively every address moves its own tokens, separating the concepts of holder and operator allows for greater flexibility. Primarily, this originates from the fact that the standard defines a mechanism for holders to let other addresses become their operators. Moreover, unlike the approve calls in <a href="./eip-20.md" lbb="2" fo="2">ERC-20</a> where the role of an approved address is not clearly defined, <a href="./eip-777.md" fo="5">ERC-777</a> details the intent of and interactions with operators, including an obligation for operators to be approved, and an irrevocable right for any holder to revoke operators.
+&gt;     </p>
+&gt;     
+&gt;     <h4 spaces-before="0">
+&gt;       <strong x-id="1">Default Operators</strong>
+&gt;     </h4>
+&gt;     
+&gt;     <p spaces-before="0">
+&gt;       Default operators were added based on community demand for pre-approved operators. That is operators which are approved for all holders by default. For obvious security reasons, the list of default operators is defined at the token contract creation time, and cannot be changed. Any holder still has the right to revoke default operators. One of the obvious advantages of default operators is to allow ether-less movements of tokens. Default operators offer other usability advantages, such as allowing token providers to offer functionality in a modular way, and to reduce the complexity for holders to use features provided through operators.
+&gt;     </p>
+&gt;     
+&gt;     <h2 spaces-before="0">
+&gt;       Backward Compatibility
+&gt;     </h2>
+&gt;     
+&gt;     <p spaces-before="0">
+&gt;       This EIP does not introduce backward incompatibilities and is backward compatible with the older <a href="./eip-20.md" lbb="2" fo="2">ERC-20</a> token standard.
+&gt;     </p>
+&gt;     
+&gt;     <p spaces-before="0">
+&gt;       This EIP does not use <code>transfer</code> and <code>transferFrom</code> and uses <code>send</code> and <code>operatorSend</code> to avoid confusion and mistakes when deciphering which token standard is being used.
+&gt;     </p>
+&gt;     
+&gt;     <p spaces-before="0">
+&gt;       This standard allows the implementation of <a href="./eip-20.md" lbb="2" fo="2">ERC-20</a> functions <code>transfer</code>, <code>transferFrom</code>, <code>approve</code> and <code>allowance</code> alongside to make a token fully compatible with <a href="./eip-20.md" lbb="2" fo="2">ERC-20</a>.
+&gt;     </p>
+&gt;     
+&gt;     <p spaces-before="0">
+&gt;       The token MAY implement <code>decimals()</code> for backward compatibility with <a href="./eip-20.md" lbb="2" fo="2">ERC-20</a>. If implemented, it MUST always return <code>18</code>.
+&gt;     </p>
+&gt;     
+&gt;     <p spaces-before="0">
+&gt;       Therefore a token contract MAY implement both <a href="./eip-20.md" lbb="2" fo="2">ERC-20</a> and <a href="./eip-777.md" fo="5">ERC-777</a> in parallel. The specification of the <code>view</code> functions (such as <code>name</code>, <code>symbol</code>, <code>balanceOf</code>, <code>totalSupply</code>) and internal data (such as the mapping of balances) overlap without problems. Note however that the following functions are mandatory in <a href="./eip-777.md" fo="5">ERC-777</a> and MUST be implemented: <code>name</code>, <code>symbol</code> <code>balanceOf</code> and <code>totalSupply</code> (<code>decimals</code> is not part of the <a href="./eip-777.md" fo="5">ERC-777</a> standard).
+&gt;     </p>
+&gt;     
+&gt;     <p spaces-before="0">
+&gt;       The state-modifying functions from both standards are decoupled and can operate independently from each other. Note that <a href="./eip-20.md" lbb="2" fo="2">ERC-20</a> functions SHOULD be limited to only being called from old contracts.
+&gt;     </p>
+&gt;     
+&gt;     <p spaces-before="0">
+&gt;       If the token implements <a href="./eip-20.md" lbb="2" fo="2">ERC-20</a>, it MUST register the <code>ERC20Token</code> interface with its own address via <a href="./eip-1820.md" fo="8">ERC-1820</a>. This is done by calling the <code>setInterfaceImplementer</code> function on the ERC1820 registry with the token contract address as both the address and the implementer and the <code>keccak256</code> hash of <code>ERC20Token</code> (<code>0xaea199e31a596269b42cdafd93407f14436db6e4cad65417994c2eb37381e05a</code>) as the interface hash.
+&gt;     </p>
+&gt;     
+&gt;     <p spaces-before="0">
+&gt;       If the contract has a switch to enable or disable ERC20 functions, every time the switch is triggered, the token MUST register or unregister the <code>ERC20Token</code> interface for its own address accordingly via ERC1820. Unregistering implies calling the <code>setInterfaceImplementer</code> with the token contract address as the address, the <code>keccak256</code> hash of <code>ERC20Token</code> as the interface hash and <code>0x0</code> as the implementer. (See <a href="./eip-1820.md#set-an-interface-for-an-address" f-id="erc1820-set" fo="9">Set An Interface For An Address</a> in <a href="./eip-1820.md" fo="8">ERC-1820</a> for more details.)
+&gt;     </p>
+&gt;     
+&gt;     <p spaces-before="0">
+&gt;       The difference for new contracts implementing <a href="./eip-20.md" lbb="2" fo="2">ERC-20</a> is that <code>tokensToSend</code> and <code>tokensReceived</code> hooks take precedence over <a href="./eip-20.md" lbb="2" fo="2">ERC-20</a>. Even with an <a href="./eip-20.md" lbb="2" fo="2">ERC-20</a> <code>transfer</code> and <code>transferFrom</code> call, the token contract MUST check via <a href="./eip-1820.md" fo="8">ERC-1820</a> if the <code>from</code> and the <code>to</code> address implement <code>tokensToSend</code> and <code>tokensReceived</code> hook respectively. If any hook is implemented, it MUST be called. Note that when calling <a href="./eip-20.md" lbb="2" fo="2">ERC-20</a> <code>transfer</code> on a contract, if the contract does not implement <code>tokensReceived</code>, the <code>transfer</code> call SHOULD still be accepted even if this means the tokens will probably be locked.
+&gt;     </p>
+&gt;     
+&gt;     <p spaces-before="0">
+&gt;       The table below summarizes the different actions the token contract MUST take when sending, minting and transferring token via <a href="./eip-777.md" fo="5">ERC-777</a> and <a href="./eip-20.md" lbb="2" fo="2">ERC-20</a>:
+&gt;     </p> <table><tr><th align="right">ERC1820</th> <th><code>to</code> address</th> <th align="center">ERC777 Sending And Minting</th> <th align="center">ERC20 <code>transfer</code>/<code>transferFrom</code></th></tr> <tr><td rowspan="2" align="right"><code>ERC777TokensRecipient</code><br>registered
+    </td> <td>regular address</td> <td colspan="2" rowspan="2" align="center">
+      MUST call <code>tokensReceived</code></td></tr> <tr><td>contract</td></tr> <tr><td rowspan="2" align="right"><code>ERC777TokensRecipient</code><br>not registered
+    </td> <td>regular address</td> <td colspan="2" align="center">continue</td></tr> <tr><td>contract</td> <td align="center">MUST <code>revert</code></td> <td align="center">SHOULD continue<sup><a id="continue-footnote-backlink" href="#continue-footnote">1</a></sup></td></tr></table> <blockquote><div class="language- extra-class"><pre><code>&lt;blockquote spaces-before=&quot;0&quot;&gt;
+  &lt;p spaces-before=&quot;0&quot;&gt;
+    &lt;a href=&quot;#continue-footnote-backlink&quot;&gt;&lt;small id=&quot;continue-footnote&quot;&gt;1.&lt;/small&gt;&lt;/a&gt;
+</code></pre></div></blockquote> <p><small>The transaction SHOULD continue for clarity as ERC20 is not aware of hooks.</small><br x-id="2"> <small>However, this can result in accidentally locked tokens.</small> <small>If avoiding accidentally locked tokens is paramount, the transaction MAY <code>revert</code>.</small></p> <blockquote><div class="language- extra-class"><pre><code>  &lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  There is no particular action to take if &lt;code&gt;tokensToSend&lt;/code&gt; is not implemented. The movement MUST proceed and only be canceled if another condition is not respected such as lack of funds or a &lt;code&gt;revert&lt;/code&gt; in &lt;code&gt;tokensReceived&lt;/code&gt; (if present).
+&lt;/p&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  During a send, mint and burn, the respective &lt;code&gt;Sent&lt;/code&gt;, &lt;code&gt;Minted&lt;/code&gt; and &lt;code&gt;Burned&lt;/code&gt; events MUST be emitted. Furthermore, if the token contract declares that it implements &lt;code&gt;ERC20Token&lt;/code&gt; via &lt;a href=&quot;./eip-1820.md&quot; fo=&quot;8&quot;&gt;ERC-1820&lt;/a&gt;, the token contract SHOULD emit a &lt;code&gt;Transfer&lt;/code&gt; event for minting and burning and MUST emit a &lt;code&gt;Transfer&lt;/code&gt; event for sending (as specified in the &lt;a href=&quot;./eip-20.md&quot; lbb=&quot;2&quot; fo=&quot;2&quot;&gt;ERC-20&lt;/a&gt; standard). During an &lt;a href=&quot;./eip-20.md&quot; lbb=&quot;2&quot; fo=&quot;2&quot;&gt;ERC-20&lt;/a&gt;'s &lt;code&gt;transfer&lt;/code&gt; or &lt;code&gt;transferFrom&lt;/code&gt; functions, a valid &lt;code&gt;Sent&lt;/code&gt; event MUST be emitted.
+&lt;/p&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  Hence for any movement of tokens, two events MAY be emitted: an &lt;a href=&quot;./eip-20.md&quot; lbb=&quot;2&quot; fo=&quot;2&quot;&gt;ERC-20&lt;/a&gt; &lt;code&gt;Transfer&lt;/code&gt; and an &lt;a href=&quot;./eip-777.md&quot; fo=&quot;5&quot;&gt;ERC-777&lt;/a&gt; &lt;code&gt;Sent&lt;/code&gt;, &lt;code&gt;Minted&lt;/code&gt; or &lt;code&gt;Burned&lt;/code&gt; (depending on the type of movement). Third-party developers MUST be careful not to consider both events as separate movements. As a general rule, if an application considers the token as an ERC20 token, then only the &lt;code&gt;Transfer&lt;/code&gt; event MUST be taken into account. If the application considers the token as an ERC777 token, then only the &lt;code&gt;Sent&lt;/code&gt;, &lt;code&gt;Minted&lt;/code&gt; and &lt;code&gt;Burned&lt;/code&gt; events MUST be considered.
+&lt;/p&gt;
+
+&lt;h2 spaces-before=&quot;0&quot;&gt;
+  Test Cases
+&lt;/h2&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  The &lt;a href=&quot;https://github.com/0xjac/ERC777&quot; f-id=&quot;0xjac/ERC777&quot; fo=&quot;11&quot;&gt;repository with the reference implementation&lt;/a&gt; contains all the &lt;a href=&quot;https://github.com/0xjac/ERC777/blob/master/test/ReferenceToken.test.js&quot; f-id=&quot;ref tests&quot; fo=&quot;14&quot;&gt;tests&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;h2 spaces-before=&quot;0&quot;&gt;
+  Implementation
+&lt;/h2&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  The GitHub repository &lt;a href=&quot;https://github.com/0xjac/ERC777&quot; fo=&quot;11&quot;&gt;0xjac/ERC777&lt;/a&gt; contains the &lt;a href=&quot;https://github.com/0xjac/ERC777/blob/master/contracts/examples/ReferenceToken.sol&quot; fo=&quot;15&quot;&gt;reference implementation&lt;/a&gt;. The reference implementation is also available via &lt;a href=&quot;https://www.npmjs.com/package/erc777&quot; f-id=&quot;npm/erc777&quot; fo=&quot;13&quot;&gt;npm&lt;/a&gt; and can be installed with &lt;code&gt;npm install erc777&lt;/code&gt;.
+&lt;/p&gt;
+
+&lt;h2 spaces-before=&quot;0&quot;&gt;
+  Copyright
+&lt;/h2&gt;
+
+&lt;p spaces-before=&quot;0&quot;&gt;
+  Copyright and related rights waived via &lt;a href=&quot;https://creativecommons.org/publicdomain/zero/1.0/&quot; lbb=&quot;2&quot; fo=&quot;31&quot;&gt;CC0&lt;/a&gt;.
+&lt;/p&gt;
+</code></pre></div></blockquote></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/ethlibrary/EIPs/edit/master/EIPS/zh/eip-777.md" target="_blank" rel="noopener noreferrer">在 GitHub 上帮助翻译此文档</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2021/10/13 下午5:03:27</span></div></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.f4044d78.js" defer></script><script src="/assets/js/3.b2dd2bf7.js" defer></script><script src="/assets/js/788.17f768ab.js" defer></script>
+  </body>
+</html>
