@@ -1,4 +1,4 @@
-# 以太坊改进提案（中文翻译） (EIPs)
+# 以太坊改进提案（中文翻译） (EIPs) 1
 
 Ethereum Improvement Proposals (EIPs) describe standards for the Ethereum platform, including core protocol specifications, client APIs, and contract standards. **Browse all current and draft EIPs on [the official EIP site](https://eips.ethereum.org/).**
 
